@@ -1,0 +1,17 @@
+{
+  "name": "claude-video-studio",
+  "owner": {
+    "name": "Santiago Pérez Barber"
+  },
+  "metadata": {
+    "description": "Skills para producir vídeos de YouTube con Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "video-studio",
+      "source": "./plugins/video-studio",
+      "description": "Elige la herramienta adecuada para cada tipo de vídeo y guía el flujo completo: edición, animación, vídeo sin cara, identidad visual y publicación en YouTube.",
+      "version": "0.1.0"
+    }
+  ]
+}

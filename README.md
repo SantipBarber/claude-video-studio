@@ -15,11 +15,31 @@ La idea: abrir Claude Code (o un proyecto de Claude) sobre este repositorio y us
 
 Todo funciona con la suscripción de Claude; lo único que se paga aparte es ElevenLabs.
 
+## Plugin `video-studio` para Claude Code
+
+El repo es también un marketplace de plugins. Instálalo una vez y las skills estarán disponibles en cualquier proyecto:
+
+```bash
+claude plugin marketplace add SantipBarber/claude-video-studio
+claude plugin install video-studio@claude-video-studio
+```
+
+| Skill | Para qué |
+|---|---|
+| `elegir-herramienta-video` | Decide qué herramienta usar según el tipo de vídeo y cómo instalarla |
+| `video-hablado` | Edita tomas con video-use: cortes, subtítulos, animaciones sincronizadas |
+| `video-sin-cara` | Investigación → guion por escenas → voz → animación → render |
+| `identidad-visual` | Aplica la identidad del canal y evita la estética típica de vídeo hecho con IA |
+| `publicar-youtube` | Título, descripción, capítulos, miniatura y subida como privado |
+
 ## Estructura
 
 ```
 CLAUDE.md                    Instrucciones para Claude al trabajar en este repo
+.claude-plugin/              Marketplace de plugins
+plugins/video-studio/        Plugin con las skills
 docs/
+  estilo/identidad.md        Identidad visual del canal (paleta, tipografía, movimiento)
   herramientas.md            Catálogo de herramientas investigadas (oct 2026)
   clonify.md                 Por qué Clonify no sirve para esto
   workflows/

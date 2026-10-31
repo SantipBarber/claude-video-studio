@@ -7,7 +7,8 @@ Este repositorio es la base de conocimiento y el espacio de trabajo de Santi par
 1. Lee `README.md` (tabla de herramientas) y `docs/herramientas.md`.
 2. Identifica el caso de uso y lee el workflow correspondiente en `docs/workflows/`.
 3. Revisa `videos/README.md` por si hay vídeos anteriores relacionados (reutiliza estilo, escenas, guiones).
-4. Crea la carpeta del vídeo copiando `videos/_plantilla/` → `videos/AAAA-MM-DD-slug/`.
+4. Si hay animaciones o miniatura, aplica `docs/estilo/identidad.md` (skill `identidad-visual` del plugin `plugins/video-studio`).
+5. Crea la carpeta del vídeo copiando `videos/_plantilla/` → `videos/AAAA-MM-DD-slug/`.
 
 ## Reglas
 

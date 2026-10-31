@@ -1,0 +1,11 @@
+{
+  "name": "video-studio",
+  "version": "0.1.0",
+  "description": "Elige la herramienta adecuada para cada tipo de vídeo y guía el flujo completo: edición, animación, vídeo sin cara, identidad visual y publicación en YouTube.",
+  "author": {
+    "name": "Santiago Pérez Barber"
+  },
+  "repository": "https://github.com/SantipBarber/claude-video-studio",
+  "license": "MIT",
+  "keywords": ["video", "youtube", "remotion", "hyperframes", "video-use", "edicion"]
+}
