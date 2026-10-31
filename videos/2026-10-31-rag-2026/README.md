@@ -18,7 +18,8 @@ Explicación del RAG clásico (trocear, vectorizar, buscar, generar), por qué f
 
 ## Decisiones y aprendizajes
 
-- 2026-10-31: guion v1 escrito; pendiente de elegir dirección de estilo (A/B/C) y voz.
+- 2026-10-31: guion v1 escrito.
+- 2026-10-31: prueba de la escena 3 (26 s, sin voz) en HyperFrames con estilo D "moderno oscuro". GSAP y fuentes Geist incluidos en `assets/` para que renderice sin red. Requiere `HYPERFRAMES_BROWSER_PATH` si no hay Chrome instalado.
 
 ## Archivos
 

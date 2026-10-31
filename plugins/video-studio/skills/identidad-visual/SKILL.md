@@ -1,6 +1,6 @@
 ---
 name: identidad-visual
-description: Aplica la identidad visual del canal (paleta, tipografías, movimiento, firma) a animaciones, escenas y miniaturas, y evita la estética típica de vídeo generado con IA. Úsala siempre que generes una animación, escena, overlay o miniatura.
+description: Aplica la identidad visual del canal (paleta, tipografías, movimiento, firma) a animaciones, escenas y miniaturas para que sean visuales, potentes y modernas, no genéricas. Úsala siempre que generes una animación, escena, overlay o miniatura.
 ---
 
 # Identidad visual
@@ -13,7 +13,7 @@ Lee `docs/estilo/identidad.md` del repo `claude-video-studio`. Si existe `docs/e
 
 - [ ] Solo colores de la paleta, y el acento solo para lo importante (≤ 10 % de la pantalla).
 - [ ] Solo las tipografías de la guía; nada de Inter, Poppins ni Roboto.
-- [ ] Ningún cliché de IA: cerebros, robots, redes brillando, degradados morados, glassmorphism, partículas.
+- [ ] Nada genérico de plantilla: mejor datos y recursos reales (docs/recursos-abiertos.md) que iconos de relleno.
 - [ ] Ritmo de movimiento coherente con la dirección elegida, sin el mismo fade+slide repetido en todo.
 - [ ] ≤ 8 palabras de texto en pantalla a la vez.
 - [ ] La firma del canal aparece donde toca (intro, cabecera de capítulo, transición).

@@ -42,6 +42,7 @@ docs/
   estilo/identidad.md        Identidad visual del canal (paleta, tipografía, movimiento)
   herramientas.md            Catálogo de herramientas investigadas (oct 2026)
   clonify.md                 Por qué Clonify no sirve para esto
+  recursos-abiertos.md       Hugging Face, documentación, iconos, fuentes, audio (con licencias)
   workflows/
     01-video-hablado.md      Cortar tomas con video-use
     02-animaciones.md        Añadir animaciones sobre tu explicación

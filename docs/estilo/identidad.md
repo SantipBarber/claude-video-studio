@@ -2,11 +2,27 @@
 
 > **Estado:** propuesta, pendiente de elegir dirección. Cuando se elija, se borran las otras dos y esta pasa a ser la guía oficial que aplica la skill `identidad-visual`.
 
-## Por qué
+## Prioridad
 
-Los vídeos hechos con IA se reconocen enseguida: degradados morados, tipografías por defecto, cerebros brillantes, partículas, voz plana. La identidad sirve para que el canal se reconozca como **tuyo** y no como "otro vídeo generado".
+Que el vídeo sea **visual, potente y moderno**. No pasa nada porque se note que está hecho con IA; lo que queremos es que no se vea genérico ni de plantilla. Mejor datos y recursos reales (ver `docs/recursos-abiertos.md`) que ilustraciones de relleno.
 
-## Lo que evitamos siempre (checklist anti-"hecho con IA")
+## D. Moderno oscuro (usado en la primera prueba, escena 3 del vídeo de RAG)
+
+| Token | Valor |
+|---|---|
+| Fondo | `#07080B` con rejilla de puntos `#1C2029` |
+| Paneles | `#0F1116`, borde `#232733` |
+| Texto | `#F4F5F7`, secundario `#8B90A0` |
+| Acento | Lima eléctrico `#D4FF3A` |
+| Categorías | Cian `#5CE1E6`, violeta `#A78BFA`, coral `#FF6B4A` |
+| Tipografía | Geist (títulos 800, texto 400–700) + Geist Mono (datos, etiquetas) |
+| Movimiento | `expo.out` para entradas, `back.out` para elementos que "aterrizan", stagger corto |
+| Firma | Barra de pasos superior (01–04) con el paso activo en lima; subtítulo explicativo abajo |
+| Texto mínimo | 28 px en 1080p |
+
+Código de referencia: `videos/2026-10-31-rag-2026/animaciones/escena-03/` (HyperFrames).
+
+## Para no parecer de plantilla
 
 - ❌ Degradados morado-azul-rosa, neones, glassmorphism, brillos.
 - ❌ Inter, Poppins o Roboto como tipografía principal.

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/geist-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/geist-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      :root {
+        --ground: #07080b;
+        --panel: #0f1116;
+        --line: #232733;
+        --ink: #f4f5f7;
+        --muted: #8b90a0;
+        --lime: #d4ff3a;
+        --cyan: #5ce1e6;
+        --coral: #ff6b4a;
+        --violet: #a78bfa;
+        --font-display: "Geist", sans-serif;
+        --font-mono: "Geist Mono", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1920px; height: 1080px; font-family: var(--font-display); color: var(--ink); }
+      .scene { position: absolute; inset: 0; }
+      .grid { position: absolute; inset: 0; background-image: radial-gradient(#1c2029 1.5px, transparent 1.5px); background-size: 40px 40px; }
+      .abs { position: absolute; }
+      .mono { font-family: var(--font-mono); }
+
+      #tracker { left: 120px; top: 70px; display: flex; gap: 14px; }
+      .step { font-family: var(--font-mono); font-size: 28px; color: var(--muted); padding: 12px 22px; border: 2px solid var(--line); border-radius: 999px; }
+      .step b { font-weight: 500; margin-right: 10px; }
+
+      #title { left: 120px; top: 380px; font-size: 140px; font-weight: 800; letter-spacing: -0.045em; line-height: 0.95; }
+      #title span { color: var(--lime); }
+      #subtitle { left: 126px; top: 700px; font-size: 40px; color: var(--muted); font-weight: 400; }
+
+      #doc { left: 140px; top: 260px; width: 420px; height: 560px; background: var(--panel); border: 2px solid var(--line); border-radius: 18px; padding: 40px 36px; }
+      #doc .h { height: 22px; width: 60%; background: var(--ink); border-radius: 6px; margin-bottom: 34px; opacity: 0.9; }
+      #doc .l { height: 12px; background: #3a3f4d; border-radius: 6px; margin-bottom: 18px; }
+      .doclabel { font-family: var(--font-mono); font-size: 28px; color: var(--muted); }
+
+      .chunk { width: 440px; height: 72px; background: var(--panel); border: 2px solid var(--line); border-radius: 12px; padding: 0 20px; display: flex; align-items: center; gap: 14px; font-size: 28px; color: var(--ink); white-space: nowrap; }
+      .chunk i { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+      .vec { font-family: var(--font-mono); font-size: 28px; color: var(--muted); white-space: nowrap; }
+
+      #plot { left: 980px; top: 230px; width: 860px; height: 730px; border: 2px solid var(--line); border-radius: 24px; background: rgba(15,17,22,0.6); overflow: hidden; }
+      .axis { position: absolute; background: var(--line); }
+      .dot { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; }
+      .clabel { position: absolute; font-family: var(--font-mono); font-size: 30px; }
+      #query { left: 900px; top: 140px; }
+      .pill { font-size: 34px; font-weight: 500; padding: 18px 34px; border-radius: 999px; background: var(--lime); color: #11140a; white-space: nowrap; }
+      #qdot { width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: var(--lime); }
+      #ring { width: 300px; height: 300px; margin: -150px 0 0 -150px; border-radius: 50%; border: 3px dashed var(--lime); }
+      svg#links { position: absolute; left: 0; top: 0; }
+
+      #llm { left: 700px; top: 420px; width: 460px; height: 240px; border-radius: 28px; border: 3px solid var(--lime); background: #10140a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+      #llm .big { font-size: 84px; font-weight: 800; letter-spacing: -0.04em; color: var(--lime); }
+      #llm .small { font-family: var(--font-mono); font-size: 26px; color: var(--muted); }
+      .ctx { width: 460px; height: 72px; }
+      #answer { left: 1220px; top: 400px; width: 620px; background: var(--panel); border: 2px solid var(--line); border-radius: 20px; padding: 32px 36px; }
+      #answer .q { font-family: var(--font-mono); font-size: 28px; color: var(--muted); margin-bottom: 18px; }
+      #answer .a { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+      #answer .cite { display: inline-block; margin-top: 22px; font-family: var(--font-mono); font-size: 28px; color: var(--lime); border: 2px solid var(--lime); border-radius: 8px; padding: 4px 12px; }
+      #caption { left: 120px; top: 985px; font-size: 32px; color: var(--muted); }
+      #caption b { color: var(--ink); font-weight: 500; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26" data-width="1920" data-height="1080">
+      <div class="scene clip" id="scene" data-start="0" data-duration="26" data-track-index="0">
+        <div class="grid"></div>
+
+        <div class="abs" id="tracker">
+          <div class="step" id="s1"><b>01</b>Trocear</div>
+          <div class="step" id="s2"><b>02</b>Vectorizar</div>
+          <div class="step" id="s3"><b>03</b>Buscar</div>
+          <div class="step" id="s4"><b>04</b>Generar</div>
+        </div>
+
+        <h1 class="abs" id="title">RAG en<br /><span>4 pasos</span></h1>
+        <p class="abs" id="subtitle">Cómo un modelo responde con <em>tus</em> documentos</p>
+
+        <div class="abs" id="doc">
+          <div class="h"></div>
+          <div class="l" style="width: 100%"></div><div class="l" style="width: 92%"></div><div class="l" style="width: 97%"></div>
+          <div class="l" style="width: 80%"></div><div class="l" style="width: 95%"></div><div class="l" style="width: 88%"></div>
+          <div class="l" style="width: 99%"></div><div class="l" style="width: 70%"></div><div class="l" style="width: 93%"></div>
+          <div class="l" style="width: 85%"></div><div class="l" style="width: 96%"></div><div class="l" style="width: 60%"></div>
+          <div class="doclabel" style="margin-top: 30px">politicas.pdf · 42 págs.</div>
+        </div>
+
+        <div id="chunks"></div>
+
+        <div class="abs" id="plot">
+          <div class="axis" style="left: 70px; top: 60px; width: 2px; height: 640px"></div>
+          <div class="axis" style="left: 70px; top: 700px; width: 740px; height: 2px"></div>
+          <div class="clabel" style="left: 90px; top: 30px; color: var(--muted); font-size: 28px">espacio de significado</div>
+          <div class="clabel" id="lab-a" style="left: 130px; top: 120px; color: var(--cyan)">devoluciones</div>
+          <div class="clabel" id="lab-b" style="left: 600px; top: 160px; color: var(--violet)">facturación</div>
+          <div class="clabel" id="lab-c" style="left: 420px; top: 610px; color: var(--coral)">envíos</div>
+          <div id="dots"></div>
+          <div class="abs" id="ring"></div>
+          <div class="abs" id="qdot"></div>
+          <svg id="links" width="860" height="730"></svg>
+        </div>
+
+        <div class="abs" id="query"><div class="pill">¿Cuál es el plazo de devolución?</div></div>
+
+        <div class="abs" id="llm"><div class="big">LLM</div><div class="small">pregunta + 3 fragmentos</div></div>
+        <div id="ctxs"></div>
+        <div class="abs" id="answer">
+          <div class="q">respuesta</div>
+          <div class="a" id="atext">Tienes 30 días desde la compra para devolverlo.</div>
+          <div class="cite">fuente: políticas.pdf · p. 12</div>
+        </div>
+
+        <p class="abs" id="caption"></p>
+      </div>
+    </div>
+
+    <script>
+      // Generador pseudoaleatorio con semilla: el render debe ser determinista.
+      let seed = 7;
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+
+      const colors = { a: "#5ce1e6", b: "#a78bfa", c: "#ff6b4a" };
+      const centers = { a: [260, 260], b: [690, 300], c: [520, 520] };
+      const dotsEl = document.getElementById("dots");
+      const dots = [];
+      ["a", "b", "c"].forEach((k) => {
+        for (let i = 0; i < 14; i++) {
+          const ang = rnd() * Math.PI * 2, r = 20 + rnd() * 120;
+          const x = centers[k][0] + Math.cos(ang) * r, y = centers[k][1] + Math.sin(ang) * r * 0.8;
+          const d = document.createElement("div");
+          d.className = "dot";
+          d.style.left = x + "px"; d.style.top = y + "px"; d.style.background = colors[k];
+          dotsEl.appendChild(d);
+          dots.push({ el: d, x, y, k });
+        }
+      });
+
+      const chunkTexts = [
+        ["a", "Las devoluciones se aceptan…"], ["b", "Las facturas se emiten…"], ["c", "Los envíos tardan 48 h…"],
+        ["a", "El reembolso se hace en…"], ["b", "El IVA aplicado es…"], ["a", "Productos sin abrir, 30 días…"],
+      ];
+      const chunksEl = document.getElementById("chunks");
+      const chunkEls = chunkTexts.map(([k, t], i) => {
+        const c = document.createElement("div");
+        c.className = "abs chunk";
+        c.innerHTML = `<i style="background:${colors[k]}"></i>${t}`;
+        c.style.left = "170px"; c.style.top = 300 + i * 84 + "px";
+        chunksEl.appendChild(c);
+        const v = document.createElement("div");
+        v.className = "abs vec";
+        const nums = [rnd(), rnd()].map((n) => (n * 2 - 1).toFixed(2));
+        v.textContent = `[${nums.join(", ")}, …]`;
+        v.style.left = "640px"; v.style.top = 318 + i * 84 + "px";
+        chunksEl.appendChild(v);
+        return { c, v, k };
+      });
+
+      // Punto de la pregunta y sus 3 vecinos más cercanos (cluster "devoluciones").
+      const q = [300, 300];
+      const qdot = document.getElementById("qdot"), ring = document.getElementById("ring");
+      qdot.style.left = q[0] + "px"; qdot.style.top = q[1] + "px";
+      ring.style.left = q[0] + "px"; ring.style.top = q[1] + "px";
+      const nearest = dots.slice().sort((p, r) => Math.hypot(p.x - q[0], p.y - q[1]) - Math.hypot(r.x - q[0], r.y - q[1])).slice(0, 3);
+      const svg = document.getElementById("links");
+      const lines = nearest.map((p) => {
+        const l = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        l.setAttribute("x1", q[0]); l.setAttribute("y1", q[1]); l.setAttribute("x2", p.x); l.setAttribute("y2", p.y);
+        l.setAttribute("stroke", "#d4ff3a"); l.setAttribute("stroke-width", "3");
+        const len = Math.hypot(p.x - q[0], p.y - q[1]);
+        l.setAttribute("stroke-dasharray", len); l.setAttribute("stroke-dashoffset", len);
+        svg.appendChild(l);
+        return l;
+      });
+
+      // Fragmentos recuperados que viajan al LLM.
+      const ctxTexts = ["Productos sin abrir, 30 días…", "Las devoluciones se aceptan…", "El reembolso se hace en…"];
+      const ctxsEl = document.getElementById("ctxs");
+      const ctxEls = ctxTexts.map((t, i) => {
+        const c = document.createElement("div");
+        c.className = "abs chunk ctx";
+        c.innerHTML = `<i style="background:${colors.a}"></i>${t}`;
+        c.style.left = "1380px"; c.style.top = 330 + i * 90 + "px";
+        ctxsEl.appendChild(c);
+        return c;
+      });
+
+      const cap = document.getElementById("caption");
+      const setCap = (html) => () => { cap.innerHTML = html; };
+
+      const tl = gsap.timeline({ paused: true });
+      const steps = ["#s1", "#s2", "#s3", "#s4"];
+      const activate = (idx, at) => {
+        steps.forEach((s, i) => {
+          tl.to(s, { color: i === idx ? "#11140a" : i < idx ? "#f4f5f7" : "#8b90a0", backgroundColor: i === idx ? "#d4ff3a" : "rgba(0,0,0,0)", borderColor: i === idx ? "#d4ff3a" : i < idx ? "#3a3f4d" : "#232733", duration: 0.35, ease: "power2.out" }, at);
+        });
+      };
+
+      // Estado inicial
+      gsap.set(["#doc", "#plot", "#query", "#llm", "#answer", "#ring", "#qdot"], { autoAlpha: 0 });
+      gsap.set(chunkEls.flatMap((o) => [o.c, o.v]), { autoAlpha: 0 });
+      gsap.set(dots.map((d) => d.el), { scale: 0, autoAlpha: 0 });
+      gsap.set(ctxEls, { autoAlpha: 0 });
+      gsap.set(".clabel", { autoAlpha: 0 });
+      gsap.set("#tracker .step", { autoAlpha: 0, y: -20 });
+      gsap.set("#query", { xPercent: -50 });
+
+      // 0 — Título
+      tl.from("#title", { y: 80, autoAlpha: 0, duration: 0.9, ease: "expo.out" }, 0.2);
+      tl.from("#subtitle", { y: 30, autoAlpha: 0, duration: 0.7, ease: "expo.out" }, 0.6);
+      tl.to("#tracker .step", { autoAlpha: 1, y: 0, stagger: 0.08, duration: 0.5, ease: "power3.out" }, 0.9);
+      tl.to(["#title", "#subtitle"], { autoAlpha: 0, y: -40, duration: 0.5, ease: "power2.in" }, 2.4);
+
+      // 1 — Trocear (3.0 – 7.5)
+      activate(0, 3.0);
+      tl.call(setCap("<b>Trocear:</b> el documento se parte en fragmentos pequeños"), null, 3.0);
+      tl.to("#doc", { autoAlpha: 1, duration: 0.5 }, 3.0);
+      tl.from("#doc", { x: -60, duration: 0.8, ease: "expo.out" }, 3.0);
+      tl.to("#doc", { autoAlpha: 0, scale: 0.92, duration: 0.4, ease: "power2.in" }, 4.6);
+      chunkEls.forEach((o, i) => {
+        tl.fromTo(o.c, { autoAlpha: 0, x: 60, y: 260 - i * 84 + 120, scale: 0.7 }, { autoAlpha: 1, x: 0, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.4)" }, 4.8 + i * 0.12);
+      });
+
+      // 2 — Vectorizar (7.5 – 12.5)
+      activate(1, 7.5);
+      tl.call(setCap("<b>Vectorizar:</b> cada fragmento se convierte en números que capturan su significado"), null, 7.5);
+      chunkEls.forEach((o, i) => {
+        tl.fromTo(o.v, { autoAlpha: 0, x: -20 }, { autoAlpha: 1, x: 0, duration: 0.4, ease: "power2.out" }, 7.7 + i * 0.12);
+      });
+      tl.to("#plot", { autoAlpha: 1, duration: 0.6 }, 8.8);
+      tl.to(dots.map((d) => d.el), { scale: 1, autoAlpha: 0.85, duration: 0.5, ease: "back.out(2)", stagger: { each: 0.03, from: "random" } }, 9.1);
+      tl.to(".clabel", { autoAlpha: 1, duration: 0.5, stagger: 0.15 }, 10.4);
+      tl.to(chunkEls.flatMap((o) => [o.c, o.v]), { autoAlpha: 0.15, duration: 0.6 }, 11.6);
+
+      // 3 — Buscar (12.5 – 18)
+      activate(2, 12.5);
+      tl.call(setCap("<b>Buscar:</b> la pregunta también se vectoriza y se buscan sus vecinos más cercanos"), null, 12.5);
+      tl.to(chunkEls.flatMap((o) => [o.c, o.v]), { autoAlpha: 0, duration: 0.4 }, 12.5);
+      tl.to("#plot", { x: -520, duration: 0.9, ease: "expo.inOut" }, 12.5);
+      tl.fromTo("#query", { autoAlpha: 0, y: -30 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "expo.out" }, 13.0);
+      tl.fromTo("#qdot", { autoAlpha: 0, scale: 3 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: "expo.out" }, 14.0);
+      tl.fromTo("#ring", { autoAlpha: 0, scale: 0.2 }, { autoAlpha: 1, scale: 1, duration: 0.9, ease: "power3.out" }, 14.5);
+      tl.to(dots.filter((d) => !nearest.includes(d)).map((d) => d.el), { autoAlpha: 0.25, duration: 0.6 }, 15.2);
+      tl.to(nearest.map((p) => p.el), { scale: 1.8, autoAlpha: 1, duration: 0.5, ease: "back.out(3)", stagger: 0.15 }, 15.3);
+      lines.forEach((l, i) => tl.to(l, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power2.out" }, 15.5 + i * 0.15));
+      tl.fromTo(ctxEls, { autoAlpha: 0, x: 40 }, { autoAlpha: 1, x: 0, duration: 0.6, stagger: 0.15, ease: "expo.out" }, 16.3);
+
+      // 4 — Generar (18 – 26)
+      activate(3, 18.0);
+      tl.call(setCap("<b>Generar:</b> el modelo responde usando solo esos fragmentos, y cita la fuente"), null, 18.0);
+      tl.to("#plot", { autoAlpha: 0, duration: 0.5 }, 18.0);
+      tl.to("#query", { x: 60, y: 120, duration: 0.9, ease: "expo.inOut" }, 18.0);
+      tl.to(ctxEls, { x: -1200, duration: 0.9, ease: "expo.inOut", stagger: 0.08 }, 18.2);
+      tl.fromTo("#llm", { autoAlpha: 0, scale: 0.85 }, { autoAlpha: 1, scale: 1, duration: 0.7, ease: "back.out(1.6)" }, 19.0);
+      tl.to(ctxEls, { x: -680, scale: 0.7, autoAlpha: 0, duration: 0.7, ease: "power3.in", stagger: 0.15 }, 20.0);
+      tl.to("#llm", { boxShadow: "0 0 0 18px rgba(212,255,58,0.12)", duration: 0.3, yoyo: true, repeat: 3 }, 20.6);
+      tl.fromTo("#answer", { autoAlpha: 0, x: 60 }, { autoAlpha: 1, x: 0, duration: 0.8, ease: "expo.out" }, 21.8);
+      tl.from("#answer .cite", { autoAlpha: 0, y: 10, duration: 0.5 }, 22.8);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
