@@ -15,6 +15,34 @@ La idea: abrir Claude Code (o un proyecto de Claude) sobre este repositorio y us
 
 Todo funciona con la suscripción de Claude; lo único que se paga aparte es ElevenLabs.
 
+## Empezar en tu Mac
+
+```bash
+# 1. Herramientas base
+brew install ffmpeg node        # Node 22 o superior
+git clone https://github.com/SantipBarber/claude-video-studio.git
+cd claude-video-studio
+
+# 2. Plugin con las skills
+claude plugin marketplace add SantipBarber/claude-video-studio
+claude plugin install video-studio@claude-video-studio
+
+# 3. Probar que la escena de ejemplo renderiza
+cd videos/2026-10-31-rag-2026/animaciones/escena-03
+npx hyperframes check
+npx hyperframes preview          # vista previa en el navegador
+npx hyperframes render -o ~/Desktop/escena-03.mp4
+
+# 4. Abrir Claude Code en la raíz del repo
+cd ../../../.. && claude
+```
+
+Claves (ElevenLabs, Google) en un `.env` en la raíz; está en `.gitignore`.
+
+## Memoria
+
+`memoria/` guarda aprendizajes técnicos, preferencias y pendientes. Claude la lee al empezar y la actualiza mientras trabaja, así cada sesión (en la nube o en el Mac) continúa donde lo dejó la anterior.
+
 ## Plugin `video-studio` para Claude Code
 
 El repo es también un marketplace de plugins. Instálalo una vez y las skills estarán disponibles en cualquier proyecto:
@@ -36,6 +64,7 @@ claude plugin install video-studio@claude-video-studio
 
 ```
 CLAUDE.md                    Instrucciones para Claude al trabajar en este repo
+memoria/                     Aprendizajes, preferencias y pendientes
 .claude-plugin/              Marketplace de plugins
 plugins/video-studio/        Plugin con las skills
 docs/

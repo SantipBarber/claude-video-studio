@@ -2,6 +2,10 @@
 
 Este repositorio es la base de conocimiento y el espacio de trabajo de Santi para producir vídeos de YouTube con Claude Code. Idioma de trabajo: español.
 
+## Memoria (siempre)
+
+Al empezar cualquier sesión, lee `memoria/aprendizajes.md`, `memoria/preferencias.md` y `memoria/pendientes.md`. Durante el trabajo, anota ahí lo que aprendas, lo que Santi decida y lo que quede pendiente (reglas en `memoria/README.md`).
+
 ## Antes de empezar cualquier vídeo
 
 1. Lee `README.md` (tabla de herramientas) y `docs/herramientas.md`.
