@@ -135,9 +135,9 @@
       tl.to("#hk-recipe", { rotation: -3, y: 40, opacity: 0.35, duration: 0.9, ease: "power2.in", transformOrigin: "692px 550px" }, 11.7);
       // «Desde entonces medio internet dice» (12.49–15.02): todo se va y entran titulares.
       tl.to(["#hk-who", "#hk-what", "#hk-recipe"], { autoAlpha: 0, duration: 0.5, ease: "power2.in" }, 12.9);
-      tl.from(["#hk-ch1", "#hk-ch2", "#hk-ch3", "#hk-ch4", "#hk-ch5"], { autoAlpha: 0, scale: 0.7, duration: 0.45, ease: "back.out(2)", stagger: 0.32 }, 13.6);
+      tl.from(["#hk-ch1", "#hk-ch2", "#hk-ch3", "#hk-ch4", "#hk-ch5"], { autoAlpha: 0, scale: 0.94, y: 18, duration: 0.45, ease: "back.out(2)", stagger: 0.32 }, 13.6);
       // «el RAG, ha muerto» (16.80–17.61): los titulares se apagan y sale la pregunta.
-      tl.to(["#hk-ch1", "#hk-ch2", "#hk-ch3", "#hk-ch4", "#hk-ch5"], { autoAlpha: 0, scale: 0.9, duration: 0.4, stagger: 0.05, ease: "power2.in" }, 16.5);
+      tl.to(["#hk-ch1", "#hk-ch2", "#hk-ch3", "#hk-ch4", "#hk-ch5"], { autoAlpha: 0, y: -16, duration: 0.4, stagger: 0.05, ease: "power2.in" }, 16.5);
       tl.from("#hk-head", { autoAlpha: 0, y: 50, duration: 0.8, ease: "expo.out" }, 16.8);
       // «Spoiler: no ha muerto.» (18.79–20.00): «muerto» se tacha.
       tl.from("#hk-spoiler", { autoAlpha: 0, y: 10, duration: 0.4, ease: "power2.out" }, 18.75);

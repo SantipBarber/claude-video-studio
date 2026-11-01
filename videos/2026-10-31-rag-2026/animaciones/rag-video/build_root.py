@@ -42,6 +42,13 @@ SPLITS = {
     "11": [("outro", 0)],
 }
 
+# Pausa extra (s) al final de una composición: la pantalla se queda quieta y la voz
+# espera. Entre partes de una misma escena se corta el mp3 (data-media-start).
+HOLD = {
+    "search": 1.2,
+    "topk": 1.2,
+}
+
 def words_of(folder, scene):
     return json.loads((folder / f"scene-{scene}.words.json").read_text())
 
@@ -57,21 +64,30 @@ def interp(x, xs, ys):
     return ys[-1] + (x - xs[-1])
 
 
-def layout(folder, splits):
-    scenes, t = [], LEAD
+def layout(folder, splits, hold):
+    """Coloca composiciones y trozos de voz. Devuelve (escenas, clips de voz, total)."""
+    scenes, clips, t = [], [], LEAD
     for scene, parts in splits.items():
         voice = round(words_of(folder, scene)["duration"], 2)
-        end = t + voice + (GAP if scene != "11" else TAIL)
+        shift = 0.0  # pausas acumuladas dentro de esta escena
         for i, (cid, local) in enumerate(parts):
-            start = t + local if i else (0 if scene == "1" else t)
-            stop = t + parts[i + 1][1] if i + 1 < len(parts) else end
+            last = i + 1 == len(parts)
+            nxt = voice if last else parts[i + 1][1]
+            seg = t + local + shift
+            start = seg if i else (0 if scene == "1" else t)
+            h = hold.get(cid, 0)
+            stop = (t + voice + shift + (GAP if scene != "11" else TAIL) + h) if last else (t + nxt + shift + h)
+            clips.append({"id": f"voice-{scene}" + (f"-{i}" if len(parts) > 1 else ""), "scene": scene,
+                          "start": round(seg, 2), "media": round(local, 2), "duration": round(nxt - local, 2)})
             scenes.append({"id": cid, "scene": scene, "start": round(start, 2),
-                           "duration": round(stop - start, 2),
+                           "duration": round(stop - start, 2), "hold": h,
                            # tiempo local en la composición = tiempo de la palabra en words.json + word_to_local
-                           "word_to_local": round(t - start, 2)})
-        scenes[-1]["voice"] = {"scene": scene, "start": round(t, 2), "duration": voice}
-        t = end
-    return scenes, round(t, 2)
+                           "word_to_local": round(t + shift - start, 2)})
+            if not last:
+                shift += h
+            else:
+                t = stop
+    return scenes, clips, round(t, 2)
 
 
 def word_times(folder, scene):
@@ -83,10 +99,17 @@ cur_splits = {}
 for scene, parts in SPLITS.items():
     a, c = word_times(AUTHORING, scene), word_times(VOICE, scene)
     assert len(a) == len(c), f"escena {scene}: la voz actual no dice el mismo texto ({len(a)} vs {len(c)} palabras)"
-    cur_splits[scene] = [(cid, round(interp(local, a, c), 2) if i else 0) for i, (cid, local) in enumerate(parts)]
+    cw = words_of(VOICE, scene)["words"]
 
-ref_scenes, _ = layout(AUTHORING, SPLITS)
-scenes, TOTAL = layout(VOICE, cur_splits)
+    def cut(local):
+        # El corte va en el silencio antes de la primera palabra que empieza tras el corte de referencia.
+        k = next(j for j, ta in enumerate(a) if ta >= local - 0.05)
+        return round((cw[k - 1]["end"] + cw[k]["start"]) / 2, 2) if k else 0
+
+    cur_splits[scene] = [(cid, cut(local) if i else 0) for i, (cid, local) in enumerate(parts)]
+
+ref_scenes, _, _ = layout(AUTHORING, SPLITS, {})
+scenes, clips, TOTAL = layout(VOICE, cur_splits, HOLD)
 
 # Mapa de tiempos por composición: (tiempo de referencia, tiempo actual), un ancla por palabra.
 WARP_JS = """/* warp:start (generado por build_root.py: no editar) */
@@ -99,19 +122,24 @@ WARP_JS = """/* warp:start (generado por build_root.py: no editar) */
       window.__timelines["{cid}"] = warp;
       /* warp:end */"""
 import re
+WARPS = {}  # id -> (tiempos de referencia, tiempos actuales)
 for ref, cur in zip(ref_scenes, scenes):
     a, c = word_times(AUTHORING, ref["scene"]), word_times(VOICE, cur["scene"])
+    base = round(cur["duration"] - cur["hold"], 3)  # sin la pausa final
     pts = [(0.0, 0.0)]
     for ta, tc in zip(a, c):
         la, lc = ta + ref["word_to_local"], tc + cur["word_to_local"]
-        if 0 < la < ref["duration"] and 0 < lc < cur["duration"]:
+        if 0 < la < ref["duration"] and 0 < lc < base:
             pts.append((round(la, 3), round(lc, 3)))
-    pts.append((ref["duration"], cur["duration"]))
+    pts.append((ref["duration"], base))
     clean = [pts[0]]
     for p in pts[1:]:
         if p[0] - clean[-1][0] >= 0.05 and p[1] - clean[-1][1] >= 0.05:
             clean.append(p)
     clean[-1] = pts[-1]
+    if cur["hold"]:
+        clean.append((ref["duration"], cur["duration"]))  # pausa: el último estado se mantiene
+    WARPS[cur["id"]] = ([p[0] for p in clean], [p[1] for p in clean])
     f = HERE / "compositions" / f"{cur['id']}.html"
     html = f.read_text()
     block = WARP_JS.format(anchors=json.dumps([list(p) for p in clean], separators=(",", ":")), cid=cur["id"])
@@ -123,10 +151,68 @@ for ref, cur in zip(ref_scenes, scenes):
         html = html[:old.start()] + block + html[old.end():]
     f.write_text(html)
 
+# ── Efectos de sonido ────────────────────────────────────────────────────────
+# Instante de referencia (segundo local de la composición, como en su código) -> segundo global actual.
+START = {s["id"]: s["start"] for s in scenes}
+
+
+def at(cid, local):
+    xs, ys = WARPS[cid]
+    return START[cid] + interp(local, xs, ys)
+
+
+FRAME = 1 / 30
+# Segundo del fichero en que suena el golpe (medido con `hyperframes audio --json`).
+PEAK = {"whoosh-1": 0.10, "whoosh-2": 0.16, "whoosh-3": 0.18, "pop-1": 0.0, "pop-2": 0.0, "tick": 0.18, "impact": 0.49}
+DUR = {"whoosh-1": 0.8, "whoosh-2": 0.8, "whoosh-3": 0.68, "pop-1": 0.48, "pop-2": 0.48, "tick": 0.48, "impact": 2.48}
+VOL = {"whoosh": 0.22, "pop": 0.3, "tick": 0.35, "impact": 0.5}
+# Pops: cifras y tarjetas clave, en tiempo de referencia de su composición.
+POPS = [("chunk", 8.6), ("embed", 6.5), ("topk", 2.4), ("topk", 4.8), ("topk", 8.9),
+        ("contextual", 26.0), ("contextual", 29.5), ("longcontext", 5.2)]
+sfx = []  # (fichero, segundo global en que debe sonar el golpe)
+for i, s_ in enumerate(scenes[1:]):
+    sfx.append((f"whoosh-{i % 3 + 1}", s_["start"]))          # cada cambio de composición
+for i, (cid, local) in enumerate(POPS):
+    sfx.append((f"pop-{i % 2 + 1}", at(cid, local) + 0.05))
+sfx.append(("impact", at("outro", 2.0) + 0.1))                 # «RAG ha madurado.»
+# ── Música de fondo ──────────────────────────────────────────────────────────
+# Pista de ElevenLabs Music (estilo A «pulso tech», 3:10) encadenada consigo misma
+# con fundidos de 6 s hasta cubrir el vídeo. Se rehace si cambia la duración.
+import subprocess
+MUSIC_SRC = HERE / "../../audio/music/A-pulso-tech-full.mp3"
+BED = HERE / "assets/music/bed.mp3"
+MUSIC_VOL = 0.14
+
+
+def media_duration(f):
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(f)],
+                         capture_output=True, text=True).stdout.strip()
+    return float(out) if out else 0.0
+
+
+if MUSIC_SRC.exists() and (not BED.exists() or abs(media_duration(BED) - TOTAL) > 0.05):
+    BED.parent.mkdir(parents=True, exist_ok=True)
+    chain = ("[0:a]asplit=3[a][b][c];[a]atrim=0:182,asetpts=N/SR/TB[s1];[b]atrim=8:182,asetpts=N/SR/TB[s2];"
+             "[c]atrim=8:120,asetpts=N/SR/TB[s3];[s1][s2]acrossfade=d=6:c1=tri:c2=tri[x];"
+             "[x][s3]acrossfade=d=6:c1=tri:c2=tri[y];"
+             f"[y]atrim=0:{TOTAL},afade=t=in:d=1.5,afade=t=out:st={TOTAL - 4}:d=4,loudnorm=I=-16:TP=-1:LRA=11")
+    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(MUSIC_SRC),
+                    "-filter_complex", chain, "-ar", "44100", "-b:a", "160k", str(BED)], check=True)
+    print(f"música: {BED.name} rehecha ({TOTAL} s)")
+music_tag = (f'      <audio id="music" class="clip" src="assets/music/bed.mp3" data-start="0" data-duration="{TOTAL}" '
+             f'data-track-index="7" data-volume="{MUSIC_VOL}"></audio>') if BED.exists() else ""
+
 tracker_from = next(s["start"] for s in scenes if s["id"] == "twomoments")
 tracker_to = next(s["start"] + s["duration"] for s in scenes if s["id"] == "generate")
 step_at = {i: next(s["start"] for s in scenes if s["id"] == cid)
            for i, cid in enumerate(["chunk", "embed", "search", "generate"])}
+
+for t_ in step_at.values():                                     # se enciende un paso de la barra
+    sfx.append(("tick", t_ + 0.2))
+sfx_tags = "\n".join(
+    f'      <audio id="sfx-{i}" class="clip" src="assets/sfx/{name}.mp3" data-start="{round(hit + FRAME - PEAK[name], 2)}" '
+    f'data-duration="{DUR[name]}" data-track-index="{5 + i % 2}" data-volume="{VOL[name.split("-")[0]]}"></audio>'
+    for i, (name, hit) in enumerate(sorted(sfx, key=lambda x: x[1])))
 
 hosts = "\n".join(
     f'      <div id="scene-{s["id"]}" class="host" data-composition-id="{s["id"]}" '
@@ -134,11 +220,12 @@ hosts = "\n".join(
     f'        data-start="{s["start"]}" data-duration="{s["duration"]}" data-track-index="1" '
     f'data-track-kind="graphics" data-width="1920" data-height="1080"></div>'
     for s in scenes)
-voices = [s["voice"] for s in scenes if "voice" in s]
 audios = "\n".join(
-    f'      <audio id="voice-{v["scene"]}" class="clip" src="assets/audio/scene-{v["scene"]}.mp3" '
-    f'data-start="{v["start"]}" data-duration="{v["duration"]}" data-track-index="{3 + i % 2}" data-volume="1"></audio>'
-    for i, v in enumerate(voices))
+    f'      <audio id="{v["id"]}" class="clip" src="assets/audio/scene-{v["scene"]}.mp3" '
+    f'data-start="{v["start"]}" data-duration="{v["duration"]}"'
+    + (f' data-media-start="{v["media"]}"' if v["media"] else "")
+    + f' data-track-index="{3 + i % 2}" data-volume="1"></audio>'
+    for i, v in enumerate(clips))
 
 html = f"""<!doctype html>
 <html lang="es" data-resolution="landscape">
@@ -179,6 +266,12 @@ html = f"""<!doctype html>
       </div>
 
 {audios}
+
+      <!-- Música de fondo -->
+{music_tag}
+
+      <!-- Efectos de sonido -->
+{sfx_tags}
     </div>
 
     <script>

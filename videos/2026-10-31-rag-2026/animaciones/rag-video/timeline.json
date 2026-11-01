@@ -1,201 +1,149 @@
 {
- "total": 370.69,
+ "total": 373.09,
  "scenes": [
   {
    "id": "hook",
    "scene": "1",
    "start": 0,
    "duration": 20.38,
-   "word_to_local": 0.5,
-   "voice": {
-    "scene": "1",
-    "start": 0.5,
-    "duration": 19.18
-   }
+   "hold": 0,
+   "word_to_local": 0.5
   },
   {
    "id": "problem",
    "scene": "2",
    "start": 20.38,
    "duration": 21.88,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "2",
-    "start": 20.38,
-    "duration": 21.18
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "openbook",
    "scene": "2b",
    "start": 42.26,
    "duration": 28.38,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "2b",
-    "start": 42.26,
-    "duration": 27.68
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "twomoments",
    "scene": "3a",
    "start": 70.64,
    "duration": 9.85,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "3a",
-    "start": 70.64,
-    "duration": 9.15
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "chunk",
    "scene": "3b",
    "start": 80.49,
-   "duration": 13.51,
+   "duration": 13.38,
+   "hold": 0,
    "word_to_local": 0.0
   },
   {
    "id": "embed",
    "scene": "3b",
-   "start": 94.0,
-   "duration": 14.22,
-   "word_to_local": -13.51,
-   "voice": {
-    "scene": "3b",
-    "start": 80.49,
-    "duration": 27.03
-   }
+   "start": 93.87,
+   "duration": 14.35,
+   "hold": 0,
+   "word_to_local": -13.38
   },
   {
    "id": "search",
    "scene": "3c",
    "start": 108.22,
-   "duration": 5.37,
+   "duration": 6.53,
+   "hold": 1.2,
    "word_to_local": 0.0
   },
   {
    "id": "topk",
    "scene": "3c",
-   "start": 113.59,
-   "duration": 6.9,
-   "word_to_local": -5.37
+   "start": 114.75,
+   "duration": 8.12,
+   "hold": 1.2,
+   "word_to_local": -5.33
   },
   {
    "id": "generate",
    "scene": "3c",
-   "start": 120.49,
-   "duration": 12.63,
-   "word_to_local": -12.27,
-   "voice": {
-    "scene": "3c",
-    "start": 108.22,
-    "duration": 24.2
-   }
+   "start": 122.87,
+   "duration": 12.65,
+   "hold": 0,
+   "word_to_local": -12.25
   },
   {
    "id": "failures",
    "scene": "4",
-   "start": 133.12,
+   "start": 135.52,
    "duration": 27.59,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "4",
-    "start": 133.12,
-    "duration": 26.89
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "hybrid",
    "scene": "5",
-   "start": 160.71,
+   "start": 163.11,
    "duration": 31.44,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "5",
-    "start": 160.71,
-    "duration": 30.74
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "contextual",
    "scene": "6",
-   "start": 192.15,
+   "start": 194.55,
    "duration": 31.3,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "6",
-    "start": 192.15,
-    "duration": 30.6
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "graphrag",
    "scene": "7",
-   "start": 223.45,
+   "start": 225.85,
    "duration": 32.23,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "7",
-    "start": 223.45,
-    "duration": 31.53
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "agentic",
    "scene": "8",
-   "start": 255.68,
-   "duration": 28.56,
+   "start": 258.08,
+   "duration": 28.41,
+   "hold": 0,
    "word_to_local": 0.0
   },
   {
    "id": "warnings",
    "scene": "8",
-   "start": 284.24,
-   "duration": 18.3,
-   "word_to_local": -28.56,
-   "voice": {
-    "scene": "8",
-    "start": 255.68,
-    "duration": 46.16
-   }
+   "start": 286.49,
+   "duration": 18.45,
+   "hold": 0,
+   "word_to_local": -28.41
   },
   {
    "id": "longcontext",
    "scene": "9",
-   "start": 302.54,
+   "start": 304.94,
    "duration": 31.21,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "9",
-    "start": 302.54,
-    "duration": 30.51
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "choose",
    "scene": "10",
-   "start": 333.75,
+   "start": 336.15,
    "duration": 28.15,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "10",
-    "start": 333.75,
-    "duration": 27.45
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   },
   {
    "id": "outro",
    "scene": "11",
-   "start": 361.9,
+   "start": 364.3,
    "duration": 8.79,
-   "word_to_local": 0.0,
-   "voice": {
-    "scene": "11",
-    "start": 361.9,
-    "duration": 7.29
-   }
+   "hold": 0,
+   "word_to_local": 0.0
   }
  ]
 }
