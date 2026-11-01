@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .swap { display: grid; }
+    #root .swap > * { grid-area: 1 / 1; }
+
+    #g-ctx { left: 120px; top: 255px; font-size: 28px; color: #8b90a0; }
+    #root .row { left: 120px; width: 640px; height: 76px; padding: 0 24px; display: flex; align-items: center; gap: 18px; font-size: 30px; border-radius: 12px; }
+    #root .row i { width: 14px; height: 14px; border-radius: 50%; background: #5ce1e6; flex: none; }
+    #g-plus { left: 120px; top: 574px; font-size: 28px; color: #8b90a0; }
+    #g-pill { left: 120px; top: 620px; font-size: 36px; font-weight: 500; padding: 18px 34px; border-radius: 999px; background: #d4ff3a; color: #11140a; white-space: nowrap; }
+    #root .arrow { width: 56px; height: 32px; }
+    #g-llm { left: 845px; top: 380px; width: 360px; height: 240px; border-radius: 24px; border: 3px solid #d4ff3a; background: #10140a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    #g-llm .big { font-size: 96px; font-weight: 800; letter-spacing: -0.04em; color: #d4ff3a; line-height: 1; }
+    #g-llm .small { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #g-ans { left: 1280px; top: 330px; width: 540px; padding: 36px; border-radius: 20px; }
+    #g-ans .lbl { font-size: 28px; color: #8b90a0; margin-bottom: 16px; }
+    #g-ans .a { font-size: 44px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+    #g-cite { display: inline-block; margin-top: 22px; font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; border: 2px solid #d4ff3a; border-radius: 8px; padding: 4px 12px; }
+    #g-upd { left: 780px; top: 312px; font-size: 28px; color: #ff6b4a; white-space: nowrap; }
+    #g-end { left: 1280px; top: 742px; font-size: 56px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+  </style>
+
+  <div data-hf-id="hf-trjw" id="root" data-composition-id="generate" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-he2q" class="abs mono" id="g-ctx">contexto</div>
+    <div data-hf-id="hf-t8kj" class="abs panel row" id="g-r1" style="top: 300px"><i data-hf-id="hf-wt6k"></i>
+      <span data-hf-id="hf-nu80" class="swap"><span data-hf-id="hf-x2ol" id="g-r1a">Productos sin abrir, 30 días…</span><span data-hf-id="hf-prei" id="g-r1b">Productos sin abrir, <b data-hf-id="hf-b6ms" style="color:#d4ff3a;font-weight:500">45 días</b>…</span></span>
+    </div>
+    <div data-hf-id="hf-ch7t" class="abs panel row" id="g-r2" style="top: 390px"><i data-hf-id="hf-zeb8"></i>Las devoluciones se aceptan…</div>
+    <div data-hf-id="hf-pux1" class="abs panel row" id="g-r3" style="top: 480px"><i data-hf-id="hf-y7e5"></i>El reembolso se hace en…</div>
+    <div data-hf-id="hf-q9cj" class="abs mono" id="g-upd">documento actualizado</div>
+    <div data-hf-id="hf-a9ii" class="abs mono" id="g-plus">+ pregunta</div>
+    <div data-hf-id="hf-fdlc" class="abs" id="g-pill">¿Cuál es el plazo de devolución?</div>
+
+    <svg data-hf-id="hf-7fpm" class="abs arrow" id="g-a1" style="left: 780px; top: 484px" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-najt" d="M0 16h52M38 3l14 13-14 13"/></svg>
+    <div data-hf-id="hf-j9ff" class="abs" id="g-llm"><div data-hf-id="hf-uigt" class="big">LLM</div><div data-hf-id="hf-06a0" class="small">usa solo el contexto</div></div>
+    <svg data-hf-id="hf-bjkm" class="abs arrow" id="g-a2" style="left: 1214px; top: 484px" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-6fx9" d="M0 16h52M38 3l14 13-14 13"/></svg>
+
+    <div data-hf-id="hf-f7lw" class="abs panel" id="g-ans">
+      <div data-hf-id="hf-7qlz" class="lbl mono">respuesta</div>
+      <div data-hf-id="hf-2cti" class="a swap"><span data-hf-id="hf-tv3w" id="g-a30">Tienes 30 días desde la compra para devolverlo.</span><span data-hf-id="hf-qpto" id="g-a45">Tienes 45 días desde la compra para devolverlo.</span></div>
+      <div data-hf-id="hf-gb42" id="g-cite">politicas.pdf · p. 12</div>
+    </div>
+
+    <div data-hf-id="hf-7x1b" class="abs" id="g-end">Sin reentrenar nada.</div>
+
+    <p data-hf-id="hf-crq4" class="abs cap" id="g-cap"><b data-hf-id="hf-txxx">Paso 4 ·</b> responde solo con esos fragmentos</p>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#g-r1b", "#g-a45"], { autoAlpha: 0 });
+      // «le das esos trozos» (1.6)
+      tl.from("#g-ctx", { autoAlpha: 0, duration: 0.4 }, 1.3);
+      tl.from(["#g-r1", "#g-r2", "#g-r3"], { autoAlpha: 0, x: -60, duration: 0.6, ease: "expo.out", stagger: 0.15 }, 1.5);
+      // «al modelo» (2.5)
+      tl.from("#g-a1", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 2.4);
+      tl.from("#g-llm", { autoAlpha: 0, scale: 0.85, duration: 0.7, ease: "back.out(1.6)" }, 2.5);
+      // «con la pregunta» (3.1)
+      tl.from(["#g-plus", "#g-pill"], { autoAlpha: 0, y: 24, duration: 0.6, ease: "expo.out", stagger: 0.08 }, 3.0);
+      // «que responda solo con eso» (4.8–6.0)
+      tl.to("#g-llm", { boxShadow: "0 0 0 22px rgba(212,255,58,0.14)", duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 4.8);
+      tl.from("#g-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 5.4);
+      tl.from("#g-a2", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 5.6);
+      tl.from("#g-ans", { autoAlpha: 0, x: 50, duration: 0.8, ease: "expo.out" }, 5.8);
+      // «y que diga de dónde lo saca» (7.0)
+      tl.from("#g-cite", { autoAlpha: 0, y: 12, duration: 0.5, ease: "back.out(2)" }, 7.0);
+      // «Si mañana cambia un documento» (10.2): el fragmento 1 cambia en la biblioteca.
+      tl.to("#g-r1", { borderColor: "#ff6b4a", duration: 0.3 }, 10.2);
+      tl.from("#g-upd", { autoAlpha: 0, y: 10, duration: 0.4, ease: "power2.out" }, 10.4);
+      // «lo actualizas en la biblioteca» (11.6)
+      tl.to("#g-r1a", { autoAlpha: 0, duration: 0.3 }, 11.6);
+      tl.to("#g-r1b", { autoAlpha: 1, duration: 0.3 }, 11.7);
+      tl.to("#g-r1", { borderColor: "#d4ff3a", duration: 0.3 }, 11.7);
+      tl.to("#g-llm", { boxShadow: "0 0 0 22px rgba(212,255,58,0.14)", duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 12.2);
+      // «y listo» (13.6): la respuesta ya dice 45 días.
+      tl.to("#g-a30", { autoAlpha: 0, duration: 0.3 }, 13.0);
+      tl.to("#g-a45", { autoAlpha: 1, duration: 0.3 }, 13.1);
+      tl.to("#g-upd", { autoAlpha: 0, duration: 0.3 }, 13.4);
+      // «Sin reentrenar nada.» (14.8)
+      tl.from("#g-end", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 14.8);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["generate"] = tl;
+    })();
+  </script>
+</template>

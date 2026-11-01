@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/geist-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/geist-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      :root {
+        --ground: #07080b; --panel: #0f1116; --line: #232733; --ink: #f4f5f7; --muted: #8b90a0;
+        --lime: #d4ff3a; --cyan: #5ce1e6; --coral: #ff6b4a; --violet: #a78bfa;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1920px; height: 1080px; font-family: "Geist", sans-serif; color: var(--ink); }
+      #bg { position: absolute; inset: 0; background-image: radial-gradient(#1c2029 1.5px, transparent 1.5px); background-size: 40px 40px; }
+      .host { position: absolute; inset: 0; }
+      #tracker { position: absolute; left: 120px; top: 70px; display: flex; gap: 14px; z-index: 10; }
+      .step { font-family: "Geist Mono", monospace; font-size: 28px; color: var(--muted); padding: 12px 22px; border: 2px solid var(--line); border-radius: 999px; }
+      .step b { font-weight: 500; margin-right: 10px; }
+    </style>
+  </head>
+  <body>
+    <!-- Tramo de prueba del vídeo de RAG: escenas 3b (preparar) y 3c (preguntar) del guion v2.
+         Los tiempos salen de audio/voice/scene-*.words.json (ElevenLabs con marcas de tiempo). -->
+    <div data-hf-id="hf-rrpb" id="root" data-composition-id="main" data-start="0" data-duration="74" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-v3rw" id="bg" class="clip" data-start="0" data-duration="74" data-track-index="0"></div>
+
+      <div data-hf-id="hf-4m7e" id="scene-chunk" class="host" data-composition-id="chunk" data-composition-src="compositions/chunk.html"
+        data-start="0" data-duration="18.3" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-avkm" id="scene-embed" class="host" data-composition-id="embed" data-composition-src="compositions/embed.html"
+        data-start="18.3" data-duration="18.9" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-vn1q" id="scene-search" class="host" data-composition-id="search" data-composition-src="compositions/search.html"
+        data-start="37.2" data-duration="7.4" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-9diw" id="scene-topk" class="host" data-composition-id="topk" data-composition-src="compositions/topk.html"
+        data-start="44.6" data-duration="10.8" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-2ygx" id="scene-generate" class="host" data-composition-id="generate" data-composition-src="compositions/generate.html"
+        data-start="55.4" data-duration="18.6" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Firma del canal: barra de pasos 01–04, común a todo el tramo -->
+      <div data-hf-id="hf-26lt" id="tracker" class="clip" data-start="0" data-duration="74" data-track-index="2">
+        <div data-hf-id="hf-9pog" class="step" id="s1"><b data-hf-id="hf-27a2">01</b>Trocear</div>
+        <div data-hf-id="hf-fvaw" class="step" id="s2"><b data-hf-id="hf-2ll3">02</b>Vectorizar</div>
+        <div data-hf-id="hf-19ym" class="step" id="s3"><b data-hf-id="hf-2zw4">03</b>Buscar</div>
+        <div data-hf-id="hf-y7gx" class="step" id="s4"><b data-hf-id="hf-3e75">04</b>Generar</div>
+      </div>
+
+      <audio data-hf-id="hf-kun3" id="voice-3b" class="clip" src="assets/audio/scene-3b.mp3" data-start="0" data-duration="36.73" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-kn6z" id="voice-3c" class="clip" src="assets/audio/scene-3c.mp3" data-start="37.2" data-duration="35.2" data-track-index="4" data-volume="1"></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const steps = ["#s1", "#s2", "#s3", "#s4"];
+      // Activa un paso: lima el actual, tinta los hechos, apagados los que faltan.
+      const activate = (idx, at) => {
+        steps.forEach((s, i) => {
+          tl.to(s, {
+            color: i === idx ? "#11140a" : i < idx ? "#f4f5f7" : "#8b90a0",
+            backgroundColor: i === idx ? "#d4ff3a" : "rgba(212,255,58,0)",
+            borderColor: i === idx ? "#d4ff3a" : i < idx ? "#3a3f4d" : "#232733",
+            duration: 0.35, ease: "power2.out",
+          }, at);
+        });
+      };
+      tl.from("#tracker .step", { autoAlpha: 0, y: -20, stagger: 0.08, duration: 0.5, ease: "power3.out" }, 0);
+      activate(0, 0.2);   // «Uno: trocear»
+      activate(1, 18.3);  // «Dos: convertir…»
+      activate(2, 37.2);  // «Tres: llega una pregunta»
+      activate(3, 55.4);  // «Cuatro: le das esos trozos…»
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

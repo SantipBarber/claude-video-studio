@@ -21,3 +21,5 @@ token*.json
 
 # HyperFrames
 .hyperframes/
+.thumbnails/
+.waveform-cache/

@@ -6,3 +6,5 @@
 - 2026-10-31 · [flujo] Quiere diseñar los fotogramas clave en pencil.dev y después animarlos y ponerles audio.
 - 2026-10-31 · [voz] Quiere clonar su voz (ElevenLabs) y narrar los vídeos con ella.
 - 2026-10-31 · [idioma] Contenido y trabajo en español.
+- 2026-10-31 · [nombres] Carpetas, ficheros y código en **inglés**; comentarios en español permitidos; contenido de docs y vídeos en español.
+- 2026-10-31 · [contenido] Los vídeos deben enseñar a quien no sabe (aterrizar con analogías y datos reales de fuentes abiertas), pero **sin ser súper profundos**, porque aburre. Duración ~10 min está bien.

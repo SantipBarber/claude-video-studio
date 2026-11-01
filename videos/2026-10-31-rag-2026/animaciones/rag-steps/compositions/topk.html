@@ -1,0 +1,67 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 20px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; white-space: nowrap; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+
+    #k-title { left: 120px; top: 210px; font-size: 120px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+    #root .card { top: 420px; width: 540px; height: 380px; padding: 44px; display: flex; flex-direction: column; justify-content: flex-end; }
+    #root .card .num { font-size: 190px; font-weight: 800; letter-spacing: -0.05em; line-height: 0.9; margin-bottom: 36px; }
+    #root .card .src { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; line-height: 1.3; }
+    #k-c3 { border-color: #d4ff3a; background: #10140a; }
+    #k-c3 .num { font-size: 120px; color: #d4ff3a; margin-bottom: 30px; }
+    #k-c3 .src { color: #d4ff3a; }
+  </style>
+
+  <div data-hf-id="hf-yppb" id="root" data-composition-id="topk" data-width="1920" data-height="1080">
+    <h1 data-hf-id="hf-2ph9" class="abs" id="k-title">¿Cuántos fragmentos?</h1>
+
+    <div data-hf-id="hf-gjhu" class="abs panel card" id="k-c1" style="left: 120px">
+      <div data-hf-id="hf-xeds" class="num" id="k-n1">5</div>
+      <div data-hf-id="hf-cpkx" class="src">Hugging Face<br data-hf-id="hf-x5px" />cookbook Advanced RAG</div>
+    </div>
+    <div data-hf-id="hf-e0fv" class="abs panel card" id="k-c2" style="left: 690px">
+      <div data-hf-id="hf-3lys" class="num" id="k-n2">20</div>
+      <div data-hf-id="hf-jswd" class="src">Anthropic<br data-hf-id="hf-rsrt" />Contextual Retrieval</div>
+    </div>
+    <div data-hf-id="hf-2wgq" class="abs panel card" id="k-c3" style="left: 1260px">
+      <div data-hf-id="hf-n6lv" class="num" id="k-n3">mídelo</div>
+      <div data-hf-id="hf-tyzj" class="src">con tus preguntas<br data-hf-id="hf-szow" />y tus documentos</div>
+    </div>
+
+    <div data-hf-id="hf-mmx0" class="abs gloss" id="k-gloss" style="left: 1280px; top: 860px">
+      <div data-hf-id="hf-z29z" class="t">top-k</div>
+      <div data-hf-id="hf-vayi" class="d">los k fragmentos más cercanos</div>
+    </div>
+
+    <p data-hf-id="hf-zlfu" class="abs cap" id="k-cap"><b data-hf-id="hf-3o6i">No hay número mágico ·</b> pocos se quedan cortos, muchos distraen</p>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      // «¿Cuántos?» (0.0)
+      tl.from("#k-title", { autoAlpha: 0, y: 50, duration: 0.8, ease: "expo.out" }, 0.0);
+      tl.from("#k-gloss", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 1.2);
+      // «en el ejemplo de Hugging Face, cinco» (2.4 · 3.8)
+      tl.from("#k-c1", { autoAlpha: 0, y: 40, duration: 0.6, ease: "expo.out" }, 2.4);
+      tl.from("#k-n1", { autoAlpha: 0, scale: 0.6, transformOrigin: "left bottom", duration: 0.5, ease: "back.out(2)" }, 3.7);
+      // «Anthropic recomienda veinte» (4.8 · 6.7)
+      tl.from("#k-c2", { autoAlpha: 0, y: 40, duration: 0.6, ease: "expo.out" }, 4.8);
+      tl.from("#k-n2", { autoAlpha: 0, scale: 0.6, transformOrigin: "left bottom", duration: 0.5, ease: "back.out(2)" }, 6.6);
+      // «No hay número mágico» (8.0) · «se mide» (9.3)
+      tl.from("#k-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 8.0);
+      tl.to(["#k-c1", "#k-c2"], { opacity: 0.45, duration: 0.5 }, 8.9);
+      tl.from("#k-c3", { autoAlpha: 0, scale: 0.9, duration: 0.6, ease: "back.out(1.6)" }, 8.9);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["topk"] = tl;
+    })();
+  </script>
+</template>

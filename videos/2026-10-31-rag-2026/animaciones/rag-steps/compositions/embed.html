@@ -1,0 +1,128 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+
+    #e-title { left: 120px; top: 190px; font-size: 96px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; }
+    #e-frag { left: 120px; top: 440px; width: 520px; padding: 22px 28px; }
+    #e-frag .lbl { font-size: 28px; color: #8b90a0; margin-bottom: 10px; }
+    #e-frag p { font-size: 30px; line-height: 1.3; }
+    #root .arrow { width: 56px; height: 32px; }
+    #e-grid { left: 745px; top: 440px; width: 576px; height: 216px; }
+    #e-grid i { position: absolute; width: 14px; height: 14px; border-radius: 2px; }
+    #e-384 { left: 745px; top: 676px; font-size: 64px; font-weight: 800; letter-spacing: -0.04em; color: #d4ff3a; white-space: nowrap; }
+    #e-nums { left: 745px; top: 752px; font-size: 30px; color: #8b90a0; white-space: nowrap; }
+    #e-plot { left: 1410px; top: 400px; width: 400px; height: 400px; overflow: hidden; }
+    #e-plot .dot { position: absolute; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; }
+    #e-plot .lab { position: absolute; font-family: "Geist Mono", monospace; font-size: 28px; white-space: nowrap; }
+    #e-new { width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: #5ce1e6; border: 3px solid #d4ff3a; z-index: 5; }
+    #e-near { left: 1410px; top: 822px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+  </style>
+
+  <div data-hf-id="hf-03xs" id="root" data-composition-id="embed" data-width="1920" data-height="1080">
+    <h1 data-hf-id="hf-c28n" class="abs" id="e-title">Un texto se convierte<br data-hf-id="hf-x5px" />en una lista de números</h1>
+
+    <div data-hf-id="hf-plt6" class="abs panel" id="e-frag">
+      <div data-hf-id="hf-q0ev" class="lbl mono">fragmento 1</div>
+      <p data-hf-id="hf-0u1g">Puedes devolver cualquier producto sin abrir en un plazo de 30 días desde la compra.</p>
+    </div>
+
+    <svg data-hf-id="hf-aknf" class="abs arrow" id="e-a1" style="left: 664px; top: 530px" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-najt" d="M0 16h52M38 3l14 13-14 13"/></svg>
+    <div data-hf-id="hf-j3kg" class="abs" id="e-grid"></div>
+    <div data-hf-id="hf-035y" class="abs" id="e-384">384 números</div>
+    <div data-hf-id="hf-8miq" class="abs mono" id="e-nums">[0.21, -0.64, 0.08, 0.93, …]</div>
+
+    <svg data-hf-id="hf-noqr" class="abs arrow" id="e-a2" style="left: 1334px; top: 530px" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-6fx9" d="M0 16h52M38 3l14 13-14 13"/></svg>
+    <div data-hf-id="hf-9h3v" class="abs panel" id="e-plot">
+      <div data-hf-id="hf-0fev" id="e-dots"></div>
+      <div data-hf-id="hf-z8ar" class="lab" id="e-la" style="left: 22px; top: 24px; color: #5ce1e6">devoluciones</div>
+      <div data-hf-id="hf-dg91" class="lab" id="e-lb" style="left: 196px; top: 200px; color: #a78bfa">facturación</div>
+      <div data-hf-id="hf-w1mm" class="lab" id="e-lc" style="left: 150px; top: 344px; color: #ff6b4a">envíos</div>
+      <div data-hf-id="hf-azo2" class="abs" id="e-new"></div>
+    </div>
+    <div data-hf-id="hf-88lm" class="abs mono" id="e-near">junto a los de su tema</div>
+
+    <div data-hf-id="hf-k3jd" class="abs gloss" id="e-gloss" style="left: 120px; top: 830px">
+      <div data-hf-id="hf-rah7" class="t">vector</div>
+      <div data-hf-id="hf-eepn" class="d">números que resumen un texto</div>
+    </div>
+
+    <p data-hf-id="hf-vswc" class="abs cap" id="e-cap"><b data-hf-id="hf-gwsz">Paso 2 ·</b> textos parecidos, números parecidos</p>
+  </div>
+
+  <script>
+    (() => {
+      // Datos ilustrativos con semilla fija: el render es determinista.
+      let seed = 384;
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+
+      // Rejilla de 384 casillas (32 × 12): cada casilla es un número del vector.
+      const grid = document.querySelector("#e-grid");
+      const cells = [];
+      for (let r = 0; r < 12; r++) for (let c = 0; c < 32; c++) {
+        const v = rnd(), el = document.createElement("i");
+        el.style.left = c * 18 + "px"; el.style.top = r * 18 + "px";
+        el.style.background = v > 0.88 ? "#d4ff3a" : `rgba(139,144,160,${(0.25 + v * 0.6).toFixed(2)})`;
+        grid.appendChild(el); cells.push(el);
+      }
+
+      // Mapa del significado en miniatura (mismo reparto que en la escena Buscar, escalado).
+      const S = 400 / 840, OX = 20, OY = 40;
+      const centers = { a: [230, 330, "#5ce1e6"], b: [650, 250, "#a78bfa"], c: [560, 580, "#ff6b4a"] };
+      let s2 = 7;
+      const r2 = () => ((s2 = (s2 * 16807) % 2147483647) / 2147483647);
+      const dotsEl = document.querySelector("#e-dots");
+      const dots = [];
+      Object.values(centers).forEach(([cx, cy, col]) => {
+        for (let i = 0; i < 16; i++) {
+          const ang = r2() * Math.PI * 2, rad = 15 + r2() * 105;
+          const d = document.createElement("div");
+          d.className = "dot";
+          d.style.left = (cx + Math.cos(ang) * rad) * S + OX + "px";
+          d.style.top = (cy + Math.sin(ang) * rad * 0.8) * S + OY + "px";
+          d.style.background = col; d.style.opacity = 0.75;
+          dotsEl.appendChild(d); dots.push(d);
+        }
+      });
+      const newDot = document.querySelector("#e-new");
+      const target = [250 * S + OX, 310 * S + OY];
+      newDot.style.left = target[0] + "px"; newDot.style.top = target[1] + "px";
+
+      const tl = gsap.timeline({ paused: true });
+      // «convertir cada trozo» (local 0.9)
+      tl.from("#e-title", { autoAlpha: 0, y: 50, duration: 0.9, ease: "expo.out" }, 0.6);
+      tl.from("#e-frag", { autoAlpha: 0, x: -60, duration: 0.7, ease: "expo.out" }, 1.5);
+      // «en un vector» (2.7): la rejilla se rellena.
+      tl.from("#e-a1", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 2.6);
+      tl.from(cells, { autoAlpha: 0, scale: 0, duration: 0.25, ease: "power2.out", stagger: { each: 0.006, from: "start" } }, 2.8);
+      // «Un vector es…» (4.0)
+      tl.from("#e-gloss", { autoAlpha: 0, x: -40, duration: 0.6, ease: "expo.out" }, 4.0);
+      // «lista de números» (5.5) · «cientos de ellos» (6.5)
+      tl.from("#e-nums", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 5.5);
+      tl.from("#e-384", { autoAlpha: 0, y: 24, duration: 0.6, ease: "expo.out" }, 6.5);
+      // «resume de qué habla el texto» (8.3): aparece el mapa con sus temas.
+      tl.from("#e-a2", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 8.3);
+      tl.from("#e-plot", { autoAlpha: 0, scale: 0.94, duration: 0.6, ease: "expo.out" }, 8.6);
+      tl.from(dots, { autoAlpha: 0, scale: 0, duration: 0.4, ease: "back.out(2)", stagger: { each: 0.02, from: "random" } }, 9.0);
+      tl.from(["#e-la", "#e-lb", "#e-lc"], { autoAlpha: 0, duration: 0.5, stagger: 0.2 }, 10.2);
+      tl.to(cells, { opacity: 0.5, duration: 0.6 }, 11.0);
+      // «No hace falta entender los números» (11.0–12.3): la rejilla parpadea.
+      tl.to(cells, { opacity: 1, duration: 0.2, yoyo: true, repeat: 1, stagger: { each: 0.004, from: "random" } }, 12.0);
+      // «textos que hablan de lo mismo» (15.0) · «acaban cerca» (17.1)
+      tl.from("#e-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 15.0);
+      tl.fromTo(newDot, { autoAlpha: 0, x: -target[0], y: 160 - target[1], scale: 1.6 },
+        { autoAlpha: 1, x: 0, y: 0, scale: 1, duration: 1.0, ease: "expo.out" }, 16.2);
+      tl.from("#e-near", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 16.9);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["embed"] = tl;
+    })();
+  </script>
+</template>
