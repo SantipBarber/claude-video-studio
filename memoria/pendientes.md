@@ -28,7 +28,8 @@
 - [x] Tramo de prueba 3b + 3c animado con voz en `animaciones/rag-steps/` (74 s, 5 escenas como subcomposiciones, voz de serie «Daniel» de ElevenLabs sincronizada por palabra). Pendiente: que Santi lo vea en la vista previa y apruebe antes de renderizar.
 - [x] **Vídeo completo montado** en `animaciones/rag-video/` (18 composiciones, 7:58, voz de prueba «Daniel»). `build_root.py` regenera `index.html` y `timeline.json` desde las duraciones reales de la voz. Borrador renderizado en `out/rag-video-draft-v1.mp4` (fuera de git). Santi: «como POC está guay», mejorable en el ajuste final.
 - [ ] Ajustes conocidos: el gancho dice «en diez minutos» y la barra del hook llega a 10:00, pero dura ~8 min; «6 o más llamadas» (8b) no tiene fuente; música y efectos (sin créditos de ElevenLabs este mes); transiciones entre escenas (ahora cortes secos).
-- [ ] Clonar la voz de Santi en ElevenLabs (Starter, ~5–6 $/mes) para la versión final; regenerar el audio y reajustar tiempos.
+- [ ] **Voz de Santi** (decidido 01-11): prueba A/B con la misma escena entre (a) ElevenLabs IVC (Starter, oferta de 1 $ el primer mes) y (b) Qwen3-TTS en local, el mismo modelo que usa TranslateCall (`mlx-community/Qwen3-TTS-12Hz-0.6B-Base-8bit` vía mlx-audio). Qwen no da tiempos por palabra: alinear con whisper-cpp/Parakeet o con la API de forced alignment de ElevenLabs. Explorar también qué más ofrece ElevenLabs que sirva a TranslateCall. Las pruebas locales con Qwen usan GPU: avisar antes a la sesión de translatecall.
+- [ ] **Ritmo para que no canse** (Santi, 01-11: prioridad justo después de la voz): revisar escenas largas (8 agentic 52 s, 9 longcontext 42 s), meter cambios de plano y alguna pausa o pregunta al espectador.
 - [ ] Afinar la escena 3: ritmo ajustado a la voz real, sonido (música de fondo + efecto en cada paso).
 - [ ] Sustituir los puntos inventados por **embeddings reales** (sentence-transformers + dataset de Hugging Face, proyección UMAP/PCA).
 - [ ] Generar la voz por escenas con la voz clonada.
@@ -36,6 +37,8 @@
 - [ ] Miniatura y publicación como privado.
 
 ## Ideas
+
+- **Biblioteca de vídeos de ingeniería de IA para la empresa de Santi** (01-11): `docs/biblioteca-ingenieria-ia.md`. Late chunking, para aplicarlo en sus proyectos: `videos/2026-10-31-rag-2026/aplicar-en-proyectos.md`.
 
 - Crear una pequeña librería de componentes reutilizables (barra de pasos, tarjeta de fragmento, panel de dispersión, caja LLM) para no rehacerlos en cada vídeo.
 - Workflow `05-pencil-a-hyperframes.md` y añadir la clonación de voz a la skill `video-sin-cara`.
