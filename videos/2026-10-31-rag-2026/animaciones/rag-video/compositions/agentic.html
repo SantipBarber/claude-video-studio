@@ -1,0 +1,133 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .arr { width: 34px; height: 24px; }
+
+    #ag-kick { left: 120px; top: 84px; font-size: 28px; color: #d4ff3a; }
+    #ag-t1 { left: 120px; top: 162px; font-size: 60px; font-weight: 800; letter-spacing: -0.045em; color: #8b90a0; white-space: nowrap; }
+    #ag-t2 { left: 120px; top: 425px; font-size: 72px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+    #root .box { height: 80px; padding: 0 28px; display: flex; align-items: center; font-size: 32px; font-weight: 500; border-radius: 12px; white-space: nowrap; }
+    #ag-search { background: #12160a; border-color: #d4ff3a; color: #d4ff3a; }
+    #root .help { left: 620px; width: 300px; height: 58px; padding: 0 20px; display: flex; align-items: center; gap: 14px; font-family: "Geist Mono", monospace; font-size: 28px; color: #5ce1e6; border: 2px solid #5ce1e6; border-radius: 999px; background: #0b1416; white-space: nowrap; }
+    #root .help i { width: 12px; height: 12px; border-radius: 50%; background: #5ce1e6; flex: none; }
+    #ag-loop { left: 460px; top: 676px; width: 640px; height: 124px; overflow: visible; }
+    #ag-again { left: 1096px; top: 722px; font-size: 28px; color: #d4ff3a; white-space: nowrap; }
+    #ag-in { left: 120px; top: 876px; font-size: 28px; color: #8b90a0; }
+    #root .src { top: 868px; height: 54px; padding: 0 18px; display: flex; align-items: center; font-family: "Geist Mono", monospace; font-size: 28px; border-radius: 8px; white-space: nowrap; }
+  </style>
+
+  <div data-hf-id="hf-lz1w" id="root" data-composition-id="agentic" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-k80m" class="abs mono" id="ag-kick">RAG agéntico</div>
+
+    <!-- Clásico: el becario -->
+    <h2 data-hf-id="hf-i5g2" class="abs" id="ag-t1">Clásico: un <span data-hf-id="hf-q5h1" id="ag-t1b">becario</span></h2>
+    <div data-hf-id="hf-3y6e" class="abs panel box" id="ag-c1" style="left: 120px; top: 250px">buscar una vez</div>
+    <svg data-hf-id="hf-dm4a" class="abs arr" id="ag-ca" style="left: 426px; top: 278px" viewBox="0 0 34 24" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-gcnz" d="M2 12h28M20 3l10 9-10 9"/></svg>
+    <div data-hf-id="hf-t00r" class="abs panel box" id="ag-c2" style="left: 477px; top: 250px">responder</div>
+
+    <!-- Agéntico: el jefe de investigación -->
+    <h2 data-hf-id="hf-4l2t" class="abs" id="ag-t2">Agéntico: un <span data-hf-id="hf-dcw5" id="ag-t2b">jefe de investigación</span></h2>
+    <div data-hf-id="hf-z1ar" class="abs panel box" id="ag-plan" style="left: 120px; top: 597px">planificar</div>
+    <svg data-hf-id="hf-lyhw" class="abs arr" id="ag-a1" style="left: 338px; top: 625px" viewBox="0 0 34 24" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-9d3z" d="M2 12h28M20 3l10 9-10 9"/></svg>
+    <div data-hf-id="hf-xxim" class="abs panel box" id="ag-search" style="left: 390px; top: 597px">buscar</div>
+    <svg data-hf-id="hf-3ptz" class="abs arr" id="ag-a2" style="left: 569px; top: 625px" viewBox="0 0 34 24" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-8ysy" d="M2 12h28M20 3l10 9-10 9"/></svg>
+    <div data-hf-id="hf-igjf" class="abs help" id="ag-h1" style="top: 542px"><i data-hf-id="hf-wt6k"></i>ayudante 1 lee</div>
+    <div data-hf-id="hf-o8la" class="abs help" id="ag-h2" style="top: 608px"><i data-hf-id="hf-zeb8"></i>ayudante 2 lee</div>
+    <div data-hf-id="hf-3ftv" class="abs help" id="ag-h3" style="top: 674px"><i data-hf-id="hf-y7e5"></i>ayudante 3 lee</div>
+    <svg data-hf-id="hf-yqiv" class="abs arr" id="ag-a3" style="left: 937px; top: 625px" viewBox="0 0 34 24" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-8khx" d="M2 12h28M20 3l10 9-10 9"/></svg>
+    <div data-hf-id="hf-un7q" class="abs panel box" id="ag-enough" style="left: 988px; top: 597px">¿basta?</div>
+    <svg data-hf-id="hf-zjll" class="abs arr" id="ag-a4" style="left: 1184px; top: 625px" viewBox="0 0 34 24" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-bcn4" d="M2 12h28M20 3l10 9-10 9"/></svg>
+    <div data-hf-id="hf-yx5p" class="abs panel box" id="ag-ans" style="left: 1235px; top: 597px">responder</div>
+
+    <!-- La vuelta: «no: otra vez» -->
+    <svg data-hf-id="hf-lswz" class="abs" id="ag-loop" viewBox="0 0 640 124" fill="none" stroke="#d4ff3a" stroke-width="3">
+      <path data-hf-id="hf-cx0d" id="ag-loop-p" d="M617 8 V114 H10 V12" />
+      <path data-hf-id="hf-4mwf" id="ag-loop-h" d="M-2 24 L10 8 L22 24" />
+    </svg>
+    <div data-hf-id="hf-7sc2" class="abs mono" id="ag-again">no: otra vez</div>
+
+    <!-- Fuentes -->
+    <div data-hf-id="hf-uxu4" class="abs mono" id="ag-in">busca en</div>
+    <div data-hf-id="hf-xalj" class="abs panel src" id="ag-s1" style="left: 268px">documentos</div>
+    <div data-hf-id="hf-chk0" class="abs panel src" id="ag-s2" style="left: 487px">SQL</div>
+    <div data-hf-id="hf-yzkr" class="abs panel src" id="ag-s3" style="left: 588px">web</div>
+
+    <div data-hf-id="hf-p01c" class="abs gloss" id="ag-gloss" style="left: 1280px; top: 850px">
+      <div data-hf-id="hf-7ln4" class="t">agente</div>
+      <div data-hf-id="hf-z8fo" class="d">un modelo que decide qué hacer</div>
+    </div>
+
+    <p data-hf-id="hf-upxc" class="abs cap" id="ag-cap"><b data-hf-id="hf-zipz">Si algo no cuadra,</b> vuelve a buscar.</p>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const loop = document.querySelector("#ag-loop-p");
+      const loopLen = 106 + 607 + 102;
+      gsap.set(loop, { attr: { "stroke-dasharray": loopLen, "stroke-dashoffset": loopLen } });
+
+      // «Y el gran cambio…» (0.0): el antetítulo entra enseguida.
+      tl.from("#ag-kick", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.1);
+      // «el RAG agéntico» (2.84): tarjeta de glosario «agente».
+      tl.from("#ag-gloss", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 2.9);
+
+      // «El RAG clásico es como un becario» (4.75–6.85)
+      tl.from("#ag-t1", { autoAlpha: 0, y: 30, duration: 0.7, ease: "expo.out" }, 4.8);
+      tl.fromTo("#ag-t1b", { color: "#8b90a0" }, { color: "#f4f5f7", duration: 0.3, yoyo: true, repeat: 1 }, 6.8);
+      // «hace una búsqueda» (8.30) · «y contesta» (9.25)
+      tl.from("#ag-c1", { autoAlpha: 0, x: -40, duration: 0.6, ease: "expo.out" }, 8.2);
+      tl.from("#ag-ca", { autoAlpha: 0, x: -14, duration: 0.3, ease: "power2.out" }, 9.1);
+      tl.from("#ag-c2", { autoAlpha: 0, x: -40, duration: 0.6, ease: "expo.out" }, 9.25);
+      // Tras contestar, el becario se queda en segundo plano.
+      tl.to(["#ag-c1", "#ag-c2", "#ag-ca"], { opacity: 0.55, duration: 0.6 }, 11.3);
+
+      // «El agéntico se parece más a un jefe de investigación» (11.54–14.31)
+      tl.from("#ag-t2", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 11.5);
+      tl.fromTo("#ag-t2b", { color: "#8b90a0" }, { color: "#f4f5f7", duration: 0.6, ease: "power2.out" }, 13.85);
+
+      // «Planifica» (15.91) · «busca» (17.14)
+      tl.from("#ag-plan", { autoAlpha: 0, y: 30, duration: 0.6, ease: "expo.out" }, 15.8);
+      tl.from("#ag-a1", { autoAlpha: 0, x: -14, duration: 0.3, ease: "power2.out" }, 16.9);
+      tl.from("#ag-search", { autoAlpha: 0, scale: 0.8, duration: 0.6, ease: "back.out(1.8)" }, 17.0);
+      // «reparte los documentos entre varios ayudantes» (18.18–20.39)
+      tl.from("#ag-a2", { autoAlpha: 0, x: -14, duration: 0.3, ease: "power2.out" }, 18.2);
+      tl.from(["#ag-h1", "#ag-h2", "#ag-h3"], { autoAlpha: 0, x: -50, duration: 0.6, ease: "expo.out", stagger: 0.35 }, 18.6);
+      // «que los leen a la vez» (21.28): los tres puntos laten a la vez.
+      tl.to("#root .help i", { scale: 1.9, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 21.2);
+      tl.to(["#ag-h1", "#ag-h2", "#ag-h3"], { backgroundColor: "#12292c", duration: 0.25, yoyo: true, repeat: 3 }, 21.2);
+      // «junta sus resúmenes» (22.48)
+      tl.from("#ag-a3", { autoAlpha: 0, x: -14, duration: 0.3, ease: "power2.out" }, 22.4);
+      tl.from("#ag-enough", { autoAlpha: 0, scale: 0.85, duration: 0.6, ease: "back.out(1.8)" }, 22.6);
+      tl.from("#ag-a4", { autoAlpha: 0, x: -14, duration: 0.3, ease: "power2.out" }, 23.5);
+      tl.from("#ag-ans", { autoAlpha: 0, x: -30, duration: 0.6, ease: "expo.out" }, 23.6);
+
+      // «si algo no cuadra» (24.47–25.11): ¿basta? se pone en coral.
+      tl.to("#ag-enough", { borderColor: "#ff6b4a", color: "#ff6b4a", duration: 0.3 }, 24.9);
+      tl.from("#ag-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 24.9);
+      // «vuelve a buscar» (25.88–26.26): se dibuja la vuelta hasta «buscar».
+      tl.to(loop, { attr: { "stroke-dashoffset": 0 }, duration: 0.9, ease: "power2.inOut" }, 25.6);
+      tl.from("#ag-loop-h", { autoAlpha: 0, duration: 0.2 }, 26.45);
+      tl.from("#ag-again", { autoAlpha: 0, x: -16, duration: 0.5, ease: "power2.out" }, 25.8);
+      tl.to("#ag-search", { boxShadow: "0 0 0 16px rgba(212,255,58,0.16)", duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 26.5);
+      tl.to("#ag-enough", { borderColor: "#232733", color: "#f4f5f7", duration: 0.4 }, 27.2);
+
+      // «en documentos (27.00), en una base de datos (28.43) o en la web (29.87)»
+      tl.from("#ag-in", { autoAlpha: 0, duration: 0.4 }, 26.8);
+      tl.from("#ag-s1", { autoAlpha: 0, y: 20, duration: 0.5, ease: "back.out(2)" }, 26.95);
+      tl.from("#ag-s2", { autoAlpha: 0, y: 20, duration: 0.5, ease: "back.out(2)" }, 28.4);
+      tl.from("#ag-s3", { autoAlpha: 0, y: 20, duration: 0.5, ease: "back.out(2)" }, 29.6);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["agentic"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,318 @@
+{
+ "scene": "2",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "Un modelo de lenguaje sabe muchísimo, pero no sabe nada de lo tuyo: tus contratos, tu documentación interna, el correo de ayer. Puedes pegárselo todo en el prompt, pero cuando son miles de documentos eso es caro y lento. RAG, generación aumentada con recuperación, resuelve justo eso: antes de responder, el sistema busca los trozos relevantes y se los pasa al modelo.",
+ "duration": 28.143,
+ "words": [
+  {
+   "w": "Un",
+   "start": 0.0,
+   "end": 0.139
+  },
+  {
+   "w": "modelo",
+   "start": 0.163,
+   "end": 0.476
+  },
+  {
+   "w": "de",
+   "start": 0.522,
+   "end": 0.58
+  },
+  {
+   "w": "lenguaje",
+   "start": 0.627,
+   "end": 1.138
+  },
+  {
+   "w": "sabe",
+   "start": 1.451,
+   "end": 1.776
+  },
+  {
+   "w": "muchísimo,",
+   "start": 1.823,
+   "end": 2.67
+  },
+  {
+   "w": "pero",
+   "start": 2.868,
+   "end": 3.065
+  },
+  {
+   "w": "no",
+   "start": 3.111,
+   "end": 3.204
+  },
+  {
+   "w": "sabe",
+   "start": 3.262,
+   "end": 3.506
+  },
+  {
+   "w": "nada",
+   "start": 3.611,
+   "end": 3.901
+  },
+  {
+   "w": "de",
+   "start": 3.947,
+   "end": 4.005
+  },
+  {
+   "w": "lo",
+   "start": 4.052,
+   "end": 4.133
+  },
+  {
+   "w": "tuyo:",
+   "start": 4.168,
+   "end": 4.702
+  },
+  {
+   "w": "tus",
+   "start": 5.004,
+   "end": 5.19
+  },
+  {
+   "w": "contratos,",
+   "start": 5.248,
+   "end": 6.037
+  },
+  {
+   "w": "tu",
+   "start": 6.2,
+   "end": 6.316
+  },
+  {
+   "w": "documentación",
+   "start": 6.374,
+   "end": 7.001
+  },
+  {
+   "w": "interna,",
+   "start": 7.047,
+   "end": 7.651
+  },
+  {
+   "w": "el",
+   "start": 7.883,
+   "end": 8.046
+  },
+  {
+   "w": "correo",
+   "start": 8.115,
+   "end": 8.429
+  },
+  {
+   "w": "de",
+   "start": 8.487,
+   "end": 8.545
+  },
+  {
+   "w": "ayer.",
+   "start": 8.591,
+   "end": 9.102
+  },
+  {
+   "w": "Puedes",
+   "start": 9.683,
+   "end": 9.996
+  },
+  {
+   "w": "pegárselo",
+   "start": 10.043,
+   "end": 10.484
+  },
+  {
+   "w": "todo",
+   "start": 10.542,
+   "end": 10.751
+  },
+  {
+   "w": "en",
+   "start": 10.786,
+   "end": 10.844
+  },
+  {
+   "w": "el",
+   "start": 10.89,
+   "end": 10.948
+  },
+  {
+   "w": "prompt,",
+   "start": 11.006,
+   "end": 11.529
+  },
+  {
+   "w": "pero",
+   "start": 11.761,
+   "end": 11.97
+  },
+  {
+   "w": "cuando",
+   "start": 12.016,
+   "end": 12.26
+  },
+  {
+   "w": "son",
+   "start": 12.318,
+   "end": 12.446
+  },
+  {
+   "w": "miles",
+   "start": 12.516,
+   "end": 12.783
+  },
+  {
+   "w": "de",
+   "start": 12.829,
+   "end": 12.875
+  },
+  {
+   "w": "documentos",
+   "start": 12.922,
+   "end": 13.572
+  },
+  {
+   "w": "eso",
+   "start": 13.886,
+   "end": 14.234
+  },
+  {
+   "w": "es",
+   "start": 14.303,
+   "end": 14.489
+  },
+  {
+   "w": "caro",
+   "start": 14.756,
+   "end": 15.186
+  },
+  {
+   "w": "y",
+   "start": 15.499,
+   "end": 15.581
+  },
+  {
+   "w": "lento.",
+   "start": 15.673,
+   "end": 16.219
+  },
+  {
+   "w": "RAG,",
+   "start": 16.893,
+   "end": 17.381
+  },
+  {
+   "w": "generación",
+   "start": 17.555,
+   "end": 18.124
+  },
+  {
+   "w": "aumentada",
+   "start": 18.158,
+   "end": 18.681
+  },
+  {
+   "w": "con",
+   "start": 18.727,
+   "end": 18.89
+  },
+  {
+   "w": "recuperación,",
+   "start": 18.971,
+   "end": 19.888
+  },
+  {
+   "w": "resuelve",
+   "start": 20.213,
+   "end": 20.759
+  },
+  {
+   "w": "justo",
+   "start": 20.794,
+   "end": 21.235
+  },
+  {
+   "w": "eso:",
+   "start": 21.316,
+   "end": 21.746
+  },
+  {
+   "w": "antes",
+   "start": 22.35,
+   "end": 22.71
+  },
+  {
+   "w": "de",
+   "start": 22.744,
+   "end": 22.802
+  },
+  {
+   "w": "responder,",
+   "start": 22.872,
+   "end": 23.545
+  },
+  {
+   "w": "el",
+   "start": 23.871,
+   "end": 24.021
+  },
+  {
+   "w": "sistema",
+   "start": 24.091,
+   "end": 24.509
+  },
+  {
+   "w": "busca",
+   "start": 24.556,
+   "end": 24.834
+  },
+  {
+   "w": "los",
+   "start": 24.881,
+   "end": 25.008
+  },
+  {
+   "w": "trozos",
+   "start": 25.055,
+   "end": 25.38
+  },
+  {
+   "w": "relevantes",
+   "start": 25.415,
+   "end": 26.042
+  },
+  {
+   "w": "y",
+   "start": 26.367,
+   "end": 26.46
+  },
+  {
+   "w": "se",
+   "start": 26.541,
+   "end": 26.622
+  },
+  {
+   "w": "los",
+   "start": 26.669,
+   "end": 26.808
+  },
+  {
+   "w": "pasa",
+   "start": 26.866,
+   "end": 27.168
+  },
+  {
+   "w": "al",
+   "start": 27.214,
+   "end": 27.295
+  },
+  {
+   "w": "modelo.",
+   "start": 27.354,
+   "end": 28.143
+  }
+ ]
+}

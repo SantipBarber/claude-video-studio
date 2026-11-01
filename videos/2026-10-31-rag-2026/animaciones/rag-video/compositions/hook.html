@@ -1,0 +1,170 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+
+    /* Fase 1: quién y qué receta */
+    #hk-who { left: 192px; top: 150px; font-size: 64px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+    #hk-what { left: 192px; top: 236px; font-size: 30px; color: #8b90a0; white-space: nowrap; }
+    #hk-box { left: 192px; top: 340px; width: 1000px; height: 420px; }
+    #hk-box .lbl { position: absolute; left: 40px; top: 32px; font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #hk-box .ttl { position: absolute; left: 40px; top: 76px; font-size: 64px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+    #hk-dots { left: 232px; top: 520px; width: 920px; height: 210px; }
+    #hk-dots i { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; }
+    #hk-strike { left: 160px; top: 446px; width: 1064px; height: 8px; border-radius: 4px; background: #ff6b4a; transform-origin: left center; }
+    #hk-model { left: 1330px; top: 450px; width: 300px; height: 200px; border-radius: 24px; border: 3px solid #3a3f4d; background: #0f1116; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    #hk-model .big { font-size: 80px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    #hk-model .small { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #hk-link { left: 1220px; top: 534px; width: 90px; height: 32px; }
+
+    /* Fase 2: el ruido de internet (titulares ilustrativos) */
+    #root .chip { font-family: "Geist Mono", monospace; font-size: 30px; color: #8b90a0; padding: 12px 22px; border: 2px solid #232733; border-radius: 999px; background: #0f1116; white-space: nowrap; }
+
+    /* Fase 3: el titular que cambia de forma */
+    #hk-head { left: 192px; top: 300px; font-size: 136px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; display: flex; align-items: baseline; }
+    #hk-head .swap { display: inline-grid; position: relative; }
+    #hk-head .swap > * { grid-area: 1 / 1; }
+    #hk-dead-w { position: relative; }
+    #hk-open { position: absolute; right: 100%; margin-right: 4px; }
+    #hk-dead-line { position: absolute; left: -6px; right: -6px; top: 56%; height: 10px; border-radius: 5px; background: #ff6b4a; transform-origin: left center; }
+    #hk-chg { color: #d4ff3a; }
+    #hk-qmark { display: inline-block; }
+    #hk-turn { width: 104px; height: 104px; margin-left: 14px; vertical-align: -6px; }
+    #hk-form { left: 192px; top: 456px; font-size: 136px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+    #hk-spoiler { left: 196px; top: 246px; font-size: 30px; color: #8b90a0; }
+
+    /* Fase 4: la promesa de los diez minutos (barra de reproducción) */
+    #hk-bar { left: 192px; top: 760px; width: 1536px; height: 10px; border-radius: 5px; background: #232733; }
+    #hk-fill { left: 192px; top: 760px; width: 1536px; height: 10px; border-radius: 5px; background: #f4f5f7; transform-origin: left center; }
+    #hk-split { left: 920px; top: 744px; width: 4px; height: 42px; border-radius: 2px; background: #8b90a0; }
+    #hk-head-dot { left: 182px; top: 751px; width: 28px; height: 28px; border-radius: 50%; background: #d4ff3a; }
+    #hk-t0 { left: 192px; top: 800px; font-size: 28px; color: #8b90a0; }
+    #hk-t10 { left: 1608px; top: 800px; font-size: 28px; color: #d4ff3a; }
+    #hk-c1 { left: 192px; top: 680px; font-size: 40px; font-weight: 700; letter-spacing: -0.03em; white-space: nowrap; }
+    #hk-c2 { left: 944px; top: 680px; font-size: 40px; font-weight: 700; letter-spacing: -0.03em; white-space: nowrap; }
+  </style>
+
+  <div data-hf-id="hf-ktv8" id="root" data-composition-id="hook" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-ukac" class="abs" id="hk-who">El equipo de Claude Code</div>
+    <div data-hf-id="hf-pq9h" class="abs mono" id="hk-what">una herramienta de IA para programar</div>
+
+    <div data-hf-id="hf-bvzd" class="abs" id="hk-recipe" style="left: 0; top: 0; width: 1920px; height: 1080px">
+    <div data-hf-id="hf-7nev" class="abs panel" id="hk-box">
+      <div data-hf-id="hf-iugi" class="lbl" id="hk-box-lbl">receta estándar</div>
+      <div data-hf-id="hf-vtk2" class="ttl" id="hk-box-ttl">base de datos vectorial</div>
+    </div>
+    <!-- Nube de vectores: ya está en pantalla en el primer fotograma -->
+    <div data-hf-id="hf-ue3i" class="abs" id="hk-dots"></div>
+    <svg data-hf-id="hf-93zd" class="abs" id="hk-link" viewBox="0 0 90 32" fill="none" stroke="#8b90a0" stroke-width="3"><path data-hf-id="hf-tica" d="M0 16h84M70 3l14 13-14 13"/></svg>
+    <div data-hf-id="hf-50oh" class="abs" id="hk-model"><div data-hf-id="hf-uigt" class="big">LLM</div><div data-hf-id="hf-33z8" class="small">busca información</div></div>
+    <div data-hf-id="hf-8zqs" class="abs" id="hk-strike"></div>
+    </div>
+
+    <div data-hf-id="hf-eyxs" class="abs chip" id="hk-ch1" style="left: 240px; top: 170px">«RAG ha muerto»</div>
+    <div data-hf-id="hf-rxsx" class="abs chip" id="hk-ch2" style="left: 1180px; top: 220px">«adiós al RAG»</div>
+    <div data-hf-id="hf-pafl" class="abs chip" id="hk-ch3" style="left: 380px; top: 640px">«el RAG está acabado»</div>
+    <div data-hf-id="hf-uk4m" class="abs chip" id="hk-ch4" style="left: 1240px; top: 560px">«ya no necesitas RAG»</div>
+    <div data-hf-id="hf-ntqi" class="abs chip" id="hk-ch5" style="left: 860px; top: 400px">«RIP RAG»</div>
+
+    <div data-hf-id="hf-uex5" class="abs mono" id="hk-spoiler">spoiler</div>
+    <div data-hf-id="hf-xdyw" class="abs" id="hk-head">
+      <span data-hf-id="hf-yfzr" id="hk-open">¿</span><span data-hf-id="hf-ukbo">RAG ha&nbsp;</span>
+      <span data-hf-id="hf-nu80" class="swap">
+        <span data-hf-id="hf-gsfg" id="hk-dead"><span data-hf-id="hf-kkyc" id="hk-dead-w">muerto<i data-hf-id="hf-n848" id="hk-dead-line"></i></span><span data-hf-id="hf-qul9" id="hk-qmark">?</span></span>
+        <span data-hf-id="hf-x8p2" id="hk-chg">cambiado<svg data-hf-id="hf-q9y1" id="hk-turn" viewBox="0 0 48 48" fill="none" stroke="#d4ff3a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path data-hf-id="hf-7gra" d="M38 14A17 17 0 1 0 41 28"/><path data-hf-id="hf-8fvo" d="M40 4v11H29"/></svg></span>
+      </span>
+    </div>
+    <div data-hf-id="hf-r168" class="abs" id="hk-form">de forma.</div>
+
+    <div data-hf-id="hf-curh" class="abs" id="hk-c1">qué es</div>
+    <div data-hf-id="hf-o947" class="abs" id="hk-c2">en qué se ha convertido</div>
+    <div data-hf-id="hf-4b0l" class="abs" id="hk-bar"></div>
+    <div data-hf-id="hf-i3wh" class="abs" id="hk-fill"></div>
+    <div data-hf-id="hf-i5gi" class="abs" id="hk-split"></div>
+    <div data-hf-id="hf-pku6" class="abs" id="hk-head-dot"></div>
+    <div data-hf-id="hf-xyk7" class="abs mono" id="hk-t0">0:00</div>
+    <div data-hf-id="hf-04o5" class="abs mono" id="hk-t10">10:00</div>
+
+    <p data-hf-id="hf-uncg" class="abs cap" id="hk-cap"><b data-hf-id="hf-bj1g">Spoiler ·</b> no ha muerto, ha cambiado de forma</p>
+  </div>
+
+  <script>
+    (() => {
+      // Nube de vectores ilustrativa con semilla fija (render determinista).
+      let seed = 2025;
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+      const cloud = document.querySelector("#hk-dots");
+      const cols = ["#5ce1e6", "#a78bfa", "#8b90a0"];
+      const dots = [];
+      for (let i = 0; i < 46; i++) {
+        const d = document.createElement("i");
+        d.style.left = (20 + rnd() * 880).toFixed(0) + "px";
+        d.style.top = (14 + rnd() * 182).toFixed(0) + "px";
+        d.style.background = cols[i % 3];
+        d.style.opacity = 0.8;
+        cloud.appendChild(d); dots.push(d);
+      }
+      const hits = [dots[4], dots[17], dots[29]];
+
+      gsap.set("#hk-chg", { autoAlpha: 0 });
+
+      const tl = gsap.timeline({ paused: true });
+      // Fotograma 0: la nube ya está; deriva suave mientras habla.
+      tl.fromTo(dots, { x: (i) => ((i * 37) % 60) - 30, y: (i) => ((i * 23) % 40) - 20 },
+        { x: 0, y: 0, duration: 6.2, ease: "sine.inOut" }, 0);
+      // «El equipo de Claude Code» (0.70)
+      tl.from("#hk-who", { autoAlpha: 0, y: 30, duration: 0.7, ease: "expo.out" }, 0.55);
+      // «una de las herramientas de IA… para programar» (2.22–5.17)
+      tl.from("#hk-what", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 2.2);
+      // «probó la receta estándar» (6.53–7.06): la caja envuelve la nube.
+      tl.from("#hk-box", { autoAlpha: 0, scale: 1.06, duration: 0.7, ease: "expo.out" }, 6.4);
+      tl.from("#hk-box-lbl", { autoAlpha: 0, x: -16, duration: 0.4, ease: "power2.out" }, 6.6);
+      tl.from("#hk-box-ttl", { autoAlpha: 0, y: 20, duration: 0.6, ease: "expo.out" }, 7.0);
+      // «para que un modelo encuentre información» (8.42–9.90)
+      tl.from("#hk-link", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 8.3);
+      tl.from("#hk-model", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 8.4);
+      tl.to(hits, { backgroundColor: "#d4ff3a", scale: 1.6, opacity: 1, duration: 0.35, stagger: 0.15, ease: "back.out(3)" }, 9.2);
+      tl.to("#hk-link", { stroke: "#d4ff3a", duration: 0.3 }, 9.7);
+      // «Y la tiró.» (11.24–11.53): tachón coral y la receta cae.
+      tl.from("#hk-strike", { scaleX: 0, duration: 0.45, ease: "power3.out" }, 11.25);
+      tl.to("#hk-box", { borderColor: "#ff6b4a", duration: 0.3 }, 11.4);
+      tl.to("#hk-recipe", { rotation: -3, y: 40, opacity: 0.35, duration: 0.9, ease: "power2.in", transformOrigin: "692px 550px" }, 11.7);
+      // «Desde entonces medio internet dice» (12.49–15.02): todo se va y entran titulares.
+      tl.to(["#hk-who", "#hk-what", "#hk-recipe"], { autoAlpha: 0, duration: 0.5, ease: "power2.in" }, 12.9);
+      tl.from(["#hk-ch1", "#hk-ch2", "#hk-ch3", "#hk-ch4", "#hk-ch5"], { autoAlpha: 0, scale: 0.7, duration: 0.45, ease: "back.out(2)", stagger: 0.32 }, 13.6);
+      // «el RAG, ha muerto» (16.80–17.61): los titulares se apagan y sale la pregunta.
+      tl.to(["#hk-ch1", "#hk-ch2", "#hk-ch3", "#hk-ch4", "#hk-ch5"], { autoAlpha: 0, scale: 0.9, duration: 0.4, stagger: 0.05, ease: "power2.in" }, 16.5);
+      tl.from("#hk-head", { autoAlpha: 0, y: 50, duration: 0.8, ease: "expo.out" }, 16.8);
+      // «Spoiler: no ha muerto.» (18.79–20.00): «muerto» se tacha.
+      tl.from("#hk-spoiler", { autoAlpha: 0, y: 10, duration: 0.4, ease: "power2.out" }, 18.75);
+      tl.from("#hk-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 18.9);
+      tl.from("#hk-dead-line", { scaleX: 0, duration: 0.4, ease: "power3.out" }, 19.65);
+      // «Ha cambiado de forma.» (20.84–21.59): la interrogación gira y se convierte en flecha.
+      tl.to("#hk-qmark", { rotation: 300, scale: 0.4, autoAlpha: 0, duration: 0.5, ease: "power2.in" }, 20.7);
+      tl.fromTo("#hk-turn", { autoAlpha: 0, rotation: -240, scale: 0.4 }, { autoAlpha: 1, rotation: 0, scale: 1, duration: 0.8, ease: "back.out(1.6)" }, 21.05);
+      tl.to("#hk-open", { autoAlpha: 0, x: -30, duration: 0.4, ease: "power2.in" }, 20.8);
+      tl.to("#hk-dead", { autoAlpha: 0, y: -70, duration: 0.4, ease: "power2.in" }, 20.8);
+      tl.fromTo("#hk-chg", { autoAlpha: 0, y: 70 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "expo.out" }, 21.05);
+      tl.from("#hk-form", { autoAlpha: 0, y: 40, duration: 0.7, ease: "expo.out" }, 21.45);
+      // «Y en diez minutos» (22.71–23.06): una barra de reproducción de 10 minutos.
+      tl.from(["#hk-bar", "#hk-t0"], { autoAlpha: 0, duration: 0.4 }, 22.6);
+      tl.from("#hk-t10", { autoAlpha: 0, x: 20, duration: 0.5, ease: "expo.out" }, 22.8);
+      tl.from("#hk-head-dot", { autoAlpha: 0, scale: 0, duration: 0.4, ease: "back.out(2)" }, 22.8);
+      // «vas a entender qué es» (24.10–25.51): avanza la primera mitad.
+      tl.from("#hk-fill", { scaleX: 0, duration: 4.4, ease: "none" }, 23.4);
+      tl.to("#hk-head-dot", { x: 1536, duration: 4.4, ease: "none" }, 23.4);
+      tl.from("#hk-c1", { autoAlpha: 0, y: 20, duration: 0.5, ease: "expo.out" }, 25.05);
+      // «y en qué se ha convertido» (26.05–26.77)
+      tl.from("#hk-split", { autoAlpha: 0, scaleY: 0, duration: 0.3, ease: "power2.out" }, 25.9);
+      tl.from("#hk-c2", { autoAlpha: 0, y: 20, duration: 0.5, ease: "expo.out" }, 26.0);
+      tl.to("#hk-c2", { color: "#d4ff3a", duration: 0.4 }, 26.8);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

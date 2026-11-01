@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Geist"; src: url("assets/fonts/geist-sans-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/geist-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Geist Mono"; src: url("assets/fonts/geist-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #07080b; }
+      #root { position: relative; width: 1920px; height: 1080px; font-family: "Geist", sans-serif; color: #f4f5f7; }
+      #bg { position: absolute; inset: 0; background-image: radial-gradient(#1c2029 1.5px, transparent 1.5px); background-size: 40px 40px; }
+      .host { position: absolute; inset: 0; }
+      #tracker { position: absolute; left: 120px; top: 70px; display: flex; gap: 14px; z-index: 10; }
+      .step { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; padding: 12px 22px; border: 2px solid #232733; border-radius: 999px; }
+      .step b { font-weight: 500; margin-right: 10px; }
+    </style>
+  </head>
+  <body>
+    <!-- Vídeo completo de RAG (guion v2). GENERADO por build_root.py: no editar a mano. -->
+    <div data-hf-id="hf-9hey" id="root" data-composition-id="main" data-start="0" data-duration="477.57" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-qoml" id="bg" class="clip" data-start="0" data-duration="477.57" data-track-index="0"></div>
+
+      <div data-hf-id="hf-3ho6" id="scene-hook" class="host" data-composition-id="hook" data-composition-src="compositions/hook.html"
+        data-start="0" data-duration="28.55" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-lxc4" id="scene-problem" class="host" data-composition-id="problem" data-composition-src="compositions/problem.html"
+        data-start="28.55" data-duration="28.84" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-ghfe" id="scene-openbook" class="host" data-composition-id="openbook" data-composition-src="compositions/openbook.html"
+        data-start="57.39" data-duration="36.78" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-z0l2" id="scene-twomoments" class="host" data-composition-id="twomoments" data-composition-src="compositions/twomoments.html"
+        data-start="94.17" data-duration="13.7" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-ct9r" id="scene-chunk" class="host" data-composition-id="chunk" data-composition-src="compositions/chunk.html"
+        data-start="107.87" data-duration="18.3" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-i723" id="scene-embed" class="host" data-composition-id="embed" data-composition-src="compositions/embed.html"
+        data-start="126.17" data-duration="19.13" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-qp7j" id="scene-search" class="host" data-composition-id="search" data-composition-src="compositions/search.html"
+        data-start="145.3" data-duration="7.4" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-5eqf" id="scene-topk" class="host" data-composition-id="topk" data-composition-src="compositions/topk.html"
+        data-start="152.7" data-duration="10.8" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-ji0a" id="scene-generate" class="host" data-composition-id="generate" data-composition-src="compositions/generate.html"
+        data-start="163.5" data-duration="17.7" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-fvhv" id="scene-failures" class="host" data-composition-id="failures" data-composition-src="compositions/failures.html"
+        data-start="181.2" data-duration="35.67" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-152j" id="scene-hybrid" class="host" data-composition-id="hybrid" data-composition-src="compositions/hybrid.html"
+        data-start="216.87" data-duration="39.62" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-7uww" id="scene-contextual" class="host" data-composition-id="contextual" data-composition-src="compositions/contextual.html"
+        data-start="256.49" data-duration="39.48" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-8qjv" id="scene-graphrag" class="host" data-composition-id="graphrag" data-composition-src="compositions/graphrag.html"
+        data-start="295.97" data-duration="37.57" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-psij" id="scene-agentic" class="host" data-composition-id="agentic" data-composition-src="compositions/agentic.html"
+        data-start="333.54" data-duration="30.6" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-7lbp" id="scene-warnings" class="host" data-composition-id="warnings" data-composition-src="compositions/warnings.html"
+        data-start="364.14" data-duration="22.34" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-umk1" id="scene-longcontext" class="host" data-composition-id="longcontext" data-composition-src="compositions/longcontext.html"
+        data-start="386.48" data-duration="42.59" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-f0ng" id="scene-choose" class="host" data-composition-id="choose" data-composition-src="compositions/choose.html"
+        data-start="429.07" data-duration="37.06" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div data-hf-id="hf-7epw" id="scene-outro" class="host" data-composition-id="outro" data-composition-src="compositions/outro.html"
+        data-start="466.13" data-duration="11.44" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <!-- Firma del canal: barra de pasos 01–04, de la escena 3a al final de la 3c -->
+      <div data-hf-id="hf-g0xx" id="tracker" class="clip" data-start="94.17" data-duration="87.03" data-track-index="2">
+        <div data-hf-id="hf-9pog" class="step" id="s1"><b data-hf-id="hf-27a2">01</b>Trocear</div>
+        <div data-hf-id="hf-fvaw" class="step" id="s2"><b data-hf-id="hf-2ll3">02</b>Vectorizar</div>
+        <div data-hf-id="hf-19ym" class="step" id="s3"><b data-hf-id="hf-2zw4">03</b>Buscar</div>
+        <div data-hf-id="hf-y7gx" class="step" id="s4"><b data-hf-id="hf-3e75">04</b>Generar</div>
+      </div>
+
+      <audio data-hf-id="hf-mfp7" id="voice-1" class="clip" src="assets/audio/scene-1.mp3" data-start="0.5" data-duration="27.35" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-iihz" id="voice-2" class="clip" src="assets/audio/scene-2.mp3" data-start="28.55" data-duration="28.14" data-track-index="4" data-volume="1"></audio>
+      <audio data-hf-id="hf-6jea" id="voice-2b" class="clip" src="assets/audio/scene-2b.mp3" data-start="57.39" data-duration="36.08" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-whf5" id="voice-3a" class="clip" src="assets/audio/scene-3a.mp3" data-start="94.17" data-duration="13.0" data-track-index="4" data-volume="1"></audio>
+      <audio data-hf-id="hf-uo2n" id="voice-3b" class="clip" src="assets/audio/scene-3b.mp3" data-start="107.87" data-duration="36.73" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-8gcx" id="voice-3c" class="clip" src="assets/audio/scene-3c.mp3" data-start="145.3" data-duration="35.2" data-track-index="4" data-volume="1"></audio>
+      <audio data-hf-id="hf-7w8o" id="voice-4" class="clip" src="assets/audio/scene-4.mp3" data-start="181.2" data-duration="34.97" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-a1ey" id="voice-5" class="clip" src="assets/audio/scene-5.mp3" data-start="216.87" data-duration="38.92" data-track-index="4" data-volume="1"></audio>
+      <audio data-hf-id="hf-ivxh" id="voice-6" class="clip" src="assets/audio/scene-6.mp3" data-start="256.49" data-duration="38.78" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-izyw" id="voice-7" class="clip" src="assets/audio/scene-7.mp3" data-start="295.97" data-duration="36.87" data-track-index="4" data-volume="1"></audio>
+      <audio data-hf-id="hf-zcdg" id="voice-8" class="clip" src="assets/audio/scene-8.mp3" data-start="333.54" data-duration="52.24" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-bobh" id="voice-9" class="clip" src="assets/audio/scene-9.mp3" data-start="386.48" data-duration="41.89" data-track-index="4" data-volume="1"></audio>
+      <audio data-hf-id="hf-ii65" id="voice-10" class="clip" src="assets/audio/scene-10.mp3" data-start="429.07" data-duration="36.36" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-4kio" id="voice-11" class="clip" src="assets/audio/scene-11.mp3" data-start="466.13" data-duration="9.94" data-track-index="4" data-volume="1"></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const steps = ["#s1", "#s2", "#s3", "#s4"];
+      const activate = (idx, at) => {
+        steps.forEach((s, i) => {
+          tl.to(s, {
+            color: i === idx ? "#11140a" : i < idx ? "#f4f5f7" : "#8b90a0",
+            backgroundColor: i === idx ? "#d4ff3a" : "rgba(212,255,58,0)",
+            borderColor: i === idx ? "#d4ff3a" : i < idx ? "#3a3f4d" : "#232733",
+            duration: 0.35, ease: "power2.out",
+          }, at);
+        });
+      };
+      // La barra nace en la escena 3a, cuando la voz dice «Un RAG tiene dos momentos».
+      tl.from("#tracker .step", { autoAlpha: 0, y: -20, stagger: 0.08, duration: 0.5, ease: "power3.out" }, 94.57000000000001);
+      activate(0, 108.07);
+      activate(1, 126.37);
+      activate(2, 145.5);
+      activate(3, 163.7);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

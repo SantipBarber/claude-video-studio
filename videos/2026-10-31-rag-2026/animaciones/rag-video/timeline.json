@@ -1,0 +1,201 @@
+{
+ "total": 477.57,
+ "scenes": [
+  {
+   "id": "hook",
+   "scene": "1",
+   "start": 0,
+   "duration": 28.55,
+   "word_to_local": 0.5,
+   "voice": {
+    "scene": "1",
+    "start": 0.5,
+    "duration": 27.35
+   }
+  },
+  {
+   "id": "problem",
+   "scene": "2",
+   "start": 28.55,
+   "duration": 28.84,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "2",
+    "start": 28.55,
+    "duration": 28.14
+   }
+  },
+  {
+   "id": "openbook",
+   "scene": "2b",
+   "start": 57.39,
+   "duration": 36.78,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "2b",
+    "start": 57.39,
+    "duration": 36.08
+   }
+  },
+  {
+   "id": "twomoments",
+   "scene": "3a",
+   "start": 94.17,
+   "duration": 13.7,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "3a",
+    "start": 94.17,
+    "duration": 13.0
+   }
+  },
+  {
+   "id": "chunk",
+   "scene": "3b",
+   "start": 107.87,
+   "duration": 18.3,
+   "word_to_local": 0.0
+  },
+  {
+   "id": "embed",
+   "scene": "3b",
+   "start": 126.17,
+   "duration": 19.13,
+   "word_to_local": -18.3,
+   "voice": {
+    "scene": "3b",
+    "start": 107.87,
+    "duration": 36.73
+   }
+  },
+  {
+   "id": "search",
+   "scene": "3c",
+   "start": 145.3,
+   "duration": 7.4,
+   "word_to_local": 0.0
+  },
+  {
+   "id": "topk",
+   "scene": "3c",
+   "start": 152.7,
+   "duration": 10.8,
+   "word_to_local": -7.4
+  },
+  {
+   "id": "generate",
+   "scene": "3c",
+   "start": 163.5,
+   "duration": 17.7,
+   "word_to_local": -18.2,
+   "voice": {
+    "scene": "3c",
+    "start": 145.3,
+    "duration": 35.2
+   }
+  },
+  {
+   "id": "failures",
+   "scene": "4",
+   "start": 181.2,
+   "duration": 35.67,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "4",
+    "start": 181.2,
+    "duration": 34.97
+   }
+  },
+  {
+   "id": "hybrid",
+   "scene": "5",
+   "start": 216.87,
+   "duration": 39.62,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "5",
+    "start": 216.87,
+    "duration": 38.92
+   }
+  },
+  {
+   "id": "contextual",
+   "scene": "6",
+   "start": 256.49,
+   "duration": 39.48,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "6",
+    "start": 256.49,
+    "duration": 38.78
+   }
+  },
+  {
+   "id": "graphrag",
+   "scene": "7",
+   "start": 295.97,
+   "duration": 37.57,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "7",
+    "start": 295.97,
+    "duration": 36.87
+   }
+  },
+  {
+   "id": "agentic",
+   "scene": "8",
+   "start": 333.54,
+   "duration": 30.6,
+   "word_to_local": 0.0
+  },
+  {
+   "id": "warnings",
+   "scene": "8",
+   "start": 364.14,
+   "duration": 22.34,
+   "word_to_local": -30.6,
+   "voice": {
+    "scene": "8",
+    "start": 333.54,
+    "duration": 52.24
+   }
+  },
+  {
+   "id": "longcontext",
+   "scene": "9",
+   "start": 386.48,
+   "duration": 42.59,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "9",
+    "start": 386.48,
+    "duration": 41.89
+   }
+  },
+  {
+   "id": "choose",
+   "scene": "10",
+   "start": 429.07,
+   "duration": 37.06,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "10",
+    "start": 429.07,
+    "duration": 36.36
+   }
+  },
+  {
+   "id": "outro",
+   "scene": "11",
+   "start": 466.13,
+   "duration": 11.44,
+   "word_to_local": 0.0,
+   "voice": {
+    "scene": "11",
+    "start": 466.13,
+    "duration": 9.94
+   }
+  }
+ ]
+}

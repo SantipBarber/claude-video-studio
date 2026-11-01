@@ -1,0 +1,144 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #root .lab { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+
+    #cx-title { left: 120px; top: 136px; font-size: 96px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+
+    /* El trozo y su etiqueta de contexto */
+    #cx-model { left: 120px; top: 270px; }
+    #cx-tag { left: 120px; top: 318px; width: 820px; height: 62px; padding: 0 22px; display: flex; align-items: center; font-family: "Geist Mono", monospace; font-size: 30px; color: #d4ff3a; background: #10140a; border: 2px solid #d4ff3a; border-radius: 12px 12px 0 0; white-space: nowrap; }
+    #cx-caret { display: inline-block; width: 3px; height: 32px; margin-left: 4px; background: #d4ff3a; }
+    #cx-frag { left: 120px; top: 378px; width: 820px; padding: 30px 36px; border-color: #ff6b4a; }
+    #cx-frag .lbl { font-size: 28px; color: #8b90a0; margin-bottom: 12px; }
+    #cx-frag p { white-space: nowrap; font-size: 46px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; }
+    #root .q { font-family: "Geist Mono", monospace; font-size: 30px; color: #ff6b4a; white-space: nowrap; }
+
+    /* Cifras de Anthropic */
+    #cx-dh { left: 1000px; top: 270px; }
+    #cx-dh b { color: #f4f5f7; font-weight: 500; }
+    #root .brow { left: 1000px; width: 800px; }
+    #root .brow .l { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; margin-bottom: 10px; white-space: nowrap; }
+    #root .brow .b { position: absolute; left: 0; top: 50px; height: 44px; border-radius: 6px; background: #ff6b4a; transform-origin: left center; }
+    #root .brow .v { position: absolute; top: 46px; font-size: 44px; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; line-height: 52px; }
+    #root .brow .v em { font-style: normal; color: #d4ff3a; margin-left: 16px; }
+
+    /* Late chunking */
+    #cx-late { left: 120px; top: 790px; display: flex; align-items: center; gap: 22px; white-space: nowrap; }
+    #cx-late .chip { font-family: "Geist Mono", monospace; font-size: 32px; color: #5ce1e6; padding: 8px 18px; border: 2px solid #5ce1e6; border-radius: 10px; }
+    #cx-late .t { font-size: 36px; font-weight: 500; }
+    #cx-late .m { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #cx-doc { left: 120px; top: 880px; width: 900px; height: 40px; }
+    #cx-doc i { position: absolute; top: 0; height: 40px; width: 146px; background: #1a1d26; border: 2px solid #232733; }
+    #cx-glow { left: 120px; top: 880px; width: 900px; height: 40px; background: rgba(92,225,230,0.35); border-radius: 4px; transform-origin: left center; }
+  </style>
+
+  <div data-hf-id="hf-8udk" id="root" data-composition-id="contextual" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-si44" class="abs mono kick" id="cx-kick">arreglo 3 · recuperación contextual</div>
+    <h1 data-hf-id="hf-33k5" class="abs" id="cx-title">Recuperación contextual</h1>
+
+    <div data-hf-id="hf-x2du" class="abs lab" id="cx-model"><span data-hf-id="hf-tzqo" id="cx-m1">antes de indexar · </span><span data-hf-id="hf-xjlk" id="cx-m2">un modelo escribe una frase</span></div>
+    <div data-hf-id="hf-0oik" class="abs" id="cx-tag"><span data-hf-id="hf-3d7s" id="cx-typed"></span><i data-hf-id="hf-c7du" id="cx-caret"></i></div>
+    <div data-hf-id="hf-indq" class="abs panel" id="cx-frag">
+      <div data-hf-id="hf-c6b3" class="lbl mono">fragmento 214</div>
+      <p data-hf-id="hf-2r62">«Los ingresos crecieron un 3 %…»</p>
+    </div>
+    <div data-hf-id="hf-hmn4" class="abs q" id="cx-q1" style="left: 156px; top: 620px">¿qué empresa?</div>
+    <div data-hf-id="hf-lp96" class="abs q" id="cx-q2" style="left: 450px; top: 620px">¿qué trimestre?</div>
+
+    <div data-hf-id="hf-v0wx" class="abs lab" id="cx-dh"><b data-hf-id="hf-fmd1">fallos de recuperación</b> · top-20 · Anthropic</div>
+    <div data-hf-id="hf-5qho" class="abs brow" id="cx-r1" style="top: 330px"><div data-hf-id="hf-wu00" class="l">búsqueda normal</div><i data-hf-id="hf-25ii" class="b" id="cx-b1" style="width: 560px"></i><div data-hf-id="hf-ttwt" class="v" style="left: 580px">5,7 %</div></div>
+    <div data-hf-id="hf-9bfq" class="abs brow" id="cx-r2" style="top: 470px"><div data-hf-id="hf-bfnu" class="l">+ contexto + búsqueda híbrida</div><i data-hf-id="hf-4tdb" class="b" id="cx-b2" style="width: 285px"></i><div data-hf-id="hf-1mg7" class="v" style="left: 305px">2,9 %<em data-hf-id="hf-2yn3" id="cx-e49">−<span data-hf-id="hf-1nj1" id="cx-n49">0</span> %</em></div></div>
+    <div data-hf-id="hf-ya0p" class="abs brow" id="cx-r3" style="top: 610px"><div data-hf-id="hf-ly0v" class="l">+ reranker</div><i data-hf-id="hf-k8z5" class="b" id="cx-b3" style="width: 187px"></i><div data-hf-id="hf-41lr" class="v" style="left: 207px">1,9 %<em data-hf-id="hf-5j03" id="cx-e67">−<span data-hf-id="hf-q5od" id="cx-n67">0</span> %</em></div></div>
+
+    <div data-hf-id="hf-p5yg" class="abs" id="cx-late"><span data-hf-id="hf-2g97" class="m" id="cx-l1">más barato:</span><span data-hf-id="hf-meqe" class="chip" id="cx-l2">late chunking</span><span data-hf-id="hf-cfzu" class="t" id="cx-l3">vectores viendo el documento entero</span></div>
+    <div data-hf-id="hf-zjym" class="abs" id="cx-doc"></div>
+    <div data-hf-id="hf-tkwv" class="abs" id="cx-glow"></div>
+
+    <p data-hf-id="hf-xuzv" class="abs cap" id="cx-cap"><b data-hf-id="hf-cm9x">Arreglo 3 ·</b> cada trozo dice de dónde viene</p>
+  </div>
+
+  <script>
+    (() => {
+      // Documento entero en 6 trozos pegados: primero se vectoriza entero, luego se trocea.
+      const doc = document.querySelector("#cx-doc");
+      const segs = [];
+      for (let i = 0; i < 6; i++) {
+        const el = document.createElement("i");
+        el.style.left = i * 150 + "px";
+        el.style.borderRadius = i === 0 ? "6px 0 0 6px" : i === 5 ? "0 6px 6px 0" : "0";
+        doc.appendChild(el); segs.push(el);
+      }
+
+      const typed = document.querySelector("#cx-typed");
+      const label = "informe de Acme · 2.º trimestre de 2023";
+
+      const tl = gsap.timeline({ paused: true });
+      // «Tercer arreglo» (0.0): el trozo huérfano de la escena anterior sigue ahí.
+      tl.from("#cx-kick", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.05);
+      tl.from("#cx-frag", { autoAlpha: 0, y: 30, duration: 0.7, ease: "expo.out" }, 0.2);
+      // «para los trozos huérfanos» (2.1)
+      tl.from(["#cx-q1", "#cx-q2"], { autoAlpha: 0, y: 16, duration: 0.5, ease: "back.out(2)", stagger: 0.25 }, 2.1);
+      // «recuperación contextual» (3.63)
+      tl.from("#cx-title", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 3.5);
+      // «Antes de indexar» (5.92) · «un modelo escribe una frase» (7.3–9.0)
+      tl.from("#cx-m1", { autoAlpha: 0, duration: 0.4 }, 5.9);
+      tl.from("#cx-m2", { autoAlpha: 0, x: -14, duration: 0.5, ease: "power2.out" }, 7.3);
+      // «que sitúa cada trozo» (9.8): aparece la etiqueta vacía, con el cursor.
+      tl.from("#cx-tag", { autoAlpha: 0, y: 20, duration: 0.5, ease: "expo.out" }, 9.8);
+      tl.to("#cx-frag", { borderColor: "#d4ff3a", borderTopLeftRadius: 0, borderTopRightRadius: 0, duration: 0.4 }, 9.8);
+      tl.to("#cx-caret", { opacity: 0, duration: 0.25, yoyo: true, repeat: 3, ease: "steps(1)" }, 10.3);
+      // «'esto es del informe de Acme del segundo trimestre de 2023'» (11.7–15.6): el modelo la escribe.
+      const p = { n: 0 };
+      tl.to(p, { n: label.length, duration: 3.6, ease: "none", onUpdate: () => { typed.textContent = label.slice(0, Math.round(p.n)); } }, 11.8);
+      tl.to("#cx-caret", { opacity: 0, duration: 0.3 }, 15.5);
+      // Las preguntas quedan contestadas.
+      tl.to(["#cx-q1", "#cx-q2"], { color: "#8b90a0", opacity: 0.5, duration: 0.5, stagger: 0.15 }, 15.6);
+      // «Parece poca cosa» (16.9)
+      tl.from("#cx-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 16.9);
+
+      // «pero Anthropic midió» (18.8–20.2): la barra de partida.
+      tl.from("#cx-dh", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 18.8);
+      tl.from("#cx-r1 .l", { autoAlpha: 0, duration: 0.4 }, 19.6);
+      tl.from("#cx-b1", { scaleX: 0, duration: 0.8, ease: "power3.out" }, 19.7);
+      tl.from("#cx-r1 .v", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 20.2);
+      // «combinada con búsqueda híbrida» (20.3–21.6) · «reduce» (22.6)
+      tl.from("#cx-r2 .l", { autoAlpha: 0, duration: 0.4 }, 20.6);
+      tl.from("#cx-b2", { scaleX: 0, duration: 0.9, ease: "power3.out" }, 22.6);
+      tl.from("#cx-r2 .v", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 23.2);
+      tl.to("#cx-b1", { opacity: 0.4, duration: 0.5 }, 23.0);
+      // «un 49 %» (25.3)
+      tl.from("#cx-e49", { autoAlpha: 0, duration: 0.2 }, 25.1);
+      const a = { v: 0 }, n49 = document.querySelector("#cx-n49");
+      tl.to(a, { v: 49, duration: 0.9, ease: "power2.out", onUpdate: () => { n49.textContent = Math.round(a.v); } }, 25.1);
+      // «y con reranker» (27.3) · «un 67 %» (28.7)
+      tl.from("#cx-r3 .l", { autoAlpha: 0, duration: 0.4 }, 27.3);
+      tl.from("#cx-b3", { scaleX: 0, duration: 0.8, ease: "power3.out" }, 27.6);
+      tl.from("#cx-r3 .v", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 28.2);
+      tl.to("#cx-b2", { opacity: 0.4, duration: 0.5 }, 28.4);
+      tl.from("#cx-e67", { autoAlpha: 0, duration: 0.2 }, 28.6);
+      const b = { v: 0 }, n67 = document.querySelector("#cx-n67");
+      tl.to(b, { v: 67, duration: 0.9, ease: "power2.out", onUpdate: () => { n67.textContent = Math.round(b.v); } }, 28.6);
+
+      // «Hay una alternativa más barata, el late chunking» (30.7–34.4)
+      tl.from("#cx-l1", { autoAlpha: 0, x: -14, duration: 0.4, ease: "power2.out" }, 31.6);
+      tl.from("#cx-l2", { autoAlpha: 0, scale: 0.85, duration: 0.5, ease: "back.out(2)" }, 33.1);
+      tl.from(segs, { autoAlpha: 0, duration: 0.4, stagger: 0.05 }, 33.4);
+      // «que genera los vectores viendo el documento entero» (34.6–36.5)
+      tl.from("#cx-l3", { autoAlpha: 0, x: -14, duration: 0.5, ease: "power2.out" }, 34.6);
+      tl.from("#cx-glow", { scaleX: 0, autoAlpha: 0, duration: 1.4, ease: "power2.inOut" }, 35.0);
+      // «antes de trocearlo» (37.6): ahora sí se separan los trozos.
+      tl.to("#cx-glow", { autoAlpha: 0, duration: 0.3 }, 37.6);
+      tl.to(segs, { x: (i) => i * 14, backgroundColor: "#0f2a2c", borderColor: "#5ce1e6", borderRadius: 6, duration: 0.6, ease: "expo.out" }, 37.6);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["contextual"] = tl;
+    })();
+  </script>
+</template>

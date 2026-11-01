@@ -1,0 +1,160 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .arrow { width: 56px; height: 32px; }
+
+    #pb-kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; }
+
+    /* El modelo y su alcance */
+    #pb-reach { left: 560px; top: 290px; width: 480px; height: 480px; border-radius: 50%; border: 2px dashed #3a3f4d; }
+    #pb-know { left: 610px; top: 340px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(139,144,160,0.16) 0%, rgba(139,144,160,0) 70%); }
+    #pb-llm { left: 620px; top: 410px; width: 360px; height: 220px; border-radius: 24px; border: 3px solid #3a3f4d; background: #0f1116; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    #pb-llm .big { font-size: 96px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    #pb-llm .small { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #pb-knows { left: 680px; top: 652px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+
+    /* Lo tuyo: documentos fuera de su alcance */
+    #root .doc { width: 420px; padding: 20px 26px; }
+    #root .doc .k { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; margin-bottom: 6px; }
+    #root .doc .n { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; }
+    #pb-yours { left: 120px; top: 240px; font-size: 28px; color: #8b90a0; }
+
+    /* Pegarlo todo en el prompt */
+    #pb-prompt { left: 560px; top: 820px; width: 480px; height: 72px; border-radius: 14px; overflow: hidden; }
+    #pb-fill { position: absolute; left: 0; top: 0; width: 480px; height: 72px; background: rgba(244,245,247,0.14); transform-origin: left center; }
+    #pb-prompt .lbl { position: absolute; left: 22px; top: 18px; font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #pb-cost { left: 1080px; top: 820px; display: flex; gap: 16px; }
+    #pb-cost span { font-family: "Geist Mono", monospace; font-size: 32px; color: #ff6b4a; padding: 12px 22px; border: 2px solid #ff6b4a; border-radius: 999px; }
+
+    /* La biblioteca: miles de documentos */
+    #pb-pile { left: 1360px; top: 300px; width: 400px; height: 400px; }
+    #pb-pile i { position: absolute; width: 34px; height: 44px; border-radius: 5px; background: #1a1d25; border: 2px solid #2c303c; }
+    #pb-many { left: 1360px; top: 716px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+
+    /* RAG */
+    #pb-rag { left: 120px; top: 150px; font-size: 120px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; }
+    #pb-exp { left: 128px; top: 284px; font-size: 36px; color: #8b90a0; white-space: nowrap; }
+    #pb-beam { left: 996px; top: 504px; width: 56px; height: 32px; }
+    #root .card { width: 250px; height: 60px; padding: 0 18px; display: flex; align-items: center; gap: 12px; font-family: "Geist Mono", monospace; font-size: 28px; border-radius: 12px; background: #10140a; border: 2px solid #d4ff3a; }
+    #root .card i { width: 12px; height: 12px; border-radius: 50%; background: #d4ff3a; flex: none; }
+    #pb-in { left: 300px; top: 504px; }
+  </style>
+
+  <div data-hf-id="hf-rs66" id="root" data-composition-id="problem" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-r0sp" class="abs mono" id="pb-kick">el problema</div>
+
+    <div data-hf-id="hf-2wog" class="abs" id="pb-know"></div>
+    <div data-hf-id="hf-coe6" class="abs" id="pb-reach"></div>
+    <div data-hf-id="hf-mfbq" class="abs" id="pb-llm"><div data-hf-id="hf-uigt" class="big">LLM</div><div data-hf-id="hf-702p" class="small">modelo de lenguaje</div></div>
+    <div data-hf-id="hf-21mn" class="abs mono" id="pb-knows">sabe muchísimo…</div>
+
+    <div data-hf-id="hf-ueqi" class="abs mono" id="pb-yours">lo tuyo</div>
+    <div data-hf-id="hf-zsvn" class="abs panel doc" id="pb-d1" style="left: 120px; top: 300px"><div data-hf-id="hf-rthn" class="k">pdf</div><div data-hf-id="hf-bgaj" class="n">tus contratos</div></div>
+    <div data-hf-id="hf-2zkn" class="abs panel doc" id="pb-d2" style="left: 120px; top: 480px"><div data-hf-id="hf-fp2f" class="k">wiki</div><div data-hf-id="hf-4h4c" class="n">documentación interna</div></div>
+    <div data-hf-id="hf-zdy2" class="abs panel doc" id="pb-d3" style="left: 120px; top: 660px"><div data-hf-id="hf-m6t9" class="k">correo</div><div data-hf-id="hf-hlen" class="n">el correo de ayer</div></div>
+
+    <div data-hf-id="hf-n88d" class="abs panel" id="pb-prompt"><div data-hf-id="hf-jdk3" id="pb-fill"></div><div data-hf-id="hf-9olo" class="lbl">prompt</div></div>
+    <div data-hf-id="hf-2gvq" class="abs" id="pb-cost"><span data-hf-id="hf-b44m" id="pb-c1">caro</span><span data-hf-id="hf-1gkw" id="pb-c2">lento</span></div>
+
+    <div data-hf-id="hf-t5i9" class="abs" id="pb-pile"></div>
+    <div data-hf-id="hf-53j1" class="abs mono" id="pb-many">miles de documentos</div>
+
+    <div data-hf-id="hf-0v71" class="abs" id="pb-rag">RAG</div>
+    <div data-hf-id="hf-dbod" class="abs" id="pb-exp">generación aumentada con recuperación</div>
+
+    <svg data-hf-id="hf-hzxb" class="abs" id="pb-beam" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-x41a" d="M54 16H4M18 3 4 16l14 13"/></svg>
+    <div data-hf-id="hf-hbx9" class="abs card" id="pb-k1" style="left: 1068px; top: 410px"><i data-hf-id="hf-wt6k"></i>trozo 1</div>
+    <div data-hf-id="hf-ggor" class="abs card" id="pb-k2" style="left: 1068px; top: 490px"><i data-hf-id="hf-zeb8"></i>trozo 2</div>
+    <div data-hf-id="hf-1poc" class="abs card" id="pb-k3" style="left: 1068px; top: 570px"><i data-hf-id="hf-y7e5"></i>trozo 3</div>
+
+    <div data-hf-id="hf-fqsz" class="abs gloss" id="pb-gloss" style="left: 1240px; top: 860px; width: 560px">
+      <div data-hf-id="hf-fsea" class="t">RAG</div>
+      <div data-hf-id="hf-1hfq" class="d">buscar antes de responder</div>
+    </div>
+
+    <p data-hf-id="hf-fj4f" class="abs cap" id="pb-cap"><b data-hf-id="hf-e3kn">El problema ·</b> no sabe nada de lo tuyo</p>
+  </div>
+
+  <script>
+    (() => {
+      // Pila ilustrativa de documentos (posiciones con semilla fija).
+      let seed = 41;
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+      const pile = document.querySelector("#pb-pile");
+      const sheets = [];
+      for (let r = 0; r < 8; r++) for (let c = 0; c < 9; c++) {
+        const s = document.createElement("i");
+        s.style.left = (c * 42 + (rnd() * 6 - 3)).toFixed(0) + "px";
+        s.style.top = (r * 50 + (rnd() * 6 - 3)).toFixed(0) + "px";
+        pile.appendChild(s); sheets.push(s);
+      }
+      // Los tres trozos relevantes dentro de la pila.
+      const picks = [sheets[11], sheets[30], sheets[51]];
+
+      const tl = gsap.timeline({ paused: true });
+      // «Un modelo de lenguaje» (0.0–0.63): el modelo ya entra en el primer fotograma.
+      tl.from("#pb-kick", { autoAlpha: 0, duration: 0.3 }, 0);
+      tl.fromTo("#pb-llm", { autoAlpha: 0.3, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.8, ease: "expo.out" }, 0);
+      // «sabe muchísimo» (1.45–1.82): su conocimiento se expande.
+      tl.from("#pb-know", { autoAlpha: 0, scale: 0.4, duration: 1.0, ease: "expo.out" }, 1.4);
+      tl.from("#pb-knows", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 1.7);
+      // «pero no sabe nada de lo tuyo» (2.87–4.17): aparece el límite de su alcance.
+      tl.from("#pb-reach", { autoAlpha: 0, scale: 0.85, rotation: -30, duration: 0.8, ease: "expo.out" }, 2.85);
+      tl.to("#pb-knows", { autoAlpha: 0, duration: 0.3 }, 3.6);
+      tl.from("#pb-yours", { autoAlpha: 0, x: -14, duration: 0.4, ease: "power2.out" }, 4.0);
+      tl.from("#pb-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 4.2);
+      // «tus contratos, tu documentación interna, el correo de ayer» (5.00–8.59)
+      tl.from("#pb-d1", { autoAlpha: 0, x: -60, duration: 0.6, ease: "expo.out" }, 5.0);
+      tl.from("#pb-d2", { autoAlpha: 0, x: -60, duration: 0.6, ease: "expo.out" }, 6.2);
+      tl.from("#pb-d3", { autoAlpha: 0, x: -60, duration: 0.6, ease: "expo.out" }, 7.9);
+      // Intentan llegar al modelo y rebotan contra su alcance.
+      tl.to(["#pb-d1", "#pb-d2", "#pb-d3"], { x: 40, duration: 0.35, ease: "power2.out", yoyo: true, repeat: 1, stagger: 0.12 }, 8.7);
+      tl.to("#pb-reach", { borderColor: "#ff6b4a", duration: 0.2, yoyo: true, repeat: 1 }, 8.95);
+      // «Puedes pegárselo todo en el prompt» (9.68–11.01): los documentos se meten en el prompt.
+      tl.from("#pb-prompt", { autoAlpha: 0, y: 30, duration: 0.5, ease: "expo.out" }, 9.7);
+      tl.to(["#pb-d1", "#pb-d2", "#pb-d3"], { x: 560, y: (i) => [520, 340, 160][i], autoAlpha: 0, duration: 0.6, ease: "power3.in", stagger: 0.15 }, 10.2);
+      tl.to(["#pb-yours"], { autoAlpha: 0, duration: 0.3 }, 10.2);
+      tl.fromTo("#pb-fill", { scaleX: 0 }, { scaleX: 0.3, duration: 0.8, ease: "power2.out" }, 10.6);
+      // «cuando son miles de documentos» (12.02–12.92): la pila crece y el prompt se desborda.
+      tl.from(sheets, { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.out", stagger: { each: 0.012, from: "end" } }, 12.2);
+      tl.from("#pb-many", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 12.5);
+      tl.to("#pb-fill", { scaleX: 1, duration: 1.4, ease: "power1.in" }, 12.6);
+      tl.to("#pb-fill", { backgroundColor: "rgba(255,107,74,0.35)", duration: 0.3 }, 13.8);
+      tl.to("#pb-prompt", { borderColor: "#ff6b4a", x: 6, duration: 0.06, yoyo: true, repeat: 5 }, 14.0);
+      // «eso es caro y lento» (14.76–15.67)
+      tl.from("#pb-c1", { autoAlpha: 0, scale: 0.6, duration: 0.4, ease: "back.out(2)" }, 14.7);
+      tl.from("#pb-c2", { autoAlpha: 0, scale: 0.6, duration: 0.4, ease: "back.out(2)" }, 15.6);
+      // «RAG, generación aumentada con recuperación» (16.89–18.97)
+      tl.to(["#pb-prompt", "#pb-cost"], { autoAlpha: 0, y: 20, duration: 0.4, ease: "power2.in" }, 16.6);
+      tl.to("#pb-reach", { autoAlpha: 0, scale: 1.1, duration: 0.5, ease: "power2.in" }, 16.6);
+      tl.to("#pb-know", { autoAlpha: 0, duration: 0.5 }, 16.6);
+      tl.from("#pb-rag", { autoAlpha: 0, y: 40, duration: 0.7, ease: "expo.out" }, 16.85);
+      tl.from("#pb-exp", { autoAlpha: 0, x: -20, duration: 0.6, ease: "expo.out" }, 17.5);
+      tl.from("#pb-gloss", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 18.2);
+      // «resuelve justo eso» (20.21–21.32): el modelo se prepara para buscar.
+      tl.to("#pb-llm", { borderColor: "#d4ff3a", duration: 0.4 }, 20.2);
+      tl.to("#pb-llm .big", { color: "#d4ff3a", duration: 0.4 }, 20.2);
+      tl.to("#pb-llm .small", { autoAlpha: 0, duration: 0.2 }, 21.0);
+      // «antes de responder, el sistema busca» (22.35–24.56): un barrido recorre la pila.
+      tl.to(sheets, { borderColor: "#5ce1e6", duration: 0.15, yoyo: true, repeat: 1, stagger: { each: 0.018, grid: [8, 9], from: "start", axis: "x" } }, 23.0);
+      // «los trozos relevantes» (25.05–25.41): se encienden tres.
+      tl.to(picks, { backgroundColor: "#d4ff3a", borderColor: "#d4ff3a", duration: 0.3, stagger: 0.15, ease: "power2.out" }, 25.0);
+      // «y se los pasa al modelo» (26.37–27.35): las tres fichas viajan hasta el modelo.
+      tl.fromTo(["#pb-k1", "#pb-k2", "#pb-k3"], { autoAlpha: 0, x: 320 },
+        { autoAlpha: 1, x: 0, duration: 0.8, ease: "expo.out", stagger: 0.15 }, 26.0);
+      tl.from("#pb-beam", { autoAlpha: 0, x: 40, duration: 0.5, ease: "power2.out" }, 26.6);
+      tl.to("#pb-llm", { boxShadow: "0 0 0 22px rgba(212,255,58,0.14)", duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, 27.3);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["problem"] = tl;
+    })();
+  </script>
+</template>

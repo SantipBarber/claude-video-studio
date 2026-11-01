@@ -1,0 +1,373 @@
+{
+ "scene": "7",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "Para las preguntas globales está GraphRAG, que popularizó Microsoft. En vez de solo trocear, extrae entidades y relaciones: personas, empresas, productos y cómo se conectan. Construye un grafo y lo agrupa en comunidades con resúmenes. Así puede responder '¿cuáles son los grandes temas?' o '¿qué proveedores dependen de esta pieza?'. El precio: construir y mantener ese grafo es bastante más caro. Úsalo cuando las relaciones sean el corazón del problema, no por moda.",
+ "duration": 36.873,
+ "words": [
+  {
+   "w": "Para",
+   "start": 0.0,
+   "end": 0.209
+  },
+  {
+   "w": "las",
+   "start": 0.255,
+   "end": 0.36
+  },
+  {
+   "w": "preguntas",
+   "start": 0.395,
+   "end": 0.813
+  },
+  {
+   "w": "globales",
+   "start": 0.859,
+   "end": 1.37
+  },
+  {
+   "w": "está",
+   "start": 1.625,
+   "end": 2.055
+  },
+  {
+   "w": "GraphRAG,",
+   "start": 2.345,
+   "end": 3.181
+  },
+  {
+   "w": "que",
+   "start": 3.587,
+   "end": 3.68
+  },
+  {
+   "w": "popularizó",
+   "start": 3.727,
+   "end": 4.319
+  },
+  {
+   "w": "Microsoft.",
+   "start": 4.423,
+   "end": 5.224
+  },
+  {
+   "w": "En",
+   "start": 5.77,
+   "end": 5.921
+  },
+  {
+   "w": "vez",
+   "start": 5.956,
+   "end": 6.107
+  },
+  {
+   "w": "de",
+   "start": 6.165,
+   "end": 6.223
+  },
+  {
+   "w": "solo",
+   "start": 6.269,
+   "end": 6.467
+  },
+  {
+   "w": "trocear,",
+   "start": 6.49,
+   "end": 7.163
+  },
+  {
+   "w": "extrae",
+   "start": 7.512,
+   "end": 8.092
+  },
+  {
+   "w": "entidades",
+   "start": 8.197,
+   "end": 8.847
+  },
+  {
+   "w": "y",
+   "start": 8.951,
+   "end": 8.975
+  },
+  {
+   "w": "relaciones:",
+   "start": 9.056,
+   "end": 9.938
+  },
+  {
+   "w": "personas,",
+   "start": 10.403,
+   "end": 11.215
+  },
+  {
+   "w": "empresas,",
+   "start": 11.517,
+   "end": 12.353
+  },
+  {
+   "w": "productos",
+   "start": 12.643,
+   "end": 13.27
+  },
+  {
+   "w": "y",
+   "start": 13.56,
+   "end": 13.642
+  },
+  {
+   "w": "cómo",
+   "start": 13.723,
+   "end": 13.897
+  },
+  {
+   "w": "se",
+   "start": 13.944,
+   "end": 14.013
+  },
+  {
+   "w": "conectan.",
+   "start": 14.06,
+   "end": 14.756
+  },
+  {
+   "w": "Construye",
+   "start": 15.302,
+   "end": 15.836
+  },
+  {
+   "w": "un",
+   "start": 15.894,
+   "end": 15.94
+  },
+  {
+   "w": "grafo",
+   "start": 15.987,
+   "end": 16.347
+  },
+  {
+   "w": "y",
+   "start": 16.649,
+   "end": 16.718
+  },
+  {
+   "w": "lo",
+   "start": 16.788,
+   "end": 16.881
+  },
+  {
+   "w": "agrupa",
+   "start": 16.916,
+   "end": 17.276
+  },
+  {
+   "w": "en",
+   "start": 17.31,
+   "end": 17.357
+  },
+  {
+   "w": "comunidades",
+   "start": 17.415,
+   "end": 18.007
+  },
+  {
+   "w": "con",
+   "start": 18.054,
+   "end": 18.169
+  },
+  {
+   "w": "resúmenes.",
+   "start": 18.25,
+   "end": 19.028
+  },
+  {
+   "w": "Así",
+   "start": 19.574,
+   "end": 19.829
+  },
+  {
+   "w": "puede",
+   "start": 19.876,
+   "end": 20.085
+  },
+  {
+   "w": "responder",
+   "start": 20.143,
+   "end": 20.7
+  },
+  {
+   "w": "'¿cuáles",
+   "start": 20.886,
+   "end": 21.455
+  },
+  {
+   "w": "son",
+   "start": 21.478,
+   "end": 21.629
+  },
+  {
+   "w": "los",
+   "start": 21.652,
+   "end": 21.768
+  },
+  {
+   "w": "grandes",
+   "start": 21.815,
+   "end": 22.128
+  },
+  {
+   "w": "temas?'",
+   "start": 22.175,
+   "end": 22.825
+  },
+  {
+   "w": "o",
+   "start": 23.208,
+   "end": 23.359
+  },
+  {
+   "w": "'¿qué",
+   "start": 23.568,
+   "end": 23.881
+  },
+  {
+   "w": "proveedores",
+   "start": 23.928,
+   "end": 24.59
+  },
+  {
+   "w": "dependen",
+   "start": 24.648,
+   "end": 25.1
+  },
+  {
+   "w": "de",
+   "start": 25.158,
+   "end": 25.228
+  },
+  {
+   "w": "esta",
+   "start": 25.275,
+   "end": 25.472
+  },
+  {
+   "w": "pieza?'.",
+   "start": 25.507,
+   "end": 26.087
+  },
+  {
+   "w": "El",
+   "start": 26.691,
+   "end": 26.853
+  },
+  {
+   "w": "precio:",
+   "start": 26.923,
+   "end": 27.55
+  },
+  {
+   "w": "construir",
+   "start": 27.794,
+   "end": 28.421
+  },
+  {
+   "w": "y",
+   "start": 28.456,
+   "end": 28.479
+  },
+  {
+   "w": "mantener",
+   "start": 28.525,
+   "end": 28.932
+  },
+  {
+   "w": "ese",
+   "start": 28.978,
+   "end": 29.117
+  },
+  {
+   "w": "grafo",
+   "start": 29.152,
+   "end": 29.582
+  },
+  {
+   "w": "es",
+   "start": 29.86,
+   "end": 30.011
+  },
+  {
+   "w": "bastante",
+   "start": 30.058,
+   "end": 30.522
+  },
+  {
+   "w": "más",
+   "start": 30.569,
+   "end": 30.708
+  },
+  {
+   "w": "caro.",
+   "start": 30.766,
+   "end": 31.219
+  },
+  {
+   "w": "Úsalo",
+   "start": 31.823,
+   "end": 32.322
+  },
+  {
+   "w": "cuando",
+   "start": 32.647,
+   "end": 32.902
+  },
+  {
+   "w": "las",
+   "start": 32.949,
+   "end": 33.03
+  },
+  {
+   "w": "relaciones",
+   "start": 33.065,
+   "end": 33.703
+  },
+  {
+   "w": "sean",
+   "start": 33.854,
+   "end": 34.203
+  },
+  {
+   "w": "el",
+   "start": 34.261,
+   "end": 34.33
+  },
+  {
+   "w": "corazón",
+   "start": 34.388,
+   "end": 34.853
+  },
+  {
+   "w": "del",
+   "start": 34.899,
+   "end": 35.027
+  },
+  {
+   "w": "problema,",
+   "start": 35.085,
+   "end": 35.665
+  },
+  {
+   "w": "no",
+   "start": 35.84,
+   "end": 35.967
+  },
+  {
+   "w": "por",
+   "start": 36.025,
+   "end": 36.153
+  },
+  {
+   "w": "moda.",
+   "start": 36.211,
+   "end": 36.873
+  }
+ ]
+}

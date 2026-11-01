@@ -1,0 +1,178 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #root .lab { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+
+    #gr-title { left: 120px; top: 126px; font-size: 120px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+    #gr-ms { left: 720px; top: 196px; }
+
+    /* Columna izquierda: fragmentos → preguntas → precio → remate */
+    #root .frag { left: 120px; width: 500px; padding: 18px 24px; }
+    #root .frag .lbl { font-size: 28px; color: #8b90a0; margin-bottom: 6px; }
+    #root .frag p { font-size: 30px; line-height: 1.28; color: #8b90a0; }
+    #root .frag .e { color: #8b90a0; }
+    #root .ask { left: 120px; width: 500px; padding: 16px 24px; font-size: 32px; font-weight: 500; line-height: 1.25; border-radius: 16px; }
+    #gr-cost { left: 120px; top: 640px; width: 500px; }
+    #gr-cost .cl { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; margin-bottom: 14px; }
+    #gr-cost .br { position: relative; height: 40px; margin-bottom: 14px; }
+    #gr-cost .br i { position: absolute; left: 190px; top: 6px; height: 28px; border-radius: 4px; transform-origin: left center; }
+    #gr-cost .br span { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; line-height: 40px; }
+    #gr-expensive { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; color: #ff6b4a; margin-top: 8px; white-space: nowrap; }
+    #gr-end { left: 120px; top: 320px; width: 520px; font-size: 52px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; }
+    #gr-moda { left: 120px; top: 570px; font-size: 30px; color: #ff6b4a; }
+
+    /* Grafo */
+    #gr-svg { left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    #root .node { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: #0f1116; border: 3px solid #f4f5f7; }
+    #root .nl { position: absolute; font-size: 30px; font-weight: 500; white-space: nowrap; line-height: 36px; }
+    #root .nl small { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; margin-left: 10px; }
+    #root .sum { position: absolute; font-family: "Geist Mono", monospace; font-size: 28px; white-space: nowrap; padding: 6px 14px; border-radius: 8px; background: #07080b; }
+  </style>
+
+  <div data-hf-id="hf-083l" id="root" data-composition-id="graphrag" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-8suc" class="abs mono kick" id="gr-kick">arreglo 4 · GraphRAG</div>
+    <h1 data-hf-id="hf-93hw" class="abs" id="gr-title">GraphRAG</h1>
+    <div data-hf-id="hf-m7g3" class="abs lab" id="gr-ms">lo popularizó Microsoft</div>
+
+    <svg data-hf-id="hf-jw05" class="abs" id="gr-svg" viewBox="0 0 1920 1080" fill="none">
+      <ellipse data-hf-id="hf-wihj" class="hull" id="gr-c1" cx="1010" cy="420" rx="250" ry="125" fill="rgba(92,225,230,0.07)" stroke="rgba(92,225,230,0.55)" stroke-width="2" stroke-dasharray="10 8"/>
+      <ellipse data-hf-id="hf-81yj" class="hull" id="gr-c2" cx="1540" cy="570" rx="250" ry="160" fill="rgba(167,139,250,0.07)" stroke="rgba(167,139,250,0.55)" stroke-width="2" stroke-dasharray="10 8"/>
+      <ellipse data-hf-id="hf-6wti" class="hull" id="gr-c3" cx="1010" cy="810" rx="250" ry="110" fill="rgba(255,107,74,0.06)" stroke="rgba(255,107,74,0.45)" stroke-width="2" stroke-dasharray="10 8"/>
+      <g data-hf-id="hf-4qq3" id="gr-edges" stroke="#3a4050" stroke-width="3" stroke-linecap="round"></g>
+    </svg>
+    <div data-hf-id="hf-oop6" class="abs" id="gr-nodes" style="left: 0; top: 0"></div>
+
+    <div data-hf-id="hf-388d" class="sum" id="gr-s1" style="left: 770px; top: 268px; color: #5ce1e6">proveedores de la pieza P-12</div>
+    <div data-hf-id="hf-qd5w" class="sum" id="gr-s2" style="left: 1330px; top: 384px; color: #a78bfa">fabricación del robot Kora</div>
+    <div data-hf-id="hf-fdd6" class="sum" id="gr-s3" style="left: 1240px; top: 880px; color: #ff8e75">ventas y clientes</div>
+
+    <!-- Fragmentos de partida (ejemplo ilustrativo) -->
+    <div data-hf-id="hf-cfff" class="abs panel frag" id="gr-f1" style="top: 300px"><div data-hf-id="hf-q0ev" class="lbl mono">fragmento 1</div><p data-hf-id="hf-te8p"><span data-hf-id="hf-wu2s" class="e">Tecmet</span> y <span data-hf-id="hf-j0ls" class="e">Fundix</span> fabrican la <span data-hf-id="hf-qeer" class="e">pieza P-12</span>.</p></div>
+    <div data-hf-id="hf-br0k" class="abs panel frag" id="gr-f2" style="top: 500px"><div data-hf-id="hf-pm3u" class="lbl mono">fragmento 2</div><p data-hf-id="hf-wy9u">La <span data-hf-id="hf-s1eu" class="e">P-12</span> va en el <span data-hf-id="hf-ai7l" class="e">robot Kora</span>, de <span data-hf-id="hf-eh0i" class="e">Nórdica</span>.</p></div>
+    <div data-hf-id="hf-wel5" class="abs panel frag" id="gr-f3" style="top: 700px"><div data-hf-id="hf-p7st" class="lbl mono">fragmento 3</div><p data-hf-id="hf-iihc"><span data-hf-id="hf-ootd" class="e">Marta Gil</span> vende <span data-hf-id="hf-igyp" class="e">Kora</span> a <span data-hf-id="hf-dca4" class="e">Bexa</span>.</p></div>
+
+    <!-- Preguntas -->
+    <div data-hf-id="hf-cx76" class="abs panel ask" id="gr-a1" style="top: 320px">¿Cuáles son los grandes temas?</div>
+    <div data-hf-id="hf-qx9n" class="abs panel ask" id="gr-a2" style="top: 450px">¿Qué proveedores dependen de esta pieza?</div>
+
+    <!-- Precio (comparación cualitativa, sin cifras) -->
+    <div data-hf-id="hf-gzlh" class="abs" id="gr-cost">
+      <div data-hf-id="hf-uhz0" class="cl" id="gr-cl">construir y mantener el grafo</div>
+      <div data-hf-id="hf-vny7" class="br" id="gr-br1"><span data-hf-id="hf-p6ow">RAG normal</span><i data-hf-id="hf-wkk9" id="gr-bar1" style="width: 70px; background: #3a4050"></i></div>
+      <div data-hf-id="hf-ksgk" class="br" id="gr-br2"><span data-hf-id="hf-paxf">GraphRAG</span><i data-hf-id="hf-vdlo" id="gr-bar2" style="width: 300px; background: #ff6b4a"></i></div>
+      <div data-hf-id="hf-xs8q" id="gr-expensive">bastante más caro</div>
+    </div>
+
+    <!-- Remate -->
+    <div data-hf-id="hf-yxz8" class="abs" id="gr-end">Cuando las relaciones son el corazón del problema.</div>
+    <div data-hf-id="hf-6ppp" class="abs mono" id="gr-moda">no por moda</div>
+
+    <p data-hf-id="hf-wash" class="abs cap" id="gr-cap"><b data-hf-id="hf-c3jc">Arreglo 4 ·</b> entidades y relaciones, no solo trozos</p>
+  </div>
+
+  <script>
+    (() => {
+      // Grafo ilustrativo: nombres inventados. k = tipo (persona, empresa, producto), c = comunidad.
+      const N = {
+        tecmet: { x: 870, y: 380, t: "Tecmet", k: "e", c: 1 },
+        fundix: { x: 1110, y: 345, t: "Fundix", k: "e", c: 1 },
+        p12:    { x: 990, y: 480, t: "pieza P-12", k: "p", c: 1 },
+        kora:   { x: 1400, y: 560, t: "robot Kora", k: "p", c: 2 },
+        nordica:{ x: 1560, y: 470, t: "Nórdica", k: "e", c: 2 },
+        ana:    { x: 1520, y: 670, t: "Ana López", k: "h", c: 2 },
+        marta:  { x: 860, y: 780, t: "Marta Gil", k: "h", c: 3 },
+        bexa:   { x: 1090, y: 760, t: "Bexa", k: "e", c: 3 },
+        luis:   { x: 960, y: 865, t: "Luis Vera", k: "h", c: 3 },
+      };
+      const E = [["tecmet", "p12"], ["fundix", "p12"], ["p12", "kora"], ["kora", "nordica"], ["nordica", "ana"], ["kora", "ana"],
+                 ["marta", "kora"], ["marta", "bexa"], ["bexa", "luis"], ["marta", "luis"], ["ana", "marta"]];
+      const COL = { 1: "#5ce1e6", 2: "#a78bfa", 3: "#ff8e75" };
+
+      const nodesEl = document.querySelector("#gr-nodes");
+      const byKind = { h: [], e: [], p: [] }, byComm = { 1: [], 2: [], 3: [] };
+      Object.entries(N).forEach(([id, n]) => {
+        const d = document.createElement("div");
+        d.className = "node"; d.id = "gr-n-" + id;
+        d.style.left = n.x + "px"; d.style.top = n.y + "px";
+        const l = document.createElement("div");
+        l.className = "nl"; l.id = "gr-l-" + id; l.textContent = n.t;
+        l.style.left = n.x + 22 + "px"; l.style.top = n.y - 18 + "px";
+        nodesEl.appendChild(d); nodesEl.appendChild(l);
+        byKind[n.k].push(d, l); byComm[n.c].push(d);
+        n.el = d;
+      });
+      const g = document.querySelector("#gr-edges");
+      const lines = E.map(([a, b]) => {
+        const ln = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        ln.setAttribute("x1", N[a].x); ln.setAttribute("y1", N[a].y);
+        ln.setAttribute("x2", N[b].x); ln.setAttribute("y2", N[b].y);
+        ln.id = "gr-e-" + a + "-" + b;
+        g.appendChild(ln);
+        return ln;
+      });
+
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#gr-a1", "#gr-a2", "#gr-cost", "#gr-end", "#gr-moda"], { autoAlpha: 0 });
+
+      // «Para las preguntas globales está GraphRAG» (0.0–2.4) · «Microsoft» (4.4)
+      tl.from("#gr-kick", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.05);
+      tl.from("#gr-title", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 2.2);
+      tl.from("#gr-ms", { autoAlpha: 0, x: -14, duration: 0.5, ease: "power2.out" }, 4.3);
+      // Mientras, aparecen los fragmentos que va a leer.
+      tl.from(["#gr-f1", "#gr-f2", "#gr-f3"], { autoAlpha: 0, x: -50, duration: 0.6, ease: "expo.out", stagger: 0.2 }, 0.3);
+      // «extrae entidades» (8.2): los nombres se iluminan.
+      tl.to("#root .frag .e", { color: "#f4f5f7", fontWeight: 700, duration: 0.3, stagger: 0.08 }, 8.2);
+      // «personas» (10.4) · «empresas» (11.5) · «productos» (12.6)
+      tl.from(byKind.h, { autoAlpha: 0, scale: 0.4, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 10.3);
+      tl.from(byKind.e, { autoAlpha: 0, scale: 0.4, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 11.4);
+      tl.from(byKind.p, { autoAlpha: 0, scale: 0.4, duration: 0.45, ease: "back.out(2)", stagger: 0.08 }, 12.5);
+      // «y cómo se conectan» (13.7–14.4): las aristas crecen desde su origen.
+      lines.forEach((ln, i) => {
+        const [a] = E[i];
+        tl.from(ln, { attr: { x2: N[a].x, y2: N[a].y }, duration: 0.5, ease: "power2.out" }, 13.7 + i * 0.1);
+      });
+      // «Construye un grafo» (15.3): los fragmentos ya no hacen falta.
+      tl.to(["#gr-f1", "#gr-f2", "#gr-f3"], { autoAlpha: 0, x: -40, duration: 0.4, ease: "power2.in", stagger: 0.08 }, 15.3);
+      tl.from("#gr-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 15.6);
+      // «lo agrupa en comunidades» (16.9–18.0)
+      tl.from(["#gr-c1", "#gr-c2", "#gr-c3"], { autoAlpha: 0, scale: 0.7, transformOrigin: "50% 50%", duration: 0.7, ease: "expo.out", stagger: 0.2 }, 16.9);
+      [1, 2, 3].forEach((c, i) => tl.to(byComm[c], { borderColor: COL[c], backgroundColor: COL[c], duration: 0.4 }, 17.1 + i * 0.2));
+      // «con resúmenes» (18.25)
+      tl.from(["#gr-s1", "#gr-s2", "#gr-s3"], { autoAlpha: 0, y: 14, duration: 0.5, ease: "expo.out", stagger: 0.2 }, 18.2);
+
+      // «'¿cuáles son los grandes temas?'» (20.9): las tres etiquetas responden.
+      tl.to("#gr-a1", { autoAlpha: 1, duration: 0.01 }, 20.7);
+      tl.from("#gr-a1", { x: -40, duration: 0.6, ease: "expo.out" }, 20.7);
+      tl.to(["#gr-s1", "#gr-s2", "#gr-s3"], { scale: 1.12, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut", stagger: 0.15 }, 22.0);
+      // «'¿qué proveedores dependen de esta pieza?'» (23.6–25.5): camino resaltado.
+      tl.to("#gr-a2", { autoAlpha: 1, duration: 0.01 }, 23.4);
+      tl.from("#gr-a2", { x: -40, duration: 0.6, ease: "expo.out" }, 23.4);
+      tl.to("#gr-n-p12", { borderColor: "#d4ff3a", backgroundColor: "#d4ff3a", scale: 1.5, duration: 0.4, ease: "back.out(2)" }, 25.2);
+      tl.to(["#gr-e-tecmet-p12", "#gr-e-fundix-p12"], { attr: { stroke: "#d4ff3a", "stroke-width": 5 }, duration: 0.4, stagger: 0.15 }, 25.4);
+      tl.to(["#gr-l-tecmet", "#gr-l-fundix"], { color: "#d4ff3a", duration: 0.4, stagger: 0.15 }, 25.5);
+
+      // «El precio: construir y mantener ese grafo» (26.7–29.9) · «bastante más caro» (30.1)
+      tl.to("#gr-cost", { autoAlpha: 1, duration: 0.01 }, 26.8);
+      tl.from("#gr-cl", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 26.8);
+      tl.from(["#gr-br1", "#gr-br2"], { autoAlpha: 0, duration: 0.4, stagger: 0.2 }, 27.8);
+      tl.from(["#gr-bar1", "#gr-bar2"], { scaleX: 0, duration: 0.9, ease: "power3.out", stagger: 0.4 }, 28.0);
+      tl.from("#gr-expensive", { autoAlpha: 0, y: 16, duration: 0.5, ease: "expo.out" }, 30.0);
+
+      // «Úsalo cuando las relaciones sean el corazón del problema» (31.8–35.1)
+      tl.to(["#gr-a1", "#gr-a2"], { autoAlpha: 0, x: -30, duration: 0.4, ease: "power2.in" }, 31.7);
+      tl.to("#gr-end", { autoAlpha: 1, duration: 0.01 }, 32.2);
+      tl.from("#gr-end", { y: 30, duration: 0.7, ease: "expo.out" }, 32.2);
+      // «no por moda» (35.8)
+      tl.to("#gr-moda", { autoAlpha: 1, duration: 0.4 }, 35.8);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["graphrag"] = tl;
+    })();
+  </script>
+</template>

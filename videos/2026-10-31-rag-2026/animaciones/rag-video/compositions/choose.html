@@ -1,0 +1,111 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+
+    #ch-kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; }
+    #ch-root { left: 120px; top: 470px; width: 300px; height: 120px; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; }
+    #ch-root .k { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; }
+    #ch-root .v { font-size: 40px; font-weight: 800; letter-spacing: -0.04em; }
+    #ch-tree { left: 420px; top: 180px; width: 120px; height: 600px; overflow: visible; }
+    #root .q { left: 540px; width: 660px; height: 110px; padding: 0 28px; display: flex; align-items: center; font-size: 32px; white-space: nowrap; }
+    #root .arr { left: 1214px; width: 48px; height: 28px; }
+    #root .a { left: 1276px; width: 524px; height: 110px; padding: 0 24px; display: flex; flex-direction: column; justify-content: center; white-space: nowrap; }
+    #root .a .v { font-size: 38px; font-weight: 800; letter-spacing: -0.03em; }
+    #root .a .s { font-family: "Geist Mono", monospace; font-size: 28px; color: #5ce1e6; margin-top: 4px; }
+    #ch-end { left: 120px; top: 846px; font-size: 52px; font-weight: 800; letter-spacing: -0.045em; color: #d4ff3a; white-space: nowrap; }
+    #ch-end2 { color: #f4f5f7; }
+  </style>
+
+  <div data-hf-id="hf-m66i" id="root" data-composition-id="choose" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-au5n" class="abs mono" id="ch-kick">cómo elegir</div>
+
+    <div data-hf-id="hf-losa" class="abs panel" id="ch-root"><div data-hf-id="hf-bc5e" class="k">tu caso</div><div data-hf-id="hf-zdax" class="v">¿qué tienes?</div></div>
+    <svg data-hf-id="hf-69sb" class="abs" id="ch-tree" viewBox="0 0 120 600" fill="none" stroke="#3a3f4d" stroke-width="3">
+      <path data-hf-id="hf-taq7" id="ch-b1" pathLength="1" d="M0 350 C70 350 50 75 120 75" />
+      <path data-hf-id="hf-925o" id="ch-b2" pathLength="1" d="M0 350 C70 350 50 235 120 235" />
+      <path data-hf-id="hf-53x3" id="ch-b3" pathLength="1" d="M0 350 C70 350 50 395 120 395" />
+      <path data-hf-id="hf-o4wu" id="ch-b4" pathLength="1" d="M0 350 C70 350 50 555 120 555" />
+    </svg>
+
+    <div data-hf-id="hf-qkne" class="abs panel q" id="ch-q1" style="top: 200px">¿Menos de unas 500 páginas?</div>
+    <svg data-hf-id="hf-h1gp" class="abs arr" id="ch-x1" style="top: 241px" viewBox="0 0 48 28" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-57nl" d="M2 14h42M32 4l12 10-12 10"/></svg>
+    <div data-hf-id="hf-m0gq" class="abs panel a" id="ch-a1" style="top: 200px"><div data-hf-id="hf-iae9" class="v">Todo al contexto</div></div>
+
+    <div data-hf-id="hf-sroh" class="abs panel q" id="ch-q2" style="top: 360px">¿Base grande&nbsp;<span data-hf-id="hf-v7qq" id="ch-q2b">tipo FAQ o docs?</span></div>
+    <svg data-hf-id="hf-7r0a" class="abs arr" id="ch-x2" style="top: 401px" viewBox="0 0 48 28" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-16vp" d="M2 14h42M32 4l12 10-12 10"/></svg>
+    <div data-hf-id="hf-wxiw" class="abs panel a" id="ch-a2" style="top: 360px"><div data-hf-id="hf-rpky" class="v">RAG híbrido + reranker</div><div data-hf-id="hf-dva1" class="s" id="ch-a2s">mejor esfuerzo-resultado</div></div>
+
+    <div data-hf-id="hf-6s0k" class="abs panel q" id="ch-q3" style="top: 520px">¿Muchas relaciones entre entidades?</div>
+    <svg data-hf-id="hf-udv2" class="abs arr" id="ch-x3" style="top: 561px" viewBox="0 0 48 28" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-2dss" d="M2 14h42M32 4l12 10-12 10"/></svg>
+    <div data-hf-id="hf-45dd" class="abs panel a" id="ch-a3" style="top: 520px"><div data-hf-id="hf-oy08" class="v">GraphRAG</div></div>
+
+    <div data-hf-id="hf-b85i" class="abs panel q" id="ch-q4" style="top: 680px">¿Tareas de varios pasos?</div>
+    <svg data-hf-id="hf-fdc5" class="abs arr" id="ch-x4" style="top: 721px" viewBox="0 0 48 28" fill="none" stroke="#8b90a0" stroke-width="2.5"><path data-hf-id="hf-1zhr" d="M2 14h42M32 4l12 10-12 10"/></svg>
+    <div data-hf-id="hf-a7bl" class="abs panel a" id="ch-a4" style="top: 680px"><div data-hf-id="hf-0atq" class="v">RAG agéntico</div></div>
+
+    <div data-hf-id="hf-k1j7" class="abs" id="ch-end"><span data-hf-id="hf-70kf" id="ch-end1">Empieza simple,</span> <span data-hf-id="hf-o561" id="ch-end2">sube de nivel</span> <span data-hf-id="hf-dwe3" id="ch-end3">cuando lo midas.</span></div>
+
+    <p data-hf-id="hf-z3wd" class="abs cap" id="ch-cap"><b data-hf-id="hf-jtgu">Cómo elegir ·</b> según tamaño, relaciones y pasos</p>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const branches = ["#ch-b1", "#ch-b2", "#ch-b3", "#ch-b4"];
+      gsap.set(branches, { attr: { "stroke-dasharray": 1, "stroke-dashoffset": 1 } });
+
+      // Una rama del árbol: se dibuja la línea y entra la pregunta.
+      const grow = (i, at) => {
+        tl.to(branches[i], { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power2.out" }, at);
+        tl.from(`#ch-q${i + 1}`, { autoAlpha: 0, x: -40, duration: 0.6, ease: "expo.out" }, at + 0.25);
+      };
+      // La respuesta de la rama.
+      const answer = (i, at) => {
+        tl.from(`#ch-x${i + 1}`, { autoAlpha: 0, x: -14, duration: 0.3, ease: "power2.out" }, at - 0.1);
+        tl.from(`#ch-a${i + 1}`, { autoAlpha: 0, x: -40, duration: 0.6, ease: "expo.out" }, at);
+      };
+
+      // «Mi recomendación práctica» (0.0–0.94)
+      tl.from("#ch-kick", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.from("#ch-root", { autoAlpha: 0, scale: 0.9, duration: 0.6, ease: "back.out(1.6)" }, 0.7);
+      tl.from("#ch-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 1.2);
+      // «¿Pocos documentos, menos de unas quinientas páginas?» (2.24–5.04) · «Mételos en el contexto» (6.06)
+      grow(0, 2.2);
+      answer(0, 6.0);
+      // «¿Una base de conocimiento grande tipo FAQ o documentación?» (9.04–12.43)
+      grow(1, 9.0);
+      tl.from("#ch-q2b", { autoAlpha: 0, x: -16, duration: 0.4, ease: "power2.out" }, 11.3);
+      tl.to("#ch-q2", { borderColor: "#8b90a0", duration: 0.3, yoyo: true, repeat: 1 }, 12.4);
+      // «RAG con búsqueda híbrida y reranker» (14.27–16.27)
+      answer(1, 14.2);
+      // «es lo que mejor relación esfuerzo-resultado tiene» (17.37–20.86)
+      tl.from("#ch-a2s", { autoAlpha: 0, y: 10, duration: 0.5, ease: "power2.out" }, 17.7);
+      tl.to("#ch-a2", { borderColor: "#5ce1e6", duration: 0.4 }, 19.5);
+      // «¿Muchas relaciones entre entidades?» (21.85) · «GraphRAG» (24.69)
+      grow(2, 21.8);
+      answer(2, 24.6);
+      // «¿Tareas de varios pasos?» (25.89) · «Agentic RAG» (28.03)
+      grow(3, 25.85);
+      answer(3, 27.95);
+
+      // «empieza por lo más simple» (30.56–31.72): la primera rama se enciende en lima.
+      tl.to("#ch-a2", { borderColor: "#232733", duration: 0.4 }, 30.3);
+      tl.to(branches[0], { attr: { stroke: "#d4ff3a" }, duration: 0.4 }, 30.5);
+      tl.to(["#ch-q1", "#ch-a1"], { borderColor: "#d4ff3a", duration: 0.4 }, 30.5);
+      tl.from("#ch-end1", { autoAlpha: 0, y: 30, duration: 0.6, ease: "expo.out" }, 30.55);
+      // «y sube de nivel» (32.69–33.11): las ramas siguientes se iluminan en cascada.
+      tl.from("#ch-end2", { autoAlpha: 0, y: 30, duration: 0.6, ease: "expo.out" }, 32.65);
+      tl.to(["#ch-a2", "#ch-a3", "#ch-a4"], { borderColor: "#8b90a0", duration: 0.25, yoyo: true, repeat: 1, stagger: 0.25 }, 32.8);
+      // «solo cuando midas que te hace falta» (33.84–35.55)
+      tl.from("#ch-end3", { autoAlpha: 0, y: 30, duration: 0.6, ease: "expo.out" }, 34.3);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["choose"] = tl;
+    })();
+  </script>
+</template>

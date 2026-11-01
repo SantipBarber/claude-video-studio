@@ -1,0 +1,195 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .swap { display: grid; }
+    #root .swap > * { grid-area: 1 / 1; }
+    #root .kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #root .title { left: 120px; top: 136px; font-size: 96px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+    #root .lab { font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #root .arrow { width: 56px; height: 32px; }
+
+    /* Parte 1 · búsqueda híbrida */
+    #hy-query { left: 1020px; top: 150px; padding: 16px 28px; font-size: 32px; font-weight: 500; border-radius: 999px; white-space: nowrap; }
+    #root .row { width: 520px; height: 76px; padding: 0 22px; display: flex; align-items: center; gap: 16px; font-size: 29px; border-radius: 12px; white-space: nowrap; }
+    #root .row i { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+    #root .row .c { font-family: "Geist Mono", monospace; }
+    #root .row .k { font-family: "Geist Mono", monospace; color: #8b90a0; width: 26px; flex: none; }
+    #root .cy i { background: #5ce1e6; }
+    #root .vi i { background: #a78bfa; }
+    #hy-std { left: 1300px; top: 770px; font-size: 28px; color: #d4ff3a; padding: 8px 16px; border: 2px solid #d4ff3a; border-radius: 8px; white-space: nowrap; }
+
+    /* Parte 2 · reranker */
+    #hy-pool { left: 120px; top: 380px; width: 520px; height: 380px; }
+    #hy-pool .chip { position: absolute; width: 76px; height: 60px; border-radius: 10px; background: #0f1116; border: 2px solid #232733; font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; display: flex; align-items: center; justify-content: center; }
+    #hy-funnel { left: 700px; top: 340px; width: 500px; height: 460px; }
+    #hy-flab { left: 760px; top: 534px; width: 380px; text-align: center; font-family: "Geist Mono", monospace; font-size: 34px; color: #d4ff3a; }
+    #hy-qtag { left: 800px; top: 290px; width: 300px; text-align: center; }
+    #root .out { left: 1290px; width: 510px; height: 74px; padding: 0 22px; display: flex; align-items: center; gap: 18px; font-size: 29px; border-radius: 12px; white-space: nowrap; }
+    #root .out .k { font-family: "Geist Mono", monospace; color: #d4ff3a; width: 28px; }
+    #root .out .c { font-family: "Geist Mono", monospace; color: #8b90a0; margin-left: auto; }
+    #hy-n30 { left: 120px; top: 300px; font-size: 56px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; }
+    #hy-n5 { left: 1290px; top: 300px; font-size: 56px; font-weight: 800; letter-spacing: -0.04em; color: #d4ff3a; white-space: nowrap; }
+    #hy-google { left: 120px; top: 790px; }
+    #hy-expert { left: 1290px; top: 802px; }
+    #hy-src { left: 1290px; top: 852px; }
+  </style>
+
+  <div data-hf-id="hf-ka2d" id="root" data-composition-id="hybrid" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-hk50" class="abs mono kick swap" id="hy-kick"><span data-hf-id="hf-ciz8" id="hy-k1">arreglo 1 · búsqueda híbrida</span><span data-hf-id="hf-2btg" id="hy-k2">arreglo 2 · reranker</span></div>
+
+    <!-- Parte 1 -->
+    <div data-hf-id="hf-t8bc" id="hy-p1">
+      <h1 data-hf-id="hf-kf4p" class="abs title" id="hy-t1">Búsqueda híbrida</h1>
+      <div data-hf-id="hf-r601" class="abs panel" id="hy-query">error <span data-hf-id="hf-bvi6" class="mono" style="color:#d4ff3a">E-4071</span> al arrancar</div>
+
+      <div data-hf-id="hf-f2k1" class="abs lab" id="hy-h1" style="left: 120px; top: 330px; color: #5ce1e6">por significado</div>
+      <div data-hf-id="hf-sky8" class="abs panel row cy" id="hy-s1" style="left: 120px; top: 380px"><span data-hf-id="hf-kesf" class="k">1</span><i data-hf-id="hf-wt6k"></i>problemas de arranque</div>
+      <div data-hf-id="hf-cbwo" class="abs panel row cy" id="hy-s2" style="left: 120px; top: 470px"><span data-hf-id="hf-k0he" class="k">2</span><i data-hf-id="hf-zeb8"></i>el equipo no enciende</div>
+      <div data-hf-id="hf-xtd4" class="abs panel row cy" id="hy-s3" style="left: 120px; top: 560px"><span data-hf-id="hf-jm6d" class="k">3</span><i data-hf-id="hf-y7e5"></i><span data-hf-id="hf-sn0m" class="c">E-4017</span> fallo del sensor</div>
+
+      <div data-hf-id="hf-uddj" class="abs lab" id="hy-h2" style="left: 680px; top: 330px; color: #a78bfa">por palabras clave · BM25</div>
+      <div data-hf-id="hf-428c" class="abs panel row vi" id="hy-b1" style="left: 680px; top: 380px"><span data-hf-id="hf-eafz" class="k">1</span><i data-hf-id="hf-ylp6"></i><span data-hf-id="hf-8b12" class="c">E-4071</span> error de arranque</div>
+      <div data-hf-id="hf-2ltg" class="abs panel row vi" id="hy-b2" style="left: 680px; top: 470px"><span data-hf-id="hf-51yu" class="k">2</span><i data-hf-id="hf-0l8b"></i>tabla de códigos <span data-hf-id="hf-di12" class="c">E-40</span></div>
+      <div data-hf-id="hf-dizm" class="abs panel row vi" id="hy-b3" style="left: 680px; top: 560px"><span data-hf-id="hf-qpuh" class="k">3</span><i data-hf-id="hf-0zjc"></i>registro <span data-hf-id="hf-2unu" class="c">E-4071</span> · v2</div>
+
+      <svg data-hf-id="hf-pdqz" class="abs arrow" id="hy-am" style="left: 1222px; top: 500px" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-najt" d="M0 16h52M38 3l14 13-14 13"/></svg>
+      <div data-hf-id="hf-1g9o" class="abs lab" id="hy-h3" style="left: 1300px; top: 330px; color: #f4f5f7">ranking fusionado</div>
+      <div data-hf-id="hf-1juh" class="abs panel row vi" id="hy-m1" style="left: 1300px; top: 380px"><span data-hf-id="hf-dw4y" class="k">1</span><i data-hf-id="hf-zsm9"></i><span data-hf-id="hf-38yv" class="c">E-4071</span> error de arranque</div>
+      <div data-hf-id="hf-sauk" class="abs panel row cy" id="hy-m2" style="left: 1300px; top: 470px"><span data-hf-id="hf-5g9v" class="k">2</span><i data-hf-id="hf-06xa"></i>problemas de arranque</div>
+      <div data-hf-id="hf-i2m4" class="abs panel row vi" id="hy-m3" style="left: 1300px; top: 560px"><span data-hf-id="hf-rwrk" class="k">3</span><i data-hf-id="hf-26gf"></i>tabla de códigos <span data-hf-id="hf-sih6" class="c">E-40</span></div>
+      <div data-hf-id="hf-tdfh" class="abs panel row cy" id="hy-m4" style="left: 1300px; top: 650px"><span data-hf-id="hf-mebk" class="k">4</span><i data-hf-id="hf-2krg"></i>el equipo no enciende</div>
+      <div data-hf-id="hf-b75t" class="abs mono" id="hy-std">estándar en producción</div>
+
+      <div data-hf-id="hf-92c0" class="abs gloss" id="hy-g1" style="left: 1280px; top: 860px">
+        <div data-hf-id="hf-46q8" class="t">BM25</div>
+        <div data-hf-id="hf-l4u5" class="d">busca las palabras exactas</div>
+      </div>
+    </div>
+
+    <!-- Parte 2 -->
+    <div data-hf-id="hf-1w77" id="hy-p2">
+      <h1 data-hf-id="hf-yx2e" class="abs title" id="hy-t2">Reranker</h1>
+      <div data-hf-id="hf-sptf" class="abs" id="hy-n30"><span data-hf-id="hf-mfze" id="hy-c30">0</span> candidatos</div>
+      <div data-hf-id="hf-1hnu" class="abs" id="hy-pool"></div>
+
+      <svg data-hf-id="hf-20kb" class="abs" id="hy-funnel" viewBox="0 0 500 460" fill="none">
+        <path data-hf-id="hf-ajvi" id="hy-fpath" d="M10 10 L490 170 L490 290 L10 450 Z" fill="#10140a" stroke="#d4ff3a" stroke-width="3" stroke-linejoin="round"/>
+      </svg>
+      <div data-hf-id="hf-3ujf" class="abs" id="hy-flab">reranker</div>
+      <div data-hf-id="hf-yomq" class="abs lab" id="hy-qtag">+ la pregunta</div>
+
+      <div data-hf-id="hf-9ykz" class="abs" id="hy-n5">5 mejores</div>
+      <div data-hf-id="hf-8g3h" class="abs panel out" id="hy-o1" style="top: 380px"><span data-hf-id="hf-dhtx" class="k">1</span>fragmento<span data-hf-id="hf-vrlu" class="c">#12</span></div>
+      <div data-hf-id="hf-ukjb" class="abs panel out" id="hy-o2" style="top: 462px"><span data-hf-id="hf-5ukw" class="k">2</span>fragmento<span data-hf-id="hf-9r56" class="c">#3</span></div>
+      <div data-hf-id="hf-o415" class="abs panel out" id="hy-o3" style="top: 544px"><span data-hf-id="hf-rigj" class="k">3</span>fragmento<span data-hf-id="hf-024e" class="c">#27</span></div>
+      <div data-hf-id="hf-11xj" class="abs panel out" id="hy-o4" style="top: 626px"><span data-hf-id="hf-7jso" class="k">4</span>fragmento<span data-hf-id="hf-dbwf" class="c">#8</span></div>
+      <div data-hf-id="hf-fs0l" class="abs panel out" id="hy-o5" style="top: 708px"><span data-hf-id="hf-m00j" class="k">5</span>fragmento<span data-hf-id="hf-szgn" class="c">#19</span></div>
+
+      <div data-hf-id="hf-h0ny" class="abs lab" id="hy-google">como buscar en Google</div>
+      <div data-hf-id="hf-88nc" class="abs lab" id="hy-expert" style="color:#f4f5f7">como un experto que filtra</div>
+      <div data-hf-id="hf-471a" class="abs lab" id="hy-src">cifras · cookbook de Hugging Face</div>
+
+      <div data-hf-id="hf-si3p" class="abs gloss" id="hy-g2" style="left: 1280px; top: 860px">
+        <div data-hf-id="hf-t5bo" class="t">reranker</div>
+        <div data-hf-id="hf-h9em" class="d">relee y reordena los candidatos</div>
+      </div>
+    </div>
+
+    <p data-hf-id="hf-fy5f" class="abs cap" id="hy-cap1"><b data-hf-id="hf-giun">Arreglo 1 ·</b> lo parecido y lo exacto, juntos</p>
+    <p data-hf-id="hf-iiik" class="abs cap" id="hy-cap2"><b data-hf-id="hf-ntuy">Arreglo 2 ·</b> pocos fragmentos, pero los mejores</p>
+  </div>
+
+  <script>
+    (() => {
+      // 30 candidatos (6 × 5). Números de fragmento ilustrativos.
+      const ids = [12, 41, 7, 3, 55, 19, 33, 27, 61, 8, 14, 49, 2, 70, 38, 22, 90, 5, 66, 44, 17, 81, 29, 10, 53, 36, 74, 1, 58, 47];
+      const pool = document.querySelector("#hy-pool");
+      const chips = [], kept = [];
+      const keep = [12, 3, 27, 8, 19];
+      ids.forEach((id, i) => {
+        const el = document.createElement("div");
+        el.className = "chip"; el.textContent = "#" + id;
+        el.setAttribute("data-layout-ignore", "");
+        el.style.left = (i % 6) * 86 + "px"; el.style.top = Math.floor(i / 6) * 72 + "px";
+        pool.appendChild(el); chips.push(el);
+        if (keep.includes(id)) kept.push(el);
+      });
+
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#hy-k2", "#hy-p2", "#hy-cap2"], { autoAlpha: 0 });
+
+      // «Primer arreglo…» (0.0) · «búsqueda híbrida» (2.66)
+      tl.from("#hy-k1", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.05);
+      tl.from("#hy-t1", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 2.5);
+      // «Combinas la búsqueda por significado» (4.5–5.6)
+      tl.from("#hy-query", { autoAlpha: 0, y: 24, duration: 0.6, ease: "expo.out" }, 4.4);
+      tl.from("#hy-h1", { autoAlpha: 0, duration: 0.4 }, 5.5);
+      tl.from(["#hy-s1", "#hy-s2", "#hy-s3"], { autoAlpha: 0, y: 30, duration: 0.5, ease: "expo.out", stagger: 0.15 }, 5.6);
+      // «con la búsqueda clásica por palabras clave» (7.3–8.7)
+      tl.from("#hy-h2", { autoAlpha: 0, duration: 0.4 }, 8.1);
+      tl.from(["#hy-b1", "#hy-b2", "#hy-b3"], { autoAlpha: 0, y: 30, duration: 0.5, ease: "expo.out", stagger: 0.15 }, 8.3);
+      // «BM25» (10.83)
+      tl.from("#hy-g1", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 10.8);
+      // «Una encuentra lo parecido» (13.06) · «la otra lo exacto» (14.9)
+      tl.to(["#hy-s1", "#hy-s2"], { borderColor: "#5ce1e6", duration: 0.3, stagger: 0.1 }, 13.2);
+      tl.from("#hy-cap1", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 13.4);
+      tl.to("#hy-b1", { borderColor: "#a78bfa", scale: 1.04, duration: 0.35, ease: "back.out(2)" }, 15.0);
+      tl.to("#hy-b1", { scale: 1, duration: 0.3 }, 15.5);
+      // «y fusionas los dos rankings» (16.4–17.6): las filas viajan a una sola lista.
+      tl.from("#hy-am", { autoAlpha: 0, x: -20, duration: 0.4, ease: "power2.out" }, 16.3);
+      tl.from("#hy-h3", { autoAlpha: 0, duration: 0.4 }, 16.4);
+      tl.from("#hy-m1", { autoAlpha: 0, x: -620, duration: 0.8, ease: "expo.out" }, 16.5);
+      tl.from("#hy-m2", { autoAlpha: 0, x: -1180, y: -90, duration: 0.8, ease: "expo.out" }, 16.7);
+      tl.from("#hy-m3", { autoAlpha: 0, x: -620, y: -90, duration: 0.8, ease: "expo.out" }, 16.9);
+      tl.from("#hy-m4", { autoAlpha: 0, x: -1180, y: -180, duration: 0.8, ease: "expo.out" }, 17.1);
+      // «Hoy es el estándar en producción» (18.6–20.0)
+      tl.from("#hy-std", { autoAlpha: 0, y: 14, duration: 0.5, ease: "back.out(2)" }, 19.1);
+
+      // «Segundo arreglo: el reranker» (21.0–22.6): cambio de antetítulo y de escena.
+      tl.to(["#hy-p1", "#hy-cap1"], { autoAlpha: 0, y: -20, duration: 0.45, ease: "power2.in" }, 20.7);
+      tl.to("#hy-k1", { autoAlpha: 0, duration: 0.3 }, 20.9);
+      tl.fromTo("#hy-k2", { autoAlpha: 0, x: -20 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out" }, 21.1);
+      tl.set("#hy-p2", { autoAlpha: 1 }, 21.2);
+      tl.from("#hy-t2", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 21.2);
+      tl.from("#hy-g2", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 22.6);
+      // «Recuperas, por ejemplo, treinta candidatos rápido» (23.75–26.2)
+      tl.from("#hy-n30", { autoAlpha: 0, y: 20, duration: 0.5, ease: "expo.out" }, 23.7);
+      tl.from(chips, { autoAlpha: 0, scale: 0.4, duration: 0.3, ease: "back.out(2)", stagger: { each: 0.04, from: "random" } }, 23.8);
+      const n = { v: 0 }, c30 = document.querySelector("#hy-c30");
+      tl.to(n, { v: 30, duration: 1.2, ease: "power2.out", onUpdate: () => { c30.textContent = Math.round(n.v); } }, 24.0);
+      // «un modelo más preciso» (27.4)
+      tl.from("#hy-funnel", { autoAlpha: 0, scale: 0.9, transformOrigin: "50% 50%", duration: 0.7, ease: "back.out(1.4)" }, 27.3);
+      tl.from("#hy-flab", { autoAlpha: 0, duration: 0.4 }, 27.7);
+      // «los lee uno a uno junto a la pregunta» (28.9–31.5): los candidatos entran al embudo.
+      // Cada candidato se ilumina al leerlo y se apaga; solo los 5 buenos se quedan encendidos.
+      chips.forEach((c, i) => {
+        const t = 28.9 + i * 0.075;
+        tl.to(c, { borderColor: "#d4ff3a", color: "#f4f5f7", duration: 0.12 }, t);
+        if (!kept.includes(c)) tl.to(c, { borderColor: "#232733", color: "#8b90a0", opacity: 0.3, duration: 0.25 }, t + 0.2);
+      });
+      tl.from("#hy-qtag", { autoAlpha: 0, y: -14, duration: 0.5, ease: "power2.out" }, 30.6);
+      tl.to("#hy-fpath", { attr: { "stroke-width": 6 }, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 30.0);
+      // «se queda con los cinco mejores» (31.7–32.8)
+      tl.from("#hy-n5", { autoAlpha: 0, y: 20, duration: 0.5, ease: "expo.out" }, 32.2);
+      tl.from(["#hy-o1", "#hy-o2", "#hy-o3", "#hy-o4", "#hy-o5"], { autoAlpha: 0, x: -120, duration: 0.6, ease: "expo.out", stagger: 0.12 }, 32.3);
+      tl.fromTo("#hy-cap2", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 32.8);
+      // «Es como pasar de buscar en Google» (34.3–36.0) «a que un experto te filtre» (36.4–37.7)
+      tl.to("#hy-g2", { autoAlpha: 0, x: 40, duration: 0.4, ease: "power2.in" }, 33.6);
+      tl.from("#hy-src", { autoAlpha: 0, duration: 0.4 }, 34.0);
+      tl.from("#hy-google", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 35.0);
+      tl.from("#hy-expert", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 36.3);
+      tl.to(kept, { scale: 1.15, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut", stagger: 0.08 }, 37.3);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hybrid"] = tl;
+    })();
+  </script>
+</template>

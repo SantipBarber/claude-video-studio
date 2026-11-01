@@ -1,0 +1,185 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .lbl { font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #root .layer { position: absolute; inset: 0; }
+
+    #lc-kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; }
+
+    /* Fase A: ventana de contexto frente a Claude Code */
+    #lc-win { left: 120px; top: 170px; width: 900px; height: 480px; }
+    #lc-win .lbl { position: absolute; left: 28px; top: 18px; }
+    #lc-pages { position: absolute; left: 28px; top: 72px; width: 844px; height: 384px; }
+    #lc-pages i { position: absolute; width: 40px; height: 52px; border-radius: 4px; border: 2px solid #3a3f4d;
+      background: #1a1d25 repeating-linear-gradient(180deg, transparent 0 9px, #3a3f4d 9px 11px); background-clip: padding-box; }
+    #lc-count { left: 120px; top: 670px; font-size: 80px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; }
+    #lc-count .u { color: #8b90a0; }
+    #lc-said { left: 120px; top: 796px; }
+    #lc-death { left: 120px; top: 836px; font-size: 64px; font-weight: 800; letter-spacing: -0.045em; color: #ff6b4a; white-space: nowrap; }
+
+    #lc-term { left: 1080px; top: 170px; width: 720px; height: 480px; padding: 18px 28px; background: #0b0c10; }
+    #lc-term .lbl { margin-bottom: 26px; }
+    #lc-term .ln { font-family: "Geist Mono", monospace; font-size: 28px; line-height: 1.55; white-space: nowrap; }
+    #lc-term .ln .p { color: #8b90a0; }
+    #lc-term .hit { color: #5ce1e6; }
+    #lc-term .dec { color: #d4ff3a; }
+    #lc-vec { left: 1080px; top: 680px; height: 58px; padding: 0 20px; display: flex; align-items: center; font-family: "Geist Mono", monospace; font-size: 28px; color: #8b90a0; border-radius: 10px; white-space: nowrap; }
+    #lc-vec i { position: absolute; left: 12px; right: 12px; top: 27px; height: 3px; background: #ff6b4a; transform-origin: left center; }
+    #lc-tag { left: 1080px; top: 780px; font-size: 44px; font-weight: 800; letter-spacing: -0.04em; line-height: 1.15; white-space: nowrap; }
+    #lc-tag2 { color: #8b90a0; }
+
+    /* Fase B: el remate */
+    #lc-dead { left: 120px; top: 400px; font-size: 32px; color: #ff6b4a; }
+    #lc-r1 { left: 120px; top: 460px; font-size: 110px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+    #lc-r2 { left: 120px; top: 600px; font-size: 110px; font-weight: 800; letter-spacing: -0.045em; white-space: nowrap; }
+    #lc-strike { left: 110px; top: 666px; width: 1140px; height: 8px; background: #ff6b4a; border-radius: 4px; transform-origin: left center; }
+
+    /* Fase C: un millón de tokens frente a cinco trozos */
+    #root .track { left: 120px; width: 1680px; height: 72px; border-radius: 12px; overflow: hidden; }
+    #lc-fill1 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #ff6b4a; transform-origin: left center; }
+    #lc-fill2 { position: absolute; left: 0; top: 0; width: 6px; height: 100%; background: #d4ff3a; }
+    #lc-n1 { left: 120px; top: 392px; font-size: 56px; font-weight: 800; letter-spacing: -0.04em; color: #ff6b4a; white-space: nowrap; }
+    #lc-n2 { left: 150px; top: 616px; font-size: 44px; font-weight: 800; letter-spacing: -0.04em; color: #d4ff3a; white-space: nowrap; }
+    #root .card { top: 720px; width: 170px; height: 104px; padding: 14px 18px; }
+    #root .card b { display: block; height: 8px; margin-bottom: 9px; border-radius: 4px; background: #3a3f4d; }
+    #root .card span { font-family: "Geist Mono", monospace; font-size: 28px; color: #f4f5f7; }
+  </style>
+
+  <div data-hf-id="hf-f74k" id="root" data-composition-id="longcontext" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-xrui" class="abs mono" id="lc-kick">¿y el contexto largo?</div>
+
+    <div data-hf-id="hf-1q24" class="layer" id="lc-a">
+      <div data-hf-id="hf-uc9m" class="abs panel" id="lc-win">
+        <div data-hf-id="hf-snib" class="lbl mono">ventana de contexto</div>
+        <div data-hf-id="hf-o6qx" id="lc-pages"></div>
+      </div>
+      <div data-hf-id="hf-v5o3" class="abs" id="lc-count"><span data-hf-id="hf-35jo" id="lc-n">0</span> <span data-hf-id="hf-uafw" class="u">tokens</span></div>
+      <div data-hf-id="hf-c4gb" class="abs mono lbl" id="lc-said">lo que la gente llama</div>
+      <div data-hf-id="hf-t8pw" class="abs" id="lc-death">«la muerte del RAG»</div>
+
+      <div data-hf-id="hf-51a6" class="abs panel" id="lc-term">
+        <div data-hf-id="hf-r9k7" class="lbl mono">Claude Code · ejemplo ilustrativo</div>
+        <div data-hf-id="hf-eql9" class="ln" id="lc-l1"><span data-hf-id="hf-41jt" class="p">$ </span><span data-hf-id="hf-pw5x" id="lc-l1t"></span></div>
+        <div data-hf-id="hf-ehcw" class="ln hit" id="lc-l2">src/pagos/refund.ts:42</div>
+        <div data-hf-id="hf-044k" class="ln hit" id="lc-l3">docs/politicas.md:12</div>
+        <div data-hf-id="hf-wszx" class="ln" id="lc-l4"><span data-hf-id="hf-jvzh" class="p">$ </span>cat src/pagos/refund.ts</div>
+        <div data-hf-id="hf-gz0k" class="ln dec" id="lc-l5">→ leo solo las líneas 30–60</div>
+      </div>
+      <div data-hf-id="hf-ecme" class="abs panel" id="lc-vec">base de datos vectorial<i data-hf-id="hf-q81h" id="lc-vecx"></i></div>
+      <div data-hf-id="hf-kb9i" class="abs" id="lc-tag"><span data-hf-id="hf-6fji" id="lc-tag1">Siguen recuperando</span><br data-hf-id="hf-x5px" /><span data-hf-id="hf-lmve" id="lc-tag2">antes de responder</span></div>
+    </div>
+
+    <div data-hf-id="hf-cljr" class="layer" id="lc-b">
+      <div data-hf-id="hf-3pgy" class="abs mono" id="lc-dead">lo que ha muerto</div>
+      <div data-hf-id="hf-8hue" class="abs" id="lc-r1">la base de datos vectorial</div>
+      <div data-hf-id="hf-gzly" class="abs" id="lc-r2">como paso obligatorio</div>
+      <div data-hf-id="hf-gj5k" class="abs" id="lc-strike"></div>
+    </div>
+
+    <div data-hf-id="hf-6fty" class="layer" id="lc-c">
+      <div data-hf-id="hf-n3cc" class="abs mono lbl" id="lc-c1l" style="left: 120px; top: 252px">todo al contexto · en cada pregunta</div>
+      <div data-hf-id="hf-9jcg" class="abs panel track" id="lc-t1" style="top: 300px"><div data-hf-id="hf-4uid" id="lc-fill1"></div></div>
+      <div data-hf-id="hf-bouz" class="abs" id="lc-n1"><span data-hf-id="hf-d5ab" id="lc-n1v">0</span> tokens</div>
+
+      <div data-hf-id="hf-iogk" class="abs mono lbl" id="lc-c2l" style="left: 120px; top: 560px">5 trozos buenos · ~512 tokens cada uno (aprox., cookbook de HF)</div>
+      <div data-hf-id="hf-7km4" class="abs panel track" id="lc-t2" style="top: 604px"><div data-hf-id="hf-8sme" id="lc-fill2"></div></div>
+      <div data-hf-id="hf-v0d7" class="abs" id="lc-n2">~2.500 tokens</div>
+      <div data-hf-id="hf-06go" class="abs panel card" style="left: 120px"><b data-hf-id="hf-paiq" style="width: 90%"></b><b data-hf-id="hf-hh5x" style="width: 60%"></b><span data-hf-id="hf-23ez">~512</span></div>
+      <div data-hf-id="hf-bunb" class="abs panel card" style="left: 310px"><b data-hf-id="hf-wcaj" style="width: 80%"></b><b data-hf-id="hf-ja8k" style="width: 70%"></b><span data-hf-id="hf-itrf">~512</span></div>
+      <div data-hf-id="hf-v1be" class="abs panel card" style="left: 500px"><b data-hf-id="hf-92d9" style="width: 95%"></b><b data-hf-id="hf-r8ji" style="width: 50%"></b><span data-hf-id="hf-ifge">~512</span></div>
+      <div data-hf-id="hf-bnpq" class="abs panel card" style="left: 690px"><b data-hf-id="hf-lt4c" style="width: 70%"></b><b data-hf-id="hf-h2vc" style="width: 85%"></b><span data-hf-id="hf-i15d">~512</span></div>
+      <div data-hf-id="hf-6vcf" class="abs panel card" style="left: 880px"><b data-hf-id="hf-3680" style="width: 85%"></b><b data-hf-id="hf-51mh" style="width: 60%"></b><span data-hf-id="hf-hmuc">~512</span></div>
+    </div>
+
+    <p data-hf-id="hf-zsgr" class="abs cap" id="lc-cap"><b data-hf-id="hf-2bpp">Contexto largo ·</b> no sustituye a recuperar bien</p>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const fmt = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+      // Rejilla de páginas que llenan la ventana de contexto (16 × 6).
+      const pagesEl = document.querySelector("#lc-pages");
+      const pages = [];
+      for (let r = 0; r < 6; r++) for (let c = 0; c < 16; c++) {
+        const p = document.createElement("i");
+        p.style.left = c * 52 + 6 + "px"; p.style.top = r * 64 + 2 + "px";
+        pagesEl.appendChild(p); pages.push(p);
+      }
+      gsap.set(["#lc-b", "#lc-c"], { autoAlpha: 0 });
+      gsap.set("#lc-vecx", { scaleX: 0 });
+      gsap.set("#lc-strike", { scaleX: 0 });
+      gsap.set("#lc-fill1", { scaleX: 0 });
+
+      // «Volvamos al principio» (0.0)
+      tl.from("#lc-kick", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.from("#lc-win", { autoAlpha: 0, y: 30, duration: 0.8, ease: "expo.out" }, 1.0);
+      // «un millón de tokens de contexto» (3.70–4.69): la ventana se llena y el contador sube.
+      tl.from("#lc-count", { autoAlpha: 0, y: 20, duration: 0.5, ease: "power2.out" }, 2.4);
+      tl.from(pages, { autoAlpha: 0, y: -24, duration: 0.3, ease: "power2.out", stagger: { each: 0.025, from: "start" } }, 2.6);
+      const n = { v: 0 };
+      tl.to(n, { v: 1000000, duration: 2.6, ease: "power1.in", onUpdate: () => { document.querySelector("#lc-n").textContent = fmt(n.v); } }, 2.6);
+
+      // «los agentes de programación como Claude Code» (6.34–8.43)
+      tl.from("#lc-term", { autoAlpha: 0, x: 60, duration: 0.8, ease: "expo.out" }, 6.3);
+      // «ya no usan una base de datos vectorial» (9.28–10.89): la ficha aparece y se tacha.
+      tl.from("#lc-vec", { autoAlpha: 0, y: 20, duration: 0.5, ease: "power2.out" }, 9.5);
+      tl.to("#lc-vecx", { scaleX: 1, duration: 0.5, ease: "power3.out" }, 10.6);
+      tl.to("#lc-vec", { opacity: 0.6, duration: 0.4 }, 11.1);
+      // «exploran el código con búsquedas de texto» (12.31–14.33): se escribe el grep.
+      const cmd = 'grep -rn "reembolso" src/';
+      const typed = { n: 0 };
+      tl.from("#lc-l1", { autoAlpha: 0, duration: 0.2 }, 12.2);
+      tl.to(typed, { n: cmd.length, duration: 1.1, ease: "none", onUpdate: () => { document.querySelector("#lc-l1t").textContent = cmd.slice(0, Math.round(typed.n)); } }, 12.3);
+      tl.from(["#lc-l2", "#lc-l3"], { autoAlpha: 0, x: -16, duration: 0.3, ease: "power2.out", stagger: 0.2 }, 13.8);
+      // «abren archivos» (15.29) · «y deciden qué leer» (16.89–17.72)
+      tl.from("#lc-l4", { autoAlpha: 0, x: -16, duration: 0.3, ease: "power2.out" }, 15.2);
+      tl.from("#lc-l5", { autoAlpha: 0, x: -16, duration: 0.4, ease: "power2.out" }, 16.9);
+
+      // «Eso es lo que la gente llama 'la muerte del RAG'» (18.94–21.78)
+      tl.from("#lc-said", { autoAlpha: 0, y: 12, duration: 0.4, ease: "power2.out" }, 19.4);
+      tl.from("#lc-death", { autoAlpha: 0, scale: 1.15, transformOrigin: "0% 50%", duration: 0.6, ease: "expo.out" }, 20.85);
+      // «Pero fíjate» (22.77): la etiqueta pierde fuerza.
+      tl.to(["#lc-death", "#lc-said"], { opacity: 0.45, duration: 0.5 }, 22.9);
+      // «siguen recuperando información» (24.15–25.12): el terminal se marca.
+      tl.to("#lc-term", { borderColor: "#d4ff3a", duration: 0.4 }, 24.1);
+      tl.from("#lc-tag1", { autoAlpha: 0, y: 20, duration: 0.6, ease: "expo.out" }, 24.15);
+      tl.from("#lc-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 24.6);
+      // «antes de responder» (26.63)
+      tl.from("#lc-tag2", { autoAlpha: 0, y: 20, duration: 0.6, ease: "expo.out" }, 26.6);
+
+      // «Lo que ha muerto es la base de datos vectorial como paso obligatorio» (28.41–32.38)
+      tl.to("#lc-a", { autoAlpha: 0, duration: 0.4, ease: "power2.in" }, 28.0);
+      tl.to("#lc-b", { autoAlpha: 1, duration: 0.01 }, 28.4);
+      tl.from("#lc-dead", { autoAlpha: 0, x: -20, duration: 0.5, ease: "power2.out" }, 28.4);
+      tl.from("#lc-r1", { autoAlpha: 0, y: 50, duration: 0.8, ease: "expo.out" }, 29.85);
+      tl.from("#lc-r2", { autoAlpha: 0, y: 50, duration: 0.8, ease: "expo.out" }, 31.55);
+      tl.to("#lc-strike", { scaleX: 1, duration: 0.6, ease: "power3.inOut" }, 32.4);
+      tl.to("#lc-r2", { color: "#8b90a0", duration: 0.4 }, 32.6);
+
+      // «Y meter un millón de tokens en cada pregunta» (33.66–35.77)
+      tl.to("#lc-b", { autoAlpha: 0, duration: 0.35, ease: "power2.in" }, 33.4);
+      tl.to("#lc-c", { autoAlpha: 1, duration: 0.01 }, 33.75);
+      tl.from(["#lc-c1l", "#lc-t1", "#lc-n1"], { autoAlpha: 0, y: 20, duration: 0.5, ease: "power2.out", stagger: 0.1 }, 33.75);
+      tl.to("#lc-fill1", { scaleX: 1, duration: 1.6, ease: "power2.inOut" }, 34.0);
+      const m = { v: 0 };
+      tl.to(m, { v: 1000000, duration: 1.6, ease: "power2.inOut", onUpdate: () => { document.querySelector("#lc-n1v").textContent = fmt(m.v); } }, 34.0);
+      // «sigue costando muchísimo más» (36.86–38.37)
+      tl.to("#lc-t1", { boxShadow: "0 0 0 14px rgba(255,107,74,0.16)", duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, 37.2);
+      tl.from(["#lc-c2l", "#lc-t2"], { autoAlpha: 0, y: 20, duration: 0.5, ease: "power2.out", stagger: 0.1 }, 38.2);
+      // «que recuperar (39.21) cinco trozos buenos (40.19–41.09)»
+      tl.from("#lc-fill2", { scaleX: 0, transformOrigin: "left center", duration: 0.3 }, 39.2);
+      tl.from("#lc-n2", { autoAlpha: 0, x: -20, duration: 0.5, ease: "expo.out" }, 39.3);
+      tl.from("#lc-c .card", { autoAlpha: 0, y: 30, duration: 0.4, ease: "back.out(1.8)", stagger: 0.12 }, 40.1);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["longcontext"] = tl;
+    })();
+  </script>
+</template>

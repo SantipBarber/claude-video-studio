@@ -1,0 +1,106 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+
+    #c-doc { left: 120px; top: 210px; width: 700px; padding: 36px 40px; }
+    #c-doc .lbl { font-size: 28px; color: #8b90a0; margin-bottom: 18px; }
+    #c-doc p { font-size: 32px; line-height: 1.35; }
+    #c-doc .cut { display: flex; align-items: center; gap: 16px; margin: 22px 0; height: 26px; }
+    #c-doc .cut svg { flex: none; }
+    #c-doc .cut i { display: block; height: 2px; flex: 1; background: #d4ff3a; opacity: 0.55; transform-origin: left center; }
+
+    #root .frag { left: 940px; width: 860px; padding: 18px 26px; }
+    #root .frag .lbl { font-size: 28px; color: #8b90a0; margin-bottom: 10px; }
+    #root .frag .ov { font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .frag p { font-size: 29px; line-height: 1.28; }
+
+    #c-count { left: 120px; top: 828px; font-size: 72px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; }
+    #c-count .lime { color: #d4ff3a; }
+    #c-sub { left: 120px; top: 916px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+  </style>
+
+  <div data-hf-id="hf-etfg" id="root" data-composition-id="chunk" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-n8hi" class="abs panel" id="c-doc">
+      <div data-hf-id="hf-ivf3" class="lbl mono">politicas.pdf · p. 12</div>
+      <p data-hf-id="hf-0u1g">Puedes devolver cualquier producto sin abrir en un plazo de 30 días desde la compra.</p>
+      <div data-hf-id="hf-rw0j" class="cut" id="c-cut1">
+        <svg data-hf-id="hf-5j2w" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4ff3a" stroke-width="2"><circle data-hf-id="hf-t51r" cx="6" cy="6" r="3"/><circle data-hf-id="hf-2o6c" cx="6" cy="18" r="3"/><path data-hf-id="hf-5rzr" d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
+        <i data-hf-id="hf-wt6k"></i>
+      </div>
+      <p data-hf-id="hf-uzkk">El reembolso se hace con el mismo método de pago en 5 días hábiles.</p>
+      <div data-hf-id="hf-j84o" class="cut" id="c-cut2">
+        <svg data-hf-id="hf-n8z4" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4ff3a" stroke-width="2"><circle data-hf-id="hf-ttkf" cx="6" cy="6" r="3"/><circle data-hf-id="hf-ckgs" cx="6" cy="18" r="3"/><path data-hf-id="hf-b307" d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
+        <i data-hf-id="hf-zeb8"></i>
+      </div>
+      <p data-hf-id="hf-bj2h">Los gastos de envío de la devolución corren de tu cuenta.</p>
+    </div>
+
+    <div data-hf-id="hf-wjx5" class="abs panel frag" id="c-f1" style="top: 210px">
+      <div data-hf-id="hf-q0ev" class="lbl mono">fragmento 1</div>
+      <p data-hf-id="hf-hr8s">Puedes devolver cualquier producto sin abrir en un plazo de 30 días desde la compra.</p>
+    </div>
+    <div data-hf-id="hf-7whg" class="abs panel frag" id="c-f2" style="top: 382px">
+      <div data-hf-id="hf-pm3u" class="lbl mono">fragmento 2</div>
+      <div data-hf-id="hf-3wkl" class="ov mono">↳ desde la compra.</div>
+      <p data-hf-id="hf-9p64">El reembolso se hace con el mismo método de pago en 5 días hábiles.</p>
+    </div>
+    <div data-hf-id="hf-h1p0" class="abs panel frag" id="c-f3" style="top: 600px">
+      <div data-hf-id="hf-p7st" class="lbl mono">fragmento 3</div>
+      <div data-hf-id="hf-v2jf" class="ov mono">↳ 5 días hábiles.</div>
+      <p data-hf-id="hf-eou5">Los gastos de envío de la devolución corren de tu cuenta.</p>
+    </div>
+
+    <div data-hf-id="hf-cbqz" class="abs" id="c-count"><span data-hf-id="hf-b3jo" id="c-pages">14 páginas</span> <span data-hf-id="hf-bjd3" id="c-arrow" class="lime">→</span> <span data-hf-id="hf-rwb9" class="lime" id="c-frags"><span data-hf-id="hf-rz6r" id="c-n">782</span> fragmentos</span></div>
+    <div data-hf-id="hf-jrxz" class="abs mono" id="c-sub"><span data-hf-id="hf-e0gr" id="c-sub1">tutorial de LangChain</span><span data-hf-id="hf-h5yw" id="c-sub2"> · ~1000 caracteres por trozo</span></div>
+
+    <div data-hf-id="hf-h8d0" class="abs gloss" id="c-gloss" style="left: 1220px; top: 860px; width: 580px">
+      <div data-hf-id="hf-j6cq" class="t">solapamiento</div>
+      <div data-hf-id="hf-lsm4" class="d">un trozo repite el final del anterior</div>
+    </div>
+
+    <p data-hf-id="hf-5977" class="abs cap" id="c-cap"><b data-hf-id="hf-c9u6">Paso 1 ·</b> ninguna idea queda partida</p>
+  </div>
+
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const counter = document.querySelector("#c-n");
+
+      // «Uno: trocear» (0.0) — aparece el documento original.
+      tl.from("#c-doc", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 0.3);
+      // «En un tutorial de LangChain» (2.5)
+      tl.from("#c-sub1", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 2.5);
+      // «catorce páginas» (4.3)
+      tl.from("#c-pages", { autoAlpha: 0, y: 30, duration: 0.6, ease: "expo.out" }, 4.3);
+      // «setecientos ochenta y dos fragmentos» (7.2–8.5): el contador sube hasta 782.
+      tl.from("#c-arrow", { autoAlpha: 0, x: -30, duration: 0.4, ease: "power2.out" }, 7.0);
+      tl.from("#c-frags", { autoAlpha: 0, duration: 0.3 }, 7.2);
+      const n = { v: 0 };
+      tl.to(n, { v: 782, duration: 1.4, ease: "power2.out", onUpdate: () => { counter.textContent = Math.round(n.v); } }, 7.2);
+      // Las tijeras cortan el documento y salen los fragmentos.
+      tl.from("#c-cut1 svg, #c-cut2 svg", { autoAlpha: 0, rotation: -90, stagger: 0.3, duration: 0.4, ease: "back.out(2)" }, 8.4);
+      tl.from("#c-cut1 i, #c-cut2 i", { scaleX: 0, stagger: 0.3, duration: 0.6, ease: "power3.out" }, 8.5);
+      tl.from(["#c-f1", "#c-f2", "#c-f3"], { autoAlpha: 0, x: -140, stagger: 0.35, duration: 0.8, ease: "expo.out" }, 9.1);
+      // «unos mil caracteres» (10.0)
+      tl.from("#c-sub2", { autoAlpha: 0, x: -14, duration: 0.5, ease: "power2.out" }, 10.0);
+      // «cada trozo repite un poco del anterior» (12.7): aparece el solapamiento en lima.
+      tl.fromTo("#c-f2 .ov", { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: "expo.out" }, 12.7);
+      tl.fromTo("#c-f3 .ov", { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.5, ease: "expo.out" }, 13.3);
+      tl.to(["#c-f2", "#c-f3"], { borderColor: "#4a5a1a", duration: 0.4 }, 12.7);
+      tl.from("#c-gloss", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 13.9);
+      // «ninguna idea quede partida» (15.0)
+      tl.from("#c-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 15.0);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["chunk"] = tl;
+    })();
+  </script>
+</template>

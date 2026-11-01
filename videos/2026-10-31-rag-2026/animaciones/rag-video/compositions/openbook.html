@@ -1,0 +1,139 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Geist", sans-serif; color: #f4f5f7; }
+    #root .abs { position: absolute; }
+    #root .mono { font-family: "Geist Mono", monospace; }
+    #root .panel { background: #0f1116; border: 2px solid #232733; border-radius: 16px; }
+    #root .gloss { width: 520px; padding: 20px 26px; background: #0f1116; border-left: 4px solid #d4ff3a; border-radius: 16px; }
+    #root .gloss .t { font-family: "Geist Mono", monospace; font-size: 28px; color: #d4ff3a; margin-bottom: 8px; }
+    #root .gloss .d { font-size: 30px; }
+    #root .cap { left: 120px; top: 985px; font-size: 32px; color: #8b90a0; }
+    #root .cap b { color: #f4f5f7; font-weight: 500; }
+    #root .arrow { width: 56px; height: 32px; }
+
+    #ob-kick { left: 120px; top: 84px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #ob-div { left: 959px; top: 190px; width: 2px; height: 650px; background: #232733; transform-origin: center top; }
+    #root .side { font-family: "Geist Mono", monospace; font-size: 32px; }
+    #root .big { font-size: 96px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+    #root .llm { width: 220px; height: 150px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 800; letter-spacing: -0.04em; }
+
+    /* Libro cerrado */
+    #ob-l-side { left: 120px; top: 180px; color: #8b90a0; }
+    #ob-l-title { left: 120px; top: 228px; color: #8b90a0; }
+    #ob-l-llm { left: 120px; top: 500px; background: #14161c; border: 2px solid #3a3f4d; color: #c3c7d1; }
+    #ob-l-sub { left: 120px; top: 690px; font-size: 28px; color: #8b90a0; line-height: 1.3; }
+
+    /* Libro abierto */
+    #ob-r-side { left: 1060px; top: 180px; color: #d4ff3a; }
+    #ob-r-title { left: 1060px; top: 228px; }
+    #ob-r-llm { left: 1060px; top: 530px; background: #10140a; border: 3px solid #d4ff3a; color: #d4ff3a; }
+    #ob-arrow { left: 1288px; top: 589px; }
+    #ob-wiki { left: 1350px; top: 444px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+    #ob-grid { left: 1350px; top: 488px; width: 462px; height: 228px; }
+    #ob-grid i { position: absolute; width: 20px; height: 20px; border-radius: 3px; background: #1a1d25; }
+    #ob-count { left: 1350px; top: 726px; font-size: 64px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; }
+    #ob-sub { left: 1350px; top: 802px; font-size: 28px; color: #8b90a0; white-space: nowrap; }
+  </style>
+
+  <div data-hf-id="hf-caim" id="root" data-composition-id="openbook" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-quoz" class="abs mono" id="ob-kick"><span data-hf-id="hf-pqlo" id="ob-k1">la idea</span><span data-hf-id="hf-5ccn" id="ob-k2"> · Meta</span><span data-hf-id="hf-6qmj" id="ob-k3"> · 2020</span><span data-hf-id="hf-gpvu" id="ob-k4"> · el artículo original de RAG</span></div>
+    <div data-hf-id="hf-y2jf" class="abs" id="ob-div"></div>
+
+    <div data-hf-id="hf-svj1" class="abs side" id="ob-l-side">libro cerrado</div>
+    <div data-hf-id="hf-r4yi" class="abs big" id="ob-l-title">Solo lo que<br data-hf-id="hf-x5px" />memorizó</div>
+    <div data-hf-id="hf-xlv4" class="abs llm" id="ob-l-llm">LLM</div>
+    <div data-hf-id="hf-cde8" class="abs mono" id="ob-l-sub">sus pesos, congelados<br data-hf-id="hf-rsrt" />al entrenarse</div>
+
+    <div data-hf-id="hf-ar5x" class="abs side" id="ob-r-side">libro abierto</div>
+    <div data-hf-id="hf-yh1z" class="abs big" id="ob-r-title"><span data-hf-id="hf-jmaq" id="ob-r-t1">Memoria</span><br data-hf-id="hf-szow" /><span data-hf-id="hf-tr0s" id="ob-r-t2">+ biblioteca</span></div>
+    <div data-hf-id="hf-k1a6" class="abs llm" id="ob-r-llm">LLM</div>
+    <svg data-hf-id="hf-gyaj" class="abs arrow" id="ob-arrow" viewBox="0 0 56 32" fill="none" stroke="#d4ff3a" stroke-width="3"><path data-hf-id="hf-x41a" d="M54 16H4M18 3 4 16l14 13"/></svg>
+    <div data-hf-id="hf-6p1f" class="abs mono" id="ob-wiki">biblioteca · Wikipedia</div>
+    <div data-hf-id="hf-zrwi" class="abs" id="ob-grid"></div>
+    <div data-hf-id="hf-8bhb" class="abs" id="ob-count"><span data-hf-id="hf-orgw" id="ob-n">0</span></div>
+    <div data-hf-id="hf-ewr1" class="abs mono" id="ob-sub"><span data-hf-id="hf-oj0o" id="ob-s1">fragmentos</span><span data-hf-id="hf-bxam" id="ob-s2"> · 5 por pregunta</span></div>
+
+    <div data-hf-id="hf-mm35" class="abs gloss" id="ob-gloss" style="left: 1200px; top: 860px; width: 600px">
+      <div data-hf-id="hf-b0m1" class="t">fragmento</div>
+      <div data-hf-id="hf-n9an" class="d">un trozo pequeño de un documento</div>
+    </div>
+
+    <p data-hf-id="hf-cjdn" class="abs cap" id="ob-cap"><b data-hf-id="hf-20i6">Sin reentrenar ·</b> si cambia la biblioteca, el modelo se entera</p>
+  </div>
+
+  <script>
+    (() => {
+      // Rejilla de 18 × 9 casillas: cada casilla representa muchos fragmentos (ilustrativo).
+      const grid = document.querySelector("#ob-grid");
+      const cells = [];
+      for (let r = 0; r < 9; r++) for (let c = 0; c < 18; c++) {
+        const el = document.createElement("i");
+        el.style.left = c * 26 + "px"; el.style.top = r * 26 + "px";
+        grid.appendChild(el); cells.push(el);
+      }
+      const at = (r, c) => cells[r * 18 + c];
+      // Los 5 fragmentos que se consultan para una pregunta (n_docs = 5).
+      const five = [at(1, 5), at(3, 3), at(5, 0), at(7, 5), at(8, 4)];
+      // Fragmentos que cambian cuando se actualiza la biblioteca.
+      const changed = [at(0, 11), at(2, 15), at(4, 9), at(6, 13), at(8, 16), at(3, 7)];
+
+      // Formato español con puntos de millar, sin depender del idioma del sistema.
+      const fmt = (v) => String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      const counter = document.querySelector("#ob-n");
+
+      const tl = gsap.timeline({ paused: true });
+      // «La idea viene de un artículo de Meta de 2020» (0.0–2.53)
+      tl.fromTo("#ob-k1", { autoAlpha: 0.3, x: -14 }, { autoAlpha: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0);
+      tl.from("#ob-k2", { autoAlpha: 0, x: -14, duration: 0.4, ease: "power2.out" }, 1.85);
+      tl.from("#ob-k3", { autoAlpha: 0, x: -14, duration: 0.4, ease: "power2.out" }, 2.35);
+      tl.from("#ob-k4", { autoAlpha: 0, x: -14, duration: 0.4, ease: "power2.out" }, 2.8);
+      // «Piensa en un examen» (3.70–4.35): la página se parte en dos.
+      tl.from("#ob-div", { scaleY: 0, duration: 0.9, ease: "expo.out" }, 3.7);
+      // «Un modelo normal» (5.42–5.96)
+      tl.from("#ob-l-llm", { autoAlpha: 0, scale: 0.85, duration: 0.6, ease: "back.out(1.6)" }, 5.4);
+      // «lo hace a libro cerrado» (7.22–7.51)
+      tl.from("#ob-l-side", { autoAlpha: 0, y: 12, duration: 0.4, ease: "power2.out" }, 7.1);
+      // «solo con lo que memorizó» (8.56–9.32)
+      tl.from("#ob-l-title", { autoAlpha: 0, y: 40, duration: 0.8, ease: "expo.out" }, 8.5);
+      // «al entrenarse» (10.11–10.31): los pesos se congelan.
+      tl.from("#ob-l-sub", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 10.1);
+      tl.to("#ob-l-llm", { borderColor: "#5ce1e6", duration: 0.25, yoyo: true, repeat: 1 }, 10.3);
+      // «Con RAG» (11.57–11.84)
+      tl.from("#ob-r-llm", { autoAlpha: 0, scale: 0.85, duration: 0.6, ease: "back.out(1.6)" }, 11.55);
+      // «lo hace a libro abierto» (12.86–13.21)
+      tl.from("#ob-r-side", { autoAlpha: 0, y: 12, duration: 0.4, ease: "power2.out" }, 12.8);
+      // «antes de contestar» (14.24) · «consulta una biblioteca» (15.66–16.38)
+      tl.from("#ob-r-t1", { autoAlpha: 0, y: 40, duration: 0.7, ease: "expo.out" }, 14.2);
+      tl.from("#ob-r-t2", { autoAlpha: 0, y: 40, duration: 0.7, ease: "expo.out" }, 16.2);
+      tl.from(cells, { autoAlpha: 0, scale: 0, duration: 0.3, ease: "power2.out", stagger: { each: 0.008, grid: [9, 18], from: "start", axis: "x" } }, 16.4);
+      // «En aquel primer experimento» (17.64–18.34): la rejilla parpadea.
+      tl.to(cells, { backgroundColor: "#2c303c", duration: 0.2, yoyo: true, repeat: 1, stagger: { each: 0.006, from: "random" } }, 18.2);
+      // «la biblioteca era Wikipedia» (19.59–20.85)
+      tl.from("#ob-wiki", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power2.out" }, 20.75);
+      // «troceada en veintiún millones de fragmentos» (21.84–24.09): el contador sube.
+      tl.from("#ob-count", { autoAlpha: 0, duration: 0.3 }, 21.8);
+      const n = { v: 0 };
+      tl.to(n, { v: 21000000, duration: 2.0, ease: "power2.out", onUpdate: () => { counter.textContent = fmt(n.v); } }, 21.85);
+      tl.from("#ob-s1", { autoAlpha: 0, y: 12, duration: 0.4, ease: "power2.out" }, 23.95);
+      tl.from("#ob-gloss", { autoAlpha: 0, x: 40, duration: 0.6, ease: "expo.out" }, 24.2);
+      // «para cada pregunta consultaba cinco» (25.40–27.56): se encienden 5 y viajan al modelo.
+      tl.from("#ob-arrow", { autoAlpha: 0, x: 20, duration: 0.4, ease: "power2.out" }, 26.7);
+      tl.to(five, { backgroundColor: "#d4ff3a", scale: 1.25, duration: 0.3, stagger: 0.1, ease: "back.out(3)" }, 27.0);
+      tl.from("#ob-s2", { autoAlpha: 0, x: -12, duration: 0.4, ease: "power2.out" }, 27.5);
+      tl.to("#ob-r-llm", { boxShadow: "0 0 0 20px rgba(212,255,58,0.14)", duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, 27.9);
+      // «Y lo mejor: si cambia la biblioteca» (28.68–30.58): unos fragmentos se renuevan.
+      tl.from("#ob-cap", { autoAlpha: 0, y: 14, duration: 0.5, ease: "power2.out" }, 29.9);
+      tl.to(changed, { backgroundColor: "#5ce1e6", scale: 0.4, duration: 0.25, stagger: 0.08, ease: "power2.in" }, 30.1);
+      tl.to(changed, { scale: 1, duration: 0.35, stagger: 0.08, ease: "back.out(2.5)" }, 30.4);
+      // «el modelo se entera al momento» (31.95–33.11)
+      tl.to("#ob-arrow", { x: -10, duration: 0.2, yoyo: true, repeat: 1, ease: "sine.inOut" }, 32.3);
+      tl.to("#ob-r-llm", { boxShadow: "0 0 0 20px rgba(212,255,58,0.14)", duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, 32.5);
+      // «No hay que volver a entrenarlo» (34.23–35.11): el libro cerrado queda atrás.
+      tl.to(["#ob-l-side", "#ob-l-title", "#ob-l-llm", "#ob-l-sub"], { opacity: 0.45, duration: 0.6, ease: "power2.out" }, 34.2);
+      tl.to("#ob-cap b", { color: "#d4ff3a", duration: 0.4 }, 34.4);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["openbook"] = tl;
+    })();
+  </script>
+</template>
