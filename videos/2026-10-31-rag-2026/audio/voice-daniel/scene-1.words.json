@@ -1,0 +1,323 @@
+{
+ "scene": "1",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "El equipo de Claude Code, una de las herramientas de IA más usadas para programar, probó la receta estándar para que un modelo encuentre información. Y la tiró. Desde entonces medio internet dice que esa receta, el RAG, ha muerto. Spoiler: no ha muerto. Ha cambiado de forma. Y en diez minutos vas a entender qué es y en qué se ha convertido.",
+ "duration": 27.353,
+ "words": [
+  {
+   "w": "El",
+   "start": 0.0,
+   "end": 0.139
+  },
+  {
+   "w": "equipo",
+   "start": 0.197,
+   "end": 0.488
+  },
+  {
+   "w": "de",
+   "start": 0.522,
+   "end": 0.592
+  },
+  {
+   "w": "Claude",
+   "start": 0.65,
+   "end": 0.894
+  },
+  {
+   "w": "Code,",
+   "start": 0.929,
+   "end": 1.358
+  },
+  {
+   "w": "una",
+   "start": 1.718,
+   "end": 1.892
+  },
+  {
+   "w": "de",
+   "start": 1.939,
+   "end": 1.997
+  },
+  {
+   "w": "las",
+   "start": 2.043,
+   "end": 2.159
+  },
+  {
+   "w": "herramientas",
+   "start": 2.218,
+   "end": 2.798
+  },
+  {
+   "w": "de",
+   "start": 2.856,
+   "end": 2.937
+  },
+  {
+   "w": "IA",
+   "start": 3.007,
+   "end": 3.309
+  },
+  {
+   "w": "más",
+   "start": 3.576,
+   "end": 3.855
+  },
+  {
+   "w": "usadas",
+   "start": 3.936,
+   "end": 4.389
+  },
+  {
+   "w": "para",
+   "start": 4.447,
+   "end": 4.621
+  },
+  {
+   "w": "programar,",
+   "start": 4.667,
+   "end": 5.375
+  },
+  {
+   "w": "probó",
+   "start": 5.677,
+   "end": 5.979
+  },
+  {
+   "w": "la",
+   "start": 6.026,
+   "end": 6.084
+  },
+  {
+   "w": "receta",
+   "start": 6.142,
+   "end": 6.525
+  },
+  {
+   "w": "estándar",
+   "start": 6.56,
+   "end": 7.094
+  },
+  {
+   "w": "para",
+   "start": 7.396,
+   "end": 7.605
+  },
+  {
+   "w": "que",
+   "start": 7.651,
+   "end": 7.732
+  },
+  {
+   "w": "un",
+   "start": 7.802,
+   "end": 7.872
+  },
+  {
+   "w": "modelo",
+   "start": 7.918,
+   "end": 8.324
+  },
+  {
+   "w": "encuentre",
+   "start": 8.696,
+   "end": 9.369
+  },
+  {
+   "w": "información.",
+   "start": 9.404,
+   "end": 10.379
+  },
+  {
+   "w": "Y",
+   "start": 10.739,
+   "end": 10.82
+  },
+  {
+   "w": "la",
+   "start": 10.89,
+   "end": 10.971
+  },
+  {
+   "w": "tiró.",
+   "start": 11.029,
+   "end": 11.505
+  },
+  {
+   "w": "Desde",
+   "start": 11.993,
+   "end": 12.249
+  },
+  {
+   "w": "entonces",
+   "start": 12.272,
+   "end": 12.899
+  },
+  {
+   "w": "medio",
+   "start": 13.259,
+   "end": 13.549
+  },
+  {
+   "w": "internet",
+   "start": 13.584,
+   "end": 14.106
+  },
+  {
+   "w": "dice",
+   "start": 14.524,
+   "end": 14.791
+  },
+  {
+   "w": "que",
+   "start": 14.849,
+   "end": 14.954
+  },
+  {
+   "w": "esa",
+   "start": 15.0,
+   "end": 15.174
+  },
+  {
+   "w": "receta,",
+   "start": 15.244,
+   "end": 15.906
+  },
+  {
+   "w": "el",
+   "start": 16.068,
+   "end": 16.208
+  },
+  {
+   "w": "RAG,",
+   "start": 16.3,
+   "end": 16.753
+  },
+  {
+   "w": "ha",
+   "start": 16.927,
+   "end": 17.043
+  },
+  {
+   "w": "muerto.",
+   "start": 17.113,
+   "end": 17.716
+  },
+  {
+   "w": "Spoiler:",
+   "start": 18.285,
+   "end": 18.935
+  },
+  {
+   "w": "no",
+   "start": 19.168,
+   "end": 19.365
+  },
+  {
+   "w": "ha",
+   "start": 19.411,
+   "end": 19.469
+  },
+  {
+   "w": "muerto.",
+   "start": 19.504,
+   "end": 20.108
+  },
+  {
+   "w": "Ha",
+   "start": 20.34,
+   "end": 20.445
+  },
+  {
+   "w": "cambiado",
+   "start": 20.503,
+   "end": 20.921
+  },
+  {
+   "w": "de",
+   "start": 20.979,
+   "end": 21.037
+  },
+  {
+   "w": "forma.",
+   "start": 21.095,
+   "end": 21.594
+  },
+  {
+   "w": "Y",
+   "start": 22.035,
+   "end": 22.128
+  },
+  {
+   "w": "en",
+   "start": 22.209,
+   "end": 22.279
+  },
+  {
+   "w": "diez",
+   "start": 22.326,
+   "end": 22.5
+  },
+  {
+   "w": "minutos",
+   "start": 22.558,
+   "end": 23.092
+  },
+  {
+   "w": "vas",
+   "start": 23.603,
+   "end": 23.881
+  },
+  {
+   "w": "a",
+   "start": 23.951,
+   "end": 23.974
+  },
+  {
+   "w": "entender",
+   "start": 24.021,
+   "end": 24.497
+  },
+  {
+   "w": "qué",
+   "start": 24.648,
+   "end": 24.915
+  },
+  {
+   "w": "es",
+   "start": 25.007,
+   "end": 25.17
+  },
+  {
+   "w": "y",
+   "start": 25.553,
+   "end": 25.634
+  },
+  {
+   "w": "en",
+   "start": 25.716,
+   "end": 25.785
+  },
+  {
+   "w": "qué",
+   "start": 25.855,
+   "end": 25.959
+  },
+  {
+   "w": "se",
+   "start": 26.029,
+   "end": 26.134
+  },
+  {
+   "w": "ha",
+   "start": 26.168,
+   "end": 26.215
+  },
+  {
+   "w": "convertido.",
+   "start": 26.273,
+   "end": 27.353
+  }
+ ]
+}

@@ -1,418 +1,418 @@
 {
  "scene": "3b",
- "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "voice_id": "JnBnSljehAqxkcZsA6n0",
  "text": "Uno: trocear. En un tutorial de LangChain, catorce páginas de documentación acaban en setecientos ochenta y dos fragmentos de unos mil caracteres. Y cada trozo repite un poco del anterior, para que ninguna idea quede partida por la mitad. Dos: convertir cada trozo en un vector. Un vector es una lista de números, cientos de ellos, que resume de qué habla el texto. No hace falta entender los números: lo importante es que los textos que hablan de lo mismo acaban cerca.",
- "duration": 36.734,
+ "duration": 27.028,
  "words": [
   {
    "w": "Uno:",
    "start": 0.0,
-   "end": 0.569
+   "end": 0.476
   },
   {
    "w": "trocear.",
-   "start": 0.975,
-   "end": 1.741
+   "start": 0.801,
+   "end": 1.405
   },
   {
    "w": "En",
-   "start": 2.218,
-   "end": 2.334
+   "start": 1.846,
+   "end": 1.985
   },
   {
    "w": "un",
-   "start": 2.403,
-   "end": 2.45
+   "start": 2.043,
+   "end": 2.09
   },
   {
    "w": "tutorial",
-   "start": 2.496,
-   "end": 2.926
+   "start": 2.125,
+   "end": 2.496
   },
   {
    "w": "de",
-   "start": 2.995,
-   "end": 3.053
+   "start": 2.554,
+   "end": 2.612
   },
   {
    "w": "LangChain,",
-   "start": 3.088,
-   "end": 3.82
+   "start": 2.67,
+   "end": 3.262
   },
   {
    "w": "catorce",
-   "start": 4.296,
-   "end": 4.725
+   "start": 3.437,
+   "end": 3.82
   },
   {
    "w": "páginas",
-   "start": 4.783,
-   "end": 5.224
+   "start": 3.878,
+   "end": 4.226
   },
   {
    "w": "de",
-   "start": 5.271,
-   "end": 5.317
+   "start": 4.272,
+   "end": 4.331
   },
   {
    "w": "documentación",
-   "start": 5.375,
-   "end": 6.153
+   "start": 4.377,
+   "end": 4.969
   },
   {
    "w": "acaban",
-   "start": 6.513,
-   "end": 6.978
+   "start": 5.016,
+   "end": 5.283
   },
   {
    "w": "en",
-   "start": 7.047,
-   "end": 7.117
+   "start": 5.341,
+   "end": 5.387
   },
   {
    "w": "setecientos",
-   "start": 7.175,
-   "end": 7.802
+   "start": 5.433,
+   "end": 5.991
   },
   {
    "w": "ochenta",
-   "start": 7.872,
-   "end": 8.208
+   "start": 6.049,
+   "end": 6.327
   },
   {
    "w": "y",
-   "start": 8.243,
-   "end": 8.266
+   "start": 6.362,
+   "end": 6.385
   },
   {
    "w": "dos",
-   "start": 8.313,
-   "end": 8.487
+   "start": 6.432,
+   "end": 6.548
   },
   {
    "w": "fragmentos",
-   "start": 8.545,
-   "end": 9.242
+   "start": 6.606,
+   "end": 7.14
   },
   {
    "w": "de",
-   "start": 9.543,
-   "end": 9.659
+   "start": 7.187,
+   "end": 7.233
   },
   {
    "w": "unos",
-   "start": 9.729,
-   "end": 9.95
+   "start": 7.279,
+   "end": 7.477
   },
   {
    "w": "mil",
-   "start": 10.031,
-   "end": 10.228
+   "start": 7.546,
+   "end": 7.697
   },
   {
    "w": "caracteres.",
-   "start": 10.31,
-   "end": 11.169
+   "start": 7.755,
+   "end": 8.487
   },
   {
    "w": "Y",
-   "start": 11.471,
-   "end": 11.54
+   "start": 8.603,
+   "end": 8.684
   },
   {
    "w": "cada",
-   "start": 11.633,
-   "end": 11.842
+   "start": 8.8,
+   "end": 9.021
   },
   {
    "w": "trozo",
-   "start": 11.877,
-   "end": 12.26
+   "start": 9.067,
+   "end": 9.369
   },
   {
    "w": "repite",
-   "start": 12.736,
-   "end": 13.096
+   "start": 9.462,
+   "end": 9.776
   },
   {
    "w": "un",
-   "start": 13.166,
-   "end": 13.235
+   "start": 9.81,
+   "end": 9.857
   },
   {
    "w": "poco",
-   "start": 13.282,
-   "end": 13.549
+   "start": 9.903,
+   "end": 10.112
   },
   {
    "w": "del",
-   "start": 13.607,
-   "end": 13.711
+   "start": 10.159,
+   "end": 10.252
   },
   {
    "w": "anterior,",
-   "start": 13.769,
-   "end": 14.478
+   "start": 10.286,
+   "end": 10.774
   },
   {
    "w": "para",
-   "start": 14.663,
-   "end": 14.861
+   "start": 10.82,
+   "end": 11.018
   },
   {
    "w": "que",
-   "start": 14.919,
-   "end": 14.988
+   "start": 11.064,
+   "end": 11.134
   },
   {
    "w": "ninguna",
-   "start": 15.035,
-   "end": 15.395
+   "start": 11.18,
+   "end": 11.505
   },
   {
    "w": "idea",
-   "start": 15.43,
-   "end": 15.813
+   "start": 11.529,
+   "end": 11.784
   },
   {
    "w": "quede",
-   "start": 16.126,
-   "end": 16.358
+   "start": 11.842,
+   "end": 12.04
   },
   {
    "w": "partida",
-   "start": 16.416,
-   "end": 16.893
+   "start": 12.086,
+   "end": 12.446
   },
   {
    "w": "por",
-   "start": 16.951,
-   "end": 17.067
+   "start": 12.492,
+   "end": 12.609
   },
   {
    "w": "la",
-   "start": 17.113,
-   "end": 17.16
+   "start": 12.655,
+   "end": 12.713
   },
   {
    "w": "mitad.",
-   "start": 17.218,
-   "end": 17.787
+   "start": 12.76,
+   "end": 13.213
   },
   {
    "w": "Dos:",
-   "start": 18.344,
-   "end": 18.866
+   "start": 13.538,
+   "end": 13.99
   },
   {
    "w": "convertir",
-   "start": 19.168,
-   "end": 19.702
+   "start": 14.374,
+   "end": 14.884
   },
   {
    "w": "cada",
-   "start": 19.784,
-   "end": 19.993
+   "start": 14.931,
+   "end": 15.117
   },
   {
    "w": "trozo",
-   "start": 20.039,
-   "end": 20.48
+   "start": 15.163,
+   "end": 15.581
   },
   {
    "w": "en",
-   "start": 20.631,
-   "end": 20.77
+   "start": 15.755,
+   "end": 15.894
   },
   {
    "w": "un",
-   "start": 20.863,
-   "end": 20.945
+   "start": 15.976,
+   "end": 16.022
   },
   {
    "w": "vector.",
-   "start": 21.003,
-   "end": 21.641
+   "start": 16.057,
+   "end": 16.521
   },
   {
    "w": "Un",
-   "start": 22.082,
-   "end": 22.256
+   "start": 16.8,
+   "end": 16.916
   },
   {
    "w": "vector",
-   "start": 22.315,
-   "end": 22.744
+   "start": 16.963,
+   "end": 17.288
   },
   {
    "w": "es",
-   "start": 23.069,
-   "end": 23.209
+   "start": 17.322,
+   "end": 17.369
   },
   {
    "w": "una",
-   "start": 23.278,
-   "end": 23.394
+   "start": 17.439,
+   "end": 17.543
   },
   {
    "w": "lista",
-   "start": 23.429,
-   "end": 23.685
+   "start": 17.59,
+   "end": 17.833
   },
   {
    "w": "de",
-   "start": 23.731,
-   "end": 23.789
+   "start": 17.868,
+   "end": 17.926
   },
   {
    "w": "números,",
-   "start": 23.835,
-   "end": 24.555
+   "start": 17.961,
+   "end": 18.472
   },
   {
    "w": "cientos",
-   "start": 24.834,
-   "end": 25.368
+   "start": 18.588,
+   "end": 19.064
   },
   {
    "w": "de",
-   "start": 25.426,
-   "end": 25.496
+   "start": 19.122,
+   "end": 19.192
   },
   {
    "w": "ellos,",
-   "start": 25.577,
-   "end": 26.134
+   "start": 19.25,
+   "end": 19.61
   },
   {
    "w": "que",
-   "start": 26.413,
-   "end": 26.517
+   "start": 19.691,
+   "end": 19.784
   },
   {
    "w": "resume",
-   "start": 26.575,
-   "end": 27.133
+   "start": 19.842,
+   "end": 20.283
   },
   {
    "w": "de",
-   "start": 27.284,
-   "end": 27.411
+   "start": 20.364,
+   "end": 20.469
   },
   {
    "w": "qué",
-   "start": 27.481,
-   "end": 27.609
+   "start": 20.527,
+   "end": 20.643
   },
   {
    "w": "habla",
-   "start": 27.667,
-   "end": 27.899
+   "start": 20.666,
+   "end": 20.864
   },
   {
    "w": "el",
-   "start": 27.934,
-   "end": 28.003
+   "start": 20.887,
+   "end": 20.933
   },
   {
    "w": "texto.",
-   "start": 28.096,
-   "end": 28.758
+   "start": 21.003,
+   "end": 21.421
   },
   {
    "w": "No",
-   "start": 29.269,
-   "end": 29.397
+   "start": 21.537,
+   "end": 21.63
   },
   {
    "w": "hace",
-   "start": 29.431,
-   "end": 29.606
+   "start": 21.653,
+   "end": 21.804
   },
   {
    "w": "falta",
-   "start": 29.675,
-   "end": 29.977
+   "start": 21.85,
+   "end": 22.083
   },
   {
    "w": "entender",
-   "start": 30.012,
-   "end": 30.407
+   "start": 22.106,
+   "end": 22.466
   },
   {
    "w": "los",
-   "start": 30.453,
-   "end": 30.581
+   "start": 22.489,
+   "end": 22.617
   },
   {
    "w": "números:",
-   "start": 30.65,
-   "end": 31.324
+   "start": 22.675,
+   "end": 23.139
   },
   {
    "w": "lo",
-   "start": 31.765,
-   "end": 31.858
+   "start": 23.255,
+   "end": 23.313
   },
   {
    "w": "importante",
-   "start": 31.916,
-   "end": 32.647
+   "start": 23.336,
+   "end": 23.894
   },
   {
    "w": "es",
-   "start": 32.972,
-   "end": 33.147
+   "start": 23.975,
+   "end": 24.126
   },
   {
    "w": "que",
-   "start": 33.193,
-   "end": 33.263
+   "start": 24.172,
+   "end": 24.254
   },
   {
    "w": "los",
-   "start": 33.309,
-   "end": 33.437
+   "start": 24.3,
+   "end": 24.428
   },
   {
    "w": "textos",
-   "start": 33.495,
-   "end": 33.878
+   "start": 24.474,
+   "end": 24.799
   },
   {
    "w": "que",
-   "start": 33.936,
-   "end": 34.029
+   "start": 24.869,
+   "end": 24.939
   },
   {
    "w": "hablan",
-   "start": 34.075,
-   "end": 34.342
+   "start": 24.962,
+   "end": 25.171
   },
   {
    "w": "de",
-   "start": 34.389,
-   "end": 34.447
+   "start": 25.206,
+   "end": 25.264
   },
   {
    "w": "lo",
-   "start": 34.493,
-   "end": 34.563
+   "start": 25.299,
+   "end": 25.368
   },
   {
    "w": "mismo",
-   "start": 34.61,
-   "end": 35.027
+   "start": 25.415,
+   "end": 25.786
   },
   {
    "w": "acaban",
-   "start": 35.353,
-   "end": 35.829
+   "start": 25.937,
+   "end": 26.332
   },
   {
    "w": "cerca.",
-   "start": 35.887,
-   "end": 36.734
+   "start": 26.39,
+   "end": 27.028
   }
  ]
 }

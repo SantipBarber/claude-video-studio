@@ -72,8 +72,15 @@
       // «dímelo en los comentarios» (8.13–8.81)
       tl.from("#ou-ask", { autoAlpha: 0, y: 24, duration: 0.6, ease: "expo.out" }, 8.1);
 
+      /* warp:start (generado por build_root.py: no editar) */
       window.__timelines = window.__timelines || {};
-      window.__timelines["outro"] = tl;
+      const warp = gsap.timeline({ paused: true });
+      const W = [[0.0,0.0],[0.232,0.197],[0.813,0.534],[0.964,0.673],[1.045,0.755],[1.962,1.265],[2.171,1.428],[3.32,2.229],[3.564,2.415],[3.924,2.682],[4.017,2.775],[4.122,2.879],[4.261,3.007],[4.737,3.413],[5.457,3.889],[6.118,4.389],[6.339,4.563],[6.49,4.656],[6.896,4.957],[7.187,5.213],[7.256,5.283],[8.127,5.828],[8.568,6.188],[8.638,6.269],[8.812,6.42],[11.44,8.79]];
+      for (let i = 0; i < W.length - 1; i++) {
+        warp.fromTo(tl, { time: W[i][0] }, { time: W[i + 1][0], duration: W[i + 1][1] - W[i][1], ease: "none", immediateRender: false }, W[i][1]);
+      }
+      window.__timelines["outro"] = warp;
+      /* warp:end */
     })();
   </script>
 </template>

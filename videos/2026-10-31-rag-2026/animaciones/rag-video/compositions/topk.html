@@ -60,8 +60,15 @@
       tl.to(["#k-c1", "#k-c2"], { opacity: 0.45, duration: 0.5 }, 8.9);
       tl.from("#k-c3", { autoAlpha: 0, scale: 0.9, duration: 0.6, ease: "back.out(1.6)" }, 8.9);
 
+      /* warp:start (generado por build_root.py: no editar) */
       window.__timelines = window.__timelines || {};
-      window.__timelines["topk"] = tl;
+      const warp = gsap.timeline({ paused: true });
+      const W = [[0.0,0.0],[1.168,0.632],[2.109,1.213],[2.283,1.375],[2.376,1.48],[2.77,1.909],[2.898,2.06],[3.212,2.455],[3.804,2.943],[4.79,3.5],[5.766,4.15],[6.706,4.638],[7.972,5.16],[8.227,5.3],[8.401,5.416],[8.715,5.741],[9.539,6.344],[9.748,6.519],[10.8,6.9]];
+      for (let i = 0; i < W.length - 1; i++) {
+        warp.fromTo(tl, { time: W[i][0] }, { time: W[i + 1][0], duration: W[i + 1][1] - W[i][1], ease: "none", immediateRender: false }, W[i][1]);
+      }
+      window.__timelines["topk"] = warp;
+      /* warp:end */
     })();
   </script>
 </template>

@@ -1,0 +1,383 @@
+{
+ "scene": "6",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "Tercer arreglo, para los trozos huérfanos: recuperación contextual. Antes de indexar, un modelo escribe una frase que sitúa cada trozo: 'esto es del informe de Acme del segundo trimestre de 2023'. Parece poca cosa, pero Anthropic midió que, combinada con búsqueda híbrida, reduce los fallos de recuperación un 49 %, y con reranker, un 67 %. Hay una alternativa más barata, el late chunking, que genera los vectores viendo el documento entero antes de trocearlo.",
+ "duration": 38.777,
+ "words": [
+  {
+   "w": "Tercer",
+   "start": 0.0,
+   "end": 0.534
+  },
+  {
+   "w": "arreglo,",
+   "start": 0.58,
+   "end": 1.242
+  },
+  {
+   "w": "para",
+   "start": 1.66,
+   "end": 1.881
+  },
+  {
+   "w": "los",
+   "start": 1.927,
+   "end": 2.055
+  },
+  {
+   "w": "trozos",
+   "start": 2.101,
+   "end": 2.45
+  },
+  {
+   "w": "huérfanos:",
+   "start": 2.508,
+   "end": 3.32
+  },
+  {
+   "w": "recuperación",
+   "start": 3.634,
+   "end": 4.331
+  },
+  {
+   "w": "contextual.",
+   "start": 4.4,
+   "end": 5.329
+  },
+  {
+   "w": "Antes",
+   "start": 5.921,
+   "end": 6.235
+  },
+  {
+   "w": "de",
+   "start": 6.258,
+   "end": 6.293
+  },
+  {
+   "w": "indexar,",
+   "start": 6.351,
+   "end": 7.036
+  },
+  {
+   "w": "un",
+   "start": 7.314,
+   "end": 7.419
+  },
+  {
+   "w": "modelo",
+   "start": 7.465,
+   "end": 7.918
+  },
+  {
+   "w": "escribe",
+   "start": 8.231,
+   "end": 8.707
+  },
+  {
+   "w": "una",
+   "start": 8.766,
+   "end": 8.893
+  },
+  {
+   "w": "frase",
+   "start": 8.951,
+   "end": 9.369
+  },
+  {
+   "w": "que",
+   "start": 9.601,
+   "end": 9.729
+  },
+  {
+   "w": "sitúa",
+   "start": 9.787,
+   "end": 10.194
+  },
+  {
+   "w": "cada",
+   "start": 10.275,
+   "end": 10.565
+  },
+  {
+   "w": "trozo:",
+   "start": 10.6,
+   "end": 11.227
+  },
+  {
+   "w": "'esto",
+   "start": 11.656,
+   "end": 12.016
+  },
+  {
+   "w": "es",
+   "start": 12.109,
+   "end": 12.237
+  },
+  {
+   "w": "del",
+   "start": 12.307,
+   "end": 12.423
+  },
+  {
+   "w": "informe",
+   "start": 12.492,
+   "end": 12.934
+  },
+  {
+   "w": "de",
+   "start": 12.98,
+   "end": 13.05
+  },
+  {
+   "w": "Acme",
+   "start": 13.096,
+   "end": 13.421
+  },
+  {
+   "w": "del",
+   "start": 13.468,
+   "end": 13.607
+  },
+  {
+   "w": "segundo",
+   "start": 13.677,
+   "end": 14.06
+  },
+  {
+   "w": "trimestre",
+   "start": 14.118,
+   "end": 14.698
+  },
+  {
+   "w": "de",
+   "start": 15.012,
+   "end": 15.139
+  },
+  {
+   "w": "2023'.",
+   "start": 15.221,
+   "end": 16.347
+  },
+  {
+   "w": "Parece",
+   "start": 16.939,
+   "end": 17.287
+  },
+  {
+   "w": "poca",
+   "start": 17.345,
+   "end": 17.566
+  },
+  {
+   "w": "cosa,",
+   "start": 17.612,
+   "end": 18.181
+  },
+  {
+   "w": "pero",
+   "start": 18.611,
+   "end": 18.808
+  },
+  {
+   "w": "Anthropic",
+   "start": 18.843,
+   "end": 19.377
+  },
+  {
+   "w": "midió",
+   "start": 19.69,
+   "end": 20.108
+  },
+  {
+   "w": "que,",
+   "start": 20.19,
+   "end": 20.294
+  },
+  {
+   "w": "combinada",
+   "start": 20.329,
+   "end": 20.933
+  },
+  {
+   "w": "con",
+   "start": 20.991,
+   "end": 21.118
+  },
+  {
+   "w": "búsqueda",
+   "start": 21.176,
+   "end": 21.594
+  },
+  {
+   "w": "híbrida,",
+   "start": 21.641,
+   "end": 22.291
+  },
+  {
+   "w": "reduce",
+   "start": 22.616,
+   "end": 22.988
+  },
+  {
+   "w": "los",
+   "start": 23.022,
+   "end": 23.162
+  },
+  {
+   "w": "fallos",
+   "start": 23.231,
+   "end": 23.615
+  },
+  {
+   "w": "de",
+   "start": 23.673,
+   "end": 23.742
+  },
+  {
+   "w": "recuperación",
+   "start": 23.812,
+   "end": 24.625
+  },
+  {
+   "w": "un",
+   "start": 25.066,
+   "end": 25.205
+  },
+  {
+   "w": "49",
+   "start": 25.321,
+   "end": 25.937
+  },
+  {
+   "w": "%,",
+   "start": 26.146,
+   "end": 26.796
+  },
+  {
+   "w": "y",
+   "start": 27.121,
+   "end": 27.202
+  },
+  {
+   "w": "con",
+   "start": 27.295,
+   "end": 27.434
+  },
+  {
+   "w": "reranker,",
+   "start": 27.504,
+   "end": 28.247
+  },
+  {
+   "w": "un",
+   "start": 28.526,
+   "end": 28.653
+  },
+  {
+   "w": "67",
+   "start": 28.723,
+   "end": 29.431
+  },
+  {
+   "w": "%.",
+   "start": 29.582,
+   "end": 30.29
+  },
+  {
+   "w": "Hay",
+   "start": 30.673,
+   "end": 30.871
+  },
+  {
+   "w": "una",
+   "start": 30.917,
+   "end": 31.057
+  },
+  {
+   "w": "alternativa",
+   "start": 31.091,
+   "end": 31.788
+  },
+  {
+   "w": "más",
+   "start": 31.846,
+   "end": 31.974
+  },
+  {
+   "w": "barata,",
+   "start": 32.032,
+   "end": 32.612
+  },
+  {
+   "w": "el",
+   "start": 32.937,
+   "end": 33.088
+  },
+  {
+   "w": "late",
+   "start": 33.216,
+   "end": 33.46
+  },
+  {
+   "w": "chunking,",
+   "start": 33.506,
+   "end": 34.168
+  },
+  {
+   "w": "que",
+   "start": 34.412,
+   "end": 34.516
+  },
+  {
+   "w": "genera",
+   "start": 34.574,
+   "end": 34.876
+  },
+  {
+   "w": "los",
+   "start": 34.911,
+   "end": 35.016
+  },
+  {
+   "w": "vectores",
+   "start": 35.074,
+   "end": 35.492
+  },
+  {
+   "w": "viendo",
+   "start": 35.55,
+   "end": 35.805
+  },
+  {
+   "w": "el",
+   "start": 35.84,
+   "end": 35.898
+  },
+  {
+   "w": "documento",
+   "start": 35.956,
+   "end": 36.444
+  },
+  {
+   "w": "entero",
+   "start": 36.49,
+   "end": 36.896
+  },
+  {
+   "w": "antes",
+   "start": 37.175,
+   "end": 37.605
+  },
+  {
+   "w": "de",
+   "start": 37.651,
+   "end": 37.709
+  },
+  {
+   "w": "trocearlo.",
+   "start": 37.755,
+   "end": 38.777
+  }
+ ]
+}

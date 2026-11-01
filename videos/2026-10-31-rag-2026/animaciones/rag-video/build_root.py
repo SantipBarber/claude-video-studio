@@ -5,12 +5,21 @@ Cada escena del guion tiene su mp3 y su words.json en ../../audio/voice/.
 Las escenas largas se reparten en varias subcomposiciones (SPLITS): el corte
 se hace en un instante de la voz, en segundos locales de la escena.
 Uso: python3 build_root.py  (reescribe index.html y timeline.json)
+
+Cambio de voz: las animaciones se escribieron con los tiempos de la voz de
+referencia (AUTHORING, la voz «Daniel» en ../../audio/voice-daniel/). Si la voz
+actual (../../audio/voice/) dice el mismo texto, el script calcula para cada
+composición un mapa tiempo de referencia -> tiempo actual (un ancla por palabra)
+y lo inyecta entre /* warp:start */ y /* warp:end */: una línea de tiempo
+exterior que mueve la original a trozos lineales. Los números de las
+composiciones siguen en tiempo de referencia: no hay que tocarlos.
 """
 import json
 from pathlib import Path
 
 HERE = Path(__file__).parent
 VOICE = HERE / "../../audio/voice"
+AUTHORING = HERE / "../../audio/voice-daniel"   # voz con la que se escribieron los tiempos
 GAP = 0.7      # silencio entre escenas
 LEAD = 0.5     # el vídeo empieza medio segundo antes de la primera palabra
 TAIL = 1.5     # cola tras la última palabra
@@ -33,21 +42,86 @@ SPLITS = {
     "11": [("outro", 0)],
 }
 
-scenes, t = [], LEAD
+def words_of(folder, scene):
+    return json.loads((folder / f"scene-{scene}.words.json").read_text())
+
+
+def interp(x, xs, ys):
+    """Interpolación lineal a trozos (xs creciente)."""
+    if x <= xs[0]:
+        return ys[0] + (x - xs[0])
+    for i in range(1, len(xs)):
+        if x <= xs[i]:
+            f = (x - xs[i - 1]) / (xs[i] - xs[i - 1]) if xs[i] > xs[i - 1] else 0
+            return ys[i - 1] + f * (ys[i] - ys[i - 1])
+    return ys[-1] + (x - xs[-1])
+
+
+def layout(folder, splits):
+    scenes, t = [], LEAD
+    for scene, parts in splits.items():
+        voice = round(words_of(folder, scene)["duration"], 2)
+        end = t + voice + (GAP if scene != "11" else TAIL)
+        for i, (cid, local) in enumerate(parts):
+            start = t + local if i else (0 if scene == "1" else t)
+            stop = t + parts[i + 1][1] if i + 1 < len(parts) else end
+            scenes.append({"id": cid, "scene": scene, "start": round(start, 2),
+                           "duration": round(stop - start, 2),
+                           # tiempo local en la composición = tiempo de la palabra en words.json + word_to_local
+                           "word_to_local": round(t - start, 2)})
+        scenes[-1]["voice"] = {"scene": scene, "start": round(t, 2), "duration": voice}
+        t = end
+    return scenes, round(t, 2)
+
+
+def word_times(folder, scene):
+    return [w["start"] for w in words_of(folder, scene)["words"]]
+
+
+# Los cortes de SPLITS están en tiempo de la voz de referencia: se trasladan a la voz actual.
+cur_splits = {}
 for scene, parts in SPLITS.items():
-    words = json.loads((VOICE / f"scene-{scene}.words.json").read_text())
-    voice = round(words["duration"], 2)
-    end = t + voice + (GAP if scene != "11" else TAIL)
-    for i, (cid, local) in enumerate(parts):
-        start = t + local if i else (0 if scene == "1" else t)
-        stop = t + parts[i + 1][1] if i + 1 < len(parts) else end
-        scenes.append({"id": cid, "scene": scene, "start": round(start, 2),
-                       "duration": round(stop - start, 2),
-                       # tiempo local en la composición = tiempo de la palabra en words.json + word_to_local
-                       "word_to_local": round(t - start, 2)})
-    scenes[-1]["voice"] = {"scene": scene, "start": round(t, 2), "duration": voice}
-    t = end
-TOTAL = round(t, 2)
+    a, c = word_times(AUTHORING, scene), word_times(VOICE, scene)
+    assert len(a) == len(c), f"escena {scene}: la voz actual no dice el mismo texto ({len(a)} vs {len(c)} palabras)"
+    cur_splits[scene] = [(cid, round(interp(local, a, c), 2) if i else 0) for i, (cid, local) in enumerate(parts)]
+
+ref_scenes, _ = layout(AUTHORING, SPLITS)
+scenes, TOTAL = layout(VOICE, cur_splits)
+
+# Mapa de tiempos por composición: (tiempo de referencia, tiempo actual), un ancla por palabra.
+WARP_JS = """/* warp:start (generado por build_root.py: no editar) */
+      window.__timelines = window.__timelines || {{}};
+      const warp = gsap.timeline({{ paused: true }});
+      const W = {anchors};
+      for (let i = 0; i < W.length - 1; i++) {{
+        warp.fromTo(tl, {{ time: W[i][0] }}, {{ time: W[i + 1][0], duration: W[i + 1][1] - W[i][1], ease: "none", immediateRender: false }}, W[i][1]);
+      }}
+      window.__timelines["{cid}"] = warp;
+      /* warp:end */"""
+import re
+for ref, cur in zip(ref_scenes, scenes):
+    a, c = word_times(AUTHORING, ref["scene"]), word_times(VOICE, cur["scene"])
+    pts = [(0.0, 0.0)]
+    for ta, tc in zip(a, c):
+        la, lc = ta + ref["word_to_local"], tc + cur["word_to_local"]
+        if 0 < la < ref["duration"] and 0 < lc < cur["duration"]:
+            pts.append((round(la, 3), round(lc, 3)))
+    pts.append((ref["duration"], cur["duration"]))
+    clean = [pts[0]]
+    for p in pts[1:]:
+        if p[0] - clean[-1][0] >= 0.05 and p[1] - clean[-1][1] >= 0.05:
+            clean.append(p)
+    clean[-1] = pts[-1]
+    f = HERE / "compositions" / f"{cur['id']}.html"
+    html = f.read_text()
+    block = WARP_JS.format(anchors=json.dumps([list(p) for p in clean], separators=(",", ":")), cid=cur["id"])
+    if "/* warp:start" in html:
+        html = re.sub(r"/\* warp:start.*?/\* warp:end \*/", lambda m: block, html, flags=re.S)
+    else:
+        old = re.search(r'window\.__timelines = window\.__timelines \|\| \{\};\s*window\.__timelines\["' + cur["id"] + r'"\] = tl;', html)
+        assert old, f"{f.name}: no encuentro el registro de la línea de tiempo"
+        html = html[:old.start()] + block + html[old.end():]
+    f.write_text(html)
 
 tracker_from = next(s["start"] for s in scenes if s["id"] == "twomoments")
 tracker_to = next(s["start"] + s["duration"] for s in scenes if s["id"] == "generate")

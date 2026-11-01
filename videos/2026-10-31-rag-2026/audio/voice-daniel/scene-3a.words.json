@@ -1,0 +1,133 @@
+{
+ "scene": "3a",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "Un RAG tiene dos momentos. Primero preparas la biblioteca, una sola vez. Después, cada vez que alguien pregunta, buscas en ella. Empecemos por la preparación.",
+ "duration": 13.003,
+ "words": [
+  {
+   "w": "Un",
+   "start": 0.0,
+   "end": 0.128
+  },
+  {
+   "w": "RAG",
+   "start": 0.244,
+   "end": 0.511
+  },
+  {
+   "w": "tiene",
+   "start": 0.836,
+   "end": 1.161
+  },
+  {
+   "w": "dos",
+   "start": 1.207,
+   "end": 1.335
+  },
+  {
+   "w": "momentos.",
+   "start": 1.405,
+   "end": 2.183
+  },
+  {
+   "w": "Primero",
+   "start": 2.566,
+   "end": 2.984
+  },
+  {
+   "w": "preparas",
+   "start": 3.03,
+   "end": 3.413
+  },
+  {
+   "w": "la",
+   "start": 3.46,
+   "end": 3.518
+  },
+  {
+   "w": "biblioteca,",
+   "start": 3.564,
+   "end": 4.331
+  },
+  {
+   "w": "una",
+   "start": 4.609,
+   "end": 4.795
+  },
+  {
+   "w": "sola",
+   "start": 4.853,
+   "end": 5.085
+  },
+  {
+   "w": "vez.",
+   "start": 5.132,
+   "end": 5.608
+  },
+  {
+   "w": "Después,",
+   "start": 6.211,
+   "end": 6.989
+  },
+  {
+   "w": "cada",
+   "start": 7.233,
+   "end": 7.477
+  },
+  {
+   "w": "vez",
+   "start": 7.523,
+   "end": 7.663
+  },
+  {
+   "w": "que",
+   "start": 7.732,
+   "end": 7.837
+  },
+  {
+   "w": "alguien",
+   "start": 7.895,
+   "end": 8.162
+  },
+  {
+   "w": "pregunta,",
+   "start": 8.208,
+   "end": 8.963
+  },
+  {
+   "w": "buscas",
+   "start": 9.288,
+   "end": 9.729
+  },
+  {
+   "w": "en",
+   "start": 9.81,
+   "end": 9.868
+  },
+  {
+   "w": "ella.",
+   "start": 9.938,
+   "end": 10.379
+  },
+  {
+   "w": "Empecemos",
+   "start": 10.983,
+   "end": 11.575
+  },
+  {
+   "w": "por",
+   "start": 11.633,
+   "end": 11.749
+  },
+  {
+   "w": "la",
+   "start": 11.807,
+   "end": 11.865
+  },
+  {
+   "w": "preparación.",
+   "start": 11.9,
+   "end": 13.003
+  }
+ ]
+}

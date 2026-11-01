@@ -1,383 +1,383 @@
 {
  "scene": "6",
- "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "voice_id": "JnBnSljehAqxkcZsA6n0",
  "text": "Tercer arreglo, para los trozos huérfanos: recuperación contextual. Antes de indexar, un modelo escribe una frase que sitúa cada trozo: 'esto es del informe de Acme del segundo trimestre de 2023'. Parece poca cosa, pero Anthropic midió que, combinada con búsqueda híbrida, reduce los fallos de recuperación un 49 %, y con reranker, un 67 %. Hay una alternativa más barata, el late chunking, que genera los vectores viendo el documento entero antes de trocearlo.",
- "duration": 38.777,
+ "duration": 30.604,
  "words": [
   {
    "w": "Tercer",
    "start": 0.0,
-   "end": 0.534
+   "end": 0.453
   },
   {
    "w": "arreglo,",
-   "start": 0.58,
-   "end": 1.242
+   "start": 0.499,
+   "end": 1.01
   },
   {
    "w": "para",
-   "start": 1.66,
-   "end": 1.881
+   "start": 1.126,
+   "end": 1.312
   },
   {
    "w": "los",
-   "start": 1.927,
-   "end": 2.055
+   "start": 1.347,
+   "end": 1.463
   },
   {
    "w": "trozos",
-   "start": 2.101,
-   "end": 2.45
+   "start": 1.509,
+   "end": 1.869
   },
   {
    "w": "huérfanos:",
-   "start": 2.508,
-   "end": 3.32
+   "start": 1.916,
+   "end": 2.612
   },
   {
    "w": "recuperación",
-   "start": 3.634,
-   "end": 4.331
+   "start": 2.821,
+   "end": 3.344
   },
   {
    "w": "contextual.",
-   "start": 4.4,
-   "end": 5.329
+   "start": 3.39,
+   "end": 4.203
   },
   {
    "w": "Antes",
-   "start": 5.921,
-   "end": 6.235
+   "start": 5.016,
+   "end": 5.387
   },
   {
    "w": "de",
-   "start": 6.258,
-   "end": 6.293
+   "start": 5.433,
+   "end": 5.48
   },
   {
    "w": "indexar,",
-   "start": 6.351,
-   "end": 7.036
+   "start": 5.515,
+   "end": 6.2
   },
   {
    "w": "un",
-   "start": 7.314,
-   "end": 7.419
+   "start": 6.351,
+   "end": 6.432
   },
   {
    "w": "modelo",
-   "start": 7.465,
-   "end": 7.918
+   "start": 6.467,
+   "end": 6.769
   },
   {
    "w": "escribe",
-   "start": 8.231,
-   "end": 8.707
+   "start": 6.792,
+   "end": 7.117
   },
   {
    "w": "una",
-   "start": 8.766,
-   "end": 8.893
+   "start": 7.163,
+   "end": 7.279
   },
   {
    "w": "frase",
-   "start": 8.951,
-   "end": 9.369
+   "start": 7.326,
+   "end": 7.767
   },
   {
    "w": "que",
-   "start": 9.601,
-   "end": 9.729
+   "start": 7.883,
+   "end": 7.999
   },
   {
    "w": "sitúa",
-   "start": 9.787,
-   "end": 10.194
+   "start": 8.057,
+   "end": 8.452
   },
   {
    "w": "cada",
-   "start": 10.275,
-   "end": 10.565
+   "start": 8.499,
+   "end": 8.696
   },
   {
    "w": "trozo:",
-   "start": 10.6,
-   "end": 11.227
+   "start": 8.742,
+   "end": 9.288
   },
   {
    "w": "'esto",
-   "start": 11.656,
-   "end": 12.016
+   "start": 9.358,
+   "end": 9.787
   },
   {
    "w": "es",
-   "start": 12.109,
-   "end": 12.237
+   "start": 9.845,
+   "end": 9.903
   },
   {
    "w": "del",
-   "start": 12.307,
-   "end": 12.423
+   "start": 9.938,
+   "end": 10.031
   },
   {
    "w": "informe",
-   "start": 12.492,
-   "end": 12.934
+   "start": 10.089,
+   "end": 10.449
   },
   {
    "w": "de",
-   "start": 12.98,
-   "end": 13.05
+   "start": 10.495,
+   "end": 10.565
   },
   {
    "w": "Acme",
-   "start": 13.096,
-   "end": 13.421
+   "start": 10.635,
+   "end": 10.879
   },
   {
    "w": "del",
-   "start": 13.468,
-   "end": 13.607
+   "start": 10.937,
+   "end": 11.053
   },
   {
    "w": "segundo",
-   "start": 13.677,
-   "end": 14.06
+   "start": 11.099,
+   "end": 11.413
   },
   {
    "w": "trimestre",
-   "start": 14.118,
-   "end": 14.698
+   "start": 11.459,
+   "end": 12.04
   },
   {
    "w": "de",
-   "start": 15.012,
-   "end": 15.139
+   "start": 12.249,
+   "end": 12.376
   },
   {
    "w": "2023'.",
-   "start": 15.221,
-   "end": 16.347
+   "start": 12.457,
+   "end": 13.456
   },
   {
    "w": "Parece",
-   "start": 16.939,
-   "end": 17.287
+   "start": 14.153,
+   "end": 14.501
   },
   {
    "w": "poca",
-   "start": 17.345,
-   "end": 17.566
+   "start": 14.547,
+   "end": 14.745
   },
   {
    "w": "cosa,",
-   "start": 17.612,
-   "end": 18.181
+   "start": 14.791,
+   "end": 15.232
   },
   {
    "w": "pero",
-   "start": 18.611,
-   "end": 18.808
+   "start": 15.302,
+   "end": 15.522
   },
   {
    "w": "Anthropic",
-   "start": 18.843,
-   "end": 19.377
+   "start": 15.545,
+   "end": 15.998
   },
   {
    "w": "midió",
-   "start": 19.69,
-   "end": 20.108
+   "start": 16.068,
+   "end": 16.381
   },
   {
    "w": "que,",
-   "start": 20.19,
-   "end": 20.294
+   "start": 16.497,
+   "end": 16.776
   },
   {
    "w": "combinada",
-   "start": 20.329,
-   "end": 20.933
+   "start": 16.846,
+   "end": 17.38
   },
   {
    "w": "con",
-   "start": 20.991,
-   "end": 21.118
+   "start": 17.426,
+   "end": 17.531
   },
   {
    "w": "búsqueda",
-   "start": 21.176,
-   "end": 21.594
+   "start": 17.566,
+   "end": 17.925
   },
   {
    "w": "híbrida,",
-   "start": 21.641,
-   "end": 22.291
+   "start": 17.96,
+   "end": 18.413
   },
   {
    "w": "reduce",
-   "start": 22.616,
-   "end": 22.988
+   "start": 18.529,
+   "end": 18.854
   },
   {
    "w": "los",
-   "start": 23.022,
-   "end": 23.162
+   "start": 18.901,
+   "end": 19.04
   },
   {
    "w": "fallos",
-   "start": 23.231,
-   "end": 23.615
+   "start": 19.098,
+   "end": 19.377
   },
   {
    "w": "de",
-   "start": 23.673,
-   "end": 23.742
+   "start": 19.423,
+   "end": 19.481
   },
   {
    "w": "recuperación",
-   "start": 23.812,
-   "end": 24.625
+   "start": 19.551,
+   "end": 20.189
   },
   {
    "w": "un",
-   "start": 25.066,
-   "end": 25.205
+   "start": 20.306,
+   "end": 20.422
   },
   {
    "w": "49",
-   "start": 25.321,
-   "end": 25.937
+   "start": 20.503,
+   "end": 21.037
   },
   {
    "w": "%,",
-   "start": 26.146,
-   "end": 26.796
+   "start": 21.188,
+   "end": 21.676
   },
   {
    "w": "y",
-   "start": 27.121,
-   "end": 27.202
+   "start": 21.71,
+   "end": 21.792
   },
   {
    "w": "con",
-   "start": 27.295,
-   "end": 27.434
+   "start": 21.884,
+   "end": 22.059
   },
   {
    "w": "reranker,",
-   "start": 27.504,
-   "end": 28.247
+   "start": 22.175,
+   "end": 22.813
   },
   {
    "w": "un",
-   "start": 28.526,
-   "end": 28.653
+   "start": 22.895,
+   "end": 22.999
   },
   {
    "w": "67",
-   "start": 28.723,
-   "end": 29.431
+   "start": 23.045,
+   "end": 23.603
   },
   {
    "w": "%.",
-   "start": 29.582,
-   "end": 30.29
+   "start": 23.73,
+   "end": 24.148
   },
   {
    "w": "Hay",
-   "start": 30.673,
-   "end": 30.871
+   "start": 24.299,
+   "end": 24.474
   },
   {
    "w": "una",
-   "start": 30.917,
-   "end": 31.057
+   "start": 24.532,
+   "end": 24.624
   },
   {
    "w": "alternativa",
-   "start": 31.091,
-   "end": 31.788
+   "start": 24.648,
+   "end": 25.135
   },
   {
    "w": "más",
-   "start": 31.846,
-   "end": 31.974
+   "start": 25.182,
+   "end": 25.298
   },
   {
    "w": "barata,",
-   "start": 32.032,
-   "end": 32.612
+   "start": 25.344,
+   "end": 25.785
   },
   {
    "w": "el",
-   "start": 32.937,
-   "end": 33.088
+   "start": 25.82,
+   "end": 25.96
   },
   {
    "w": "late",
-   "start": 33.216,
-   "end": 33.46
+   "start": 26.029,
+   "end": 26.273
   },
   {
    "w": "chunking,",
-   "start": 33.506,
-   "end": 34.168
+   "start": 26.308,
+   "end": 26.854
   },
   {
    "w": "que",
-   "start": 34.412,
-   "end": 34.516
+   "start": 26.923,
+   "end": 27.028
   },
   {
    "w": "genera",
-   "start": 34.574,
-   "end": 34.876
+   "start": 27.086,
+   "end": 27.376
   },
   {
    "w": "los",
-   "start": 34.911,
-   "end": 35.016
+   "start": 27.411,
+   "end": 27.527
   },
   {
    "w": "vectores",
-   "start": 35.074,
-   "end": 35.492
+   "start": 27.585,
+   "end": 27.98
   },
   {
    "w": "viendo",
-   "start": 35.55,
-   "end": 35.805
+   "start": 28.038,
+   "end": 28.27
   },
   {
    "w": "el",
-   "start": 35.84,
-   "end": 35.898
+   "start": 28.293,
+   "end": 28.34
   },
   {
    "w": "documento",
-   "start": 35.956,
-   "end": 36.444
+   "start": 28.386,
+   "end": 28.827
   },
   {
    "w": "entero",
-   "start": 36.49,
-   "end": 36.896
+   "start": 28.862,
+   "end": 29.222
   },
   {
    "w": "antes",
-   "start": 37.175,
-   "end": 37.605
+   "start": 29.292,
+   "end": 29.605
   },
   {
    "w": "de",
-   "start": 37.651,
-   "end": 37.709
+   "start": 29.64,
+   "end": 29.698
   },
   {
    "w": "trocearlo.",
-   "start": 37.755,
-   "end": 38.777
+   "start": 29.744,
+   "end": 30.604
   }
  ]
 }

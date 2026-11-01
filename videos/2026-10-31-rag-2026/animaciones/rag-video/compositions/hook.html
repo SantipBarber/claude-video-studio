@@ -37,7 +37,7 @@
     #hk-form { left: 192px; top: 456px; font-size: 136px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
     #hk-spoiler { left: 196px; top: 246px; font-size: 30px; color: #8b90a0; }
 
-    /* Fase 4: la promesa de los diez minutos (barra de reproducción) */
+    /* Fase 4: la promesa de los seis minutos (barra de reproducción) */
     #hk-bar { left: 192px; top: 760px; width: 1536px; height: 10px; border-radius: 5px; background: #232733; }
     #hk-fill { left: 192px; top: 760px; width: 1536px; height: 10px; border-radius: 5px; background: #f4f5f7; transform-origin: left center; }
     #hk-split { left: 920px; top: 744px; width: 4px; height: 42px; border-radius: 2px; background: #8b90a0; }
@@ -87,7 +87,7 @@
     <div data-hf-id="hf-i5gi" class="abs" id="hk-split"></div>
     <div data-hf-id="hf-pku6" class="abs" id="hk-head-dot"></div>
     <div data-hf-id="hf-xyk7" class="abs mono" id="hk-t0">0:00</div>
-    <div data-hf-id="hf-04o5" class="abs mono" id="hk-t10">10:00</div>
+    <div data-hf-id="hf-04o5" class="abs mono" id="hk-t10">6:00</div>
 
     <p data-hf-id="hf-uncg" class="abs cap" id="hk-cap"><b data-hf-id="hf-bj1g">Spoiler ·</b> no ha muerto, ha cambiado de forma</p>
   </div>
@@ -150,7 +150,7 @@
       tl.to("#hk-dead", { autoAlpha: 0, y: -70, duration: 0.4, ease: "power2.in" }, 20.8);
       tl.fromTo("#hk-chg", { autoAlpha: 0, y: 70 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "expo.out" }, 21.05);
       tl.from("#hk-form", { autoAlpha: 0, y: 40, duration: 0.7, ease: "expo.out" }, 21.45);
-      // «Y en diez minutos» (22.71–23.06): una barra de reproducción de 10 minutos.
+      // «Y en seis minutos» (22.71–23.06): una barra de reproducción de 6 minutos.
       tl.from(["#hk-bar", "#hk-t0"], { autoAlpha: 0, duration: 0.4 }, 22.6);
       tl.from("#hk-t10", { autoAlpha: 0, x: 20, duration: 0.5, ease: "expo.out" }, 22.8);
       tl.from("#hk-head-dot", { autoAlpha: 0, scale: 0, duration: 0.4, ease: "back.out(2)" }, 22.8);
@@ -163,8 +163,15 @@
       tl.from("#hk-c2", { autoAlpha: 0, y: 20, duration: 0.5, ease: "expo.out" }, 26.0);
       tl.to("#hk-c2", { color: "#d4ff3a", duration: 0.4 }, 26.8);
 
+      /* warp:start (generado por build_root.py: no editar) */
       window.__timelines = window.__timelines || {};
-      window.__timelines["hook"] = tl;
+      const warp = gsap.timeline({ paused: true });
+      const W = [[0.0,0.0],[0.5,0.5],[0.697,0.674],[1.022,0.953],[1.15,1.046],[1.429,1.289],[2.218,1.731],[2.439,1.963],[2.543,2.067],[2.718,2.253],[3.356,2.868],[3.507,2.996],[4.076,3.391],[4.436,3.728],[4.947,4.238],[5.167,4.482],[6.177,5.132],[6.526,5.457],[6.642,5.585],[7.06,5.968],[7.896,6.433],[8.151,6.642],[8.302,6.758],[8.418,6.851],[9.196,7.199],[9.904,7.605],[11.239,8.395],[11.39,8.546],[11.529,8.662],[12.493,9.207],[12.772,9.486],[13.759,10.009],[14.084,10.229],[15.024,10.81],[15.349,11.112],[15.5,11.216],[15.744,11.437],[16.568,11.982],[16.8,12.226],[17.427,12.632],[17.613,12.842],[18.785,13.504],[19.668,14.107],[19.911,14.247],[20.004,14.34],[20.84,14.839],[21.003,15.001],[21.479,15.384],[21.595,15.489],[22.535,15.977],[22.709,16.128],[22.826,16.244],[23.058,16.511],[24.103,17.126],[24.451,17.323],[25.148,17.857],[25.507,18.078],[26.053,18.357],[26.216,18.473],[26.355,18.589],[26.529,18.728],[26.668,18.809],[26.773,18.914],[28.55,20.38]];
+      for (let i = 0; i < W.length - 1; i++) {
+        warp.fromTo(tl, { time: W[i][0] }, { time: W[i + 1][0], duration: W[i + 1][1] - W[i][1], ease: "none", immediateRender: false }, W[i][1]);
+      }
+      window.__timelines["hook"] = warp;
+      /* warp:end */
     })();
   </script>
 </template>

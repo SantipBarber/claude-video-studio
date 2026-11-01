@@ -1,373 +1,373 @@
 {
  "scene": "7",
- "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "voice_id": "JnBnSljehAqxkcZsA6n0",
  "text": "Para las preguntas globales está GraphRAG, que popularizó Microsoft. En vez de solo trocear, extrae entidades y relaciones: personas, empresas, productos y cómo se conectan. Construye un grafo y lo agrupa en comunidades con resúmenes. Así puede responder '¿cuáles son los grandes temas?' o '¿qué proveedores dependen de esta pieza?'. El precio: construir y mantener ese grafo es bastante más caro. Úsalo cuando las relaciones sean el corazón del problema, no por moda.",
- "duration": 36.873,
+ "duration": 31.533,
  "words": [
   {
    "w": "Para",
    "start": 0.0,
-   "end": 0.209
+   "end": 0.232
   },
   {
    "w": "las",
-   "start": 0.255,
-   "end": 0.36
+   "start": 0.29,
+   "end": 0.418
   },
   {
    "w": "preguntas",
-   "start": 0.395,
-   "end": 0.813
+   "start": 0.464,
+   "end": 0.917
   },
   {
    "w": "globales",
-   "start": 0.859,
-   "end": 1.37
+   "start": 0.975,
+   "end": 1.463
   },
   {
    "w": "está",
-   "start": 1.625,
-   "end": 2.055
+   "start": 1.591,
+   "end": 2.043
   },
   {
    "w": "GraphRAG,",
-   "start": 2.345,
-   "end": 3.181
+   "start": 2.368,
+   "end": 3.077
   },
   {
    "w": "que",
-   "start": 3.587,
-   "end": 3.68
+   "start": 3.251,
+   "end": 3.355
   },
   {
    "w": "popularizó",
-   "start": 3.727,
-   "end": 4.319
+   "start": 3.413,
+   "end": 4.063
   },
   {
    "w": "Microsoft.",
-   "start": 4.423,
-   "end": 5.224
+   "start": 4.18,
+   "end": 4.911
   },
   {
    "w": "En",
-   "start": 5.77,
-   "end": 5.921
+   "start": 5.236,
+   "end": 5.375
   },
   {
    "w": "vez",
-   "start": 5.956,
-   "end": 6.107
+   "start": 5.41,
+   "end": 5.55
   },
   {
    "w": "de",
-   "start": 6.165,
-   "end": 6.223
+   "start": 5.573,
+   "end": 5.631
   },
   {
    "w": "solo",
-   "start": 6.269,
-   "end": 6.467
+   "start": 5.677,
+   "end": 5.863
   },
   {
    "w": "trocear,",
-   "start": 6.49,
-   "end": 7.163
+   "start": 5.898,
+   "end": 6.455
   },
   {
    "w": "extrae",
-   "start": 7.512,
-   "end": 8.092
+   "start": 6.664,
+   "end": 7.175
   },
   {
    "w": "entidades",
-   "start": 8.197,
-   "end": 8.847
+   "start": 7.256,
+   "end": 7.872
   },
   {
    "w": "y",
-   "start": 8.951,
-   "end": 8.975
+   "start": 7.964,
+   "end": 8.011
   },
   {
    "w": "relaciones:",
-   "start": 9.056,
-   "end": 9.938
+   "start": 8.104,
+   "end": 8.905
   },
   {
    "w": "personas,",
-   "start": 10.403,
-   "end": 11.215
+   "start": 9.23,
+   "end": 9.927
   },
   {
    "w": "empresas,",
-   "start": 11.517,
-   "end": 12.353
+   "start": 9.996,
+   "end": 10.739
   },
   {
    "w": "productos",
-   "start": 12.643,
-   "end": 13.27
+   "start": 10.832,
+   "end": 11.447
   },
   {
    "w": "y",
-   "start": 13.56,
-   "end": 13.642
+   "start": 11.575,
+   "end": 11.645
   },
   {
    "w": "cómo",
-   "start": 13.723,
-   "end": 13.897
+   "start": 11.726,
+   "end": 11.889
   },
   {
    "w": "se",
-   "start": 13.944,
-   "end": 14.013
+   "start": 11.935,
+   "end": 12.016
   },
   {
    "w": "conectan.",
-   "start": 14.06,
-   "end": 14.756
+   "start": 12.063,
+   "end": 12.643
   },
   {
    "w": "Construye",
-   "start": 15.302,
-   "end": 15.836
+   "start": 13.084,
+   "end": 13.607
   },
   {
    "w": "un",
-   "start": 15.894,
-   "end": 15.94
+   "start": 13.688,
+   "end": 13.769
   },
   {
    "w": "grafo",
-   "start": 15.987,
-   "end": 16.347
+   "start": 13.804,
+   "end": 14.211
   },
   {
    "w": "y",
-   "start": 16.649,
-   "end": 16.718
+   "start": 14.327,
+   "end": 14.396
   },
   {
    "w": "lo",
-   "start": 16.788,
-   "end": 16.881
+   "start": 14.478,
+   "end": 14.536
   },
   {
    "w": "agrupa",
-   "start": 16.916,
-   "end": 17.276
+   "start": 14.559,
+   "end": 14.919
   },
   {
    "w": "en",
-   "start": 17.31,
-   "end": 17.357
+   "start": 14.988,
+   "end": 15.07
   },
   {
    "w": "comunidades",
-   "start": 17.415,
-   "end": 18.007
+   "start": 15.128,
+   "end": 15.708
   },
   {
    "w": "con",
-   "start": 18.054,
-   "end": 18.169
+   "start": 15.766,
+   "end": 15.906
   },
   {
    "w": "resúmenes.",
-   "start": 18.25,
-   "end": 19.028
+   "start": 15.975,
+   "end": 16.684
   },
   {
    "w": "Así",
-   "start": 19.574,
-   "end": 19.829
+   "start": 17.067,
+   "end": 17.311
   },
   {
    "w": "puede",
-   "start": 19.876,
-   "end": 20.085
+   "start": 17.357,
+   "end": 17.566
   },
   {
    "w": "responder",
-   "start": 20.143,
-   "end": 20.7
+   "start": 17.624,
+   "end": 18.1
   },
   {
    "w": "'¿cuáles",
-   "start": 20.886,
-   "end": 21.455
+   "start": 18.274,
+   "end": 19.006
   },
   {
    "w": "son",
-   "start": 21.478,
-   "end": 21.629
+   "start": 19.029,
+   "end": 19.168
   },
   {
    "w": "los",
-   "start": 21.652,
-   "end": 21.768
+   "start": 19.203,
+   "end": 19.308
   },
   {
    "w": "grandes",
-   "start": 21.815,
-   "end": 22.128
+   "start": 19.354,
+   "end": 19.656
   },
   {
    "w": "temas?'",
-   "start": 22.175,
-   "end": 22.825
+   "start": 19.702,
+   "end": 20.178
   },
   {
    "w": "o",
-   "start": 23.208,
-   "end": 23.359
+   "start": 20.294,
+   "end": 20.469
   },
   {
    "w": "'¿qué",
-   "start": 23.568,
-   "end": 23.881
+   "start": 20.561,
+   "end": 20.828
   },
   {
    "w": "proveedores",
-   "start": 23.928,
-   "end": 24.59
+   "start": 20.863,
+   "end": 21.432
   },
   {
    "w": "dependen",
-   "start": 24.648,
-   "end": 25.1
+   "start": 21.49,
+   "end": 21.885
   },
   {
    "w": "de",
-   "start": 25.158,
-   "end": 25.228
+   "start": 21.931,
+   "end": 21.989
   },
   {
    "w": "esta",
-   "start": 25.275,
-   "end": 25.472
+   "start": 22.013,
+   "end": 22.175
   },
   {
    "w": "pieza?'.",
-   "start": 25.507,
-   "end": 26.087
+   "start": 22.21,
+   "end": 22.744
   },
   {
    "w": "El",
-   "start": 26.691,
-   "end": 26.853
+   "start": 23.348,
+   "end": 23.476
   },
   {
    "w": "precio:",
-   "start": 26.923,
-   "end": 27.55
+   "start": 23.534,
+   "end": 24.068
   },
   {
    "w": "construir",
-   "start": 27.794,
-   "end": 28.421
+   "start": 24.346,
+   "end": 24.88
   },
   {
    "w": "y",
-   "start": 28.456,
-   "end": 28.479
+   "start": 24.904,
+   "end": 24.927
   },
   {
    "w": "mantener",
-   "start": 28.525,
-   "end": 28.932
+   "start": 24.973,
+   "end": 25.356
   },
   {
    "w": "ese",
-   "start": 28.978,
-   "end": 29.117
+   "start": 25.414,
+   "end": 25.542
   },
   {
    "w": "grafo",
-   "start": 29.152,
-   "end": 29.582
+   "start": 25.589,
+   "end": 25.867
   },
   {
    "w": "es",
-   "start": 29.86,
-   "end": 30.011
+   "start": 25.902,
+   "end": 25.96
   },
   {
    "w": "bastante",
-   "start": 30.058,
-   "end": 30.522
+   "start": 26.007,
+   "end": 26.366
   },
   {
    "w": "más",
-   "start": 30.569,
-   "end": 30.708
+   "start": 26.413,
+   "end": 26.541
   },
   {
    "w": "caro.",
-   "start": 30.766,
-   "end": 31.219
+   "start": 26.599,
+   "end": 26.993
   },
   {
    "w": "Úsalo",
-   "start": 31.823,
-   "end": 32.322
+   "start": 27.318,
+   "end": 27.702
   },
   {
    "w": "cuando",
-   "start": 32.647,
-   "end": 32.902
+   "start": 27.748,
+   "end": 27.969
   },
   {
    "w": "las",
-   "start": 32.949,
-   "end": 33.03
+   "start": 28.027,
+   "end": 28.143
   },
   {
    "w": "relaciones",
-   "start": 33.065,
-   "end": 33.703
+   "start": 28.259,
+   "end": 28.932
   },
   {
    "w": "sean",
-   "start": 33.854,
-   "end": 34.203
+   "start": 29.083,
+   "end": 29.362
   },
   {
    "w": "el",
-   "start": 34.261,
-   "end": 34.33
+   "start": 29.42,
+   "end": 29.489
   },
   {
    "w": "corazón",
-   "start": 34.388,
-   "end": 34.853
+   "start": 29.559,
+   "end": 29.896
   },
   {
    "w": "del",
-   "start": 34.899,
-   "end": 35.027
+   "start": 29.931,
+   "end": 30.035
   },
   {
    "w": "problema,",
-   "start": 35.085,
-   "end": 35.665
+   "start": 30.093,
+   "end": 30.604
   },
   {
    "w": "no",
-   "start": 35.84,
-   "end": 35.967
+   "start": 30.72,
+   "end": 30.848
   },
   {
    "w": "por",
-   "start": 36.025,
-   "end": 36.153
+   "start": 30.906,
+   "end": 31.045
   },
   {
    "w": "moda.",
-   "start": 36.211,
-   "end": 36.873
+   "start": 31.103,
+   "end": 31.533
   }
  ]
 }

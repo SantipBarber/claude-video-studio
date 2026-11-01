@@ -1,0 +1,468 @@
+{
+ "scene": "9",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "Volvamos al principio. Hoy hay modelos con un millón de tokens de contexto, y los agentes de programación como Claude Code ya no usan una base de datos vectorial: exploran el código con búsquedas de texto, abren archivos y deciden qué leer. Eso es lo que la gente llama 'la muerte del RAG'. Pero fíjate: siguen recuperando información antes de responder. Lo que ha muerto es la base de datos vectorial como paso obligatorio. Y meter un millón de tokens en cada pregunta sigue costando muchísimo más que recuperar cinco trozos buenos.",
+ "duration": 41.889,
+ "words": [
+  {
+   "w": "Volvamos",
+   "start": 0.0,
+   "end": 0.476
+  },
+  {
+   "w": "al",
+   "start": 0.534,
+   "end": 0.604
+  },
+  {
+   "w": "principio.",
+   "start": 0.65,
+   "end": 1.44
+  },
+  {
+   "w": "Hoy",
+   "start": 1.823,
+   "end": 2.194
+  },
+  {
+   "w": "hay",
+   "start": 2.635,
+   "end": 2.798
+  },
+  {
+   "w": "modelos",
+   "start": 2.856,
+   "end": 3.297
+  },
+  {
+   "w": "con",
+   "start": 3.379,
+   "end": 3.518
+  },
+  {
+   "w": "un",
+   "start": 3.611,
+   "end": 3.669
+  },
+  {
+   "w": "millón",
+   "start": 3.704,
+   "end": 4.005
+  },
+  {
+   "w": "de",
+   "start": 4.052,
+   "end": 4.122
+  },
+  {
+   "w": "tokens",
+   "start": 4.168,
+   "end": 4.551
+  },
+  {
+   "w": "de",
+   "start": 4.586,
+   "end": 4.644
+  },
+  {
+   "w": "contexto,",
+   "start": 4.69,
+   "end": 5.584
+  },
+  {
+   "w": "y",
+   "start": 6.026,
+   "end": 6.095
+  },
+  {
+   "w": "los",
+   "start": 6.153,
+   "end": 6.269
+  },
+  {
+   "w": "agentes",
+   "start": 6.339,
+   "end": 6.757
+  },
+  {
+   "w": "de",
+   "start": 6.792,
+   "end": 6.85
+  },
+  {
+   "w": "programación",
+   "start": 6.896,
+   "end": 7.697
+  },
+  {
+   "w": "como",
+   "start": 7.814,
+   "end": 8.057
+  },
+  {
+   "w": "Claude",
+   "start": 8.127,
+   "end": 8.394
+  },
+  {
+   "w": "Code",
+   "start": 8.429,
+   "end": 8.835
+  },
+  {
+   "w": "ya",
+   "start": 9.276,
+   "end": 9.439
+  },
+  {
+   "w": "no",
+   "start": 9.485,
+   "end": 9.555
+  },
+  {
+   "w": "usan",
+   "start": 9.613,
+   "end": 9.868
+  },
+  {
+   "w": "una",
+   "start": 9.938,
+   "end": 10.077
+  },
+  {
+   "w": "base",
+   "start": 10.124,
+   "end": 10.379
+  },
+  {
+   "w": "de",
+   "start": 10.437,
+   "end": 10.507
+  },
+  {
+   "w": "datos",
+   "start": 10.553,
+   "end": 10.844
+  },
+  {
+   "w": "vectorial:",
+   "start": 10.89,
+   "end": 11.703
+  },
+  {
+   "w": "exploran",
+   "start": 12.307,
+   "end": 12.864
+  },
+  {
+   "w": "el",
+   "start": 12.922,
+   "end": 13.003
+  },
+  {
+   "w": "código",
+   "start": 13.084,
+   "end": 13.479
+  },
+  {
+   "w": "con",
+   "start": 13.537,
+   "end": 13.677
+  },
+  {
+   "w": "búsquedas",
+   "start": 13.723,
+   "end": 14.176
+  },
+  {
+   "w": "de",
+   "start": 14.222,
+   "end": 14.28
+  },
+  {
+   "w": "texto,",
+   "start": 14.327,
+   "end": 15.012
+  },
+  {
+   "w": "abren",
+   "start": 15.29,
+   "end": 15.604
+  },
+  {
+   "w": "archivos",
+   "start": 15.65,
+   "end": 16.289
+  },
+  {
+   "w": "y",
+   "start": 16.73,
+   "end": 16.811
+  },
+  {
+   "w": "deciden",
+   "start": 16.892,
+   "end": 17.38
+  },
+  {
+   "w": "qué",
+   "start": 17.508,
+   "end": 17.659
+  },
+  {
+   "w": "leer.",
+   "start": 17.717,
+   "end": 18.239
+  },
+  {
+   "w": "Eso",
+   "start": 18.936,
+   "end": 19.261
+  },
+  {
+   "w": "es",
+   "start": 19.342,
+   "end": 19.446
+  },
+  {
+   "w": "lo",
+   "start": 19.516,
+   "end": 19.597
+  },
+  {
+   "w": "que",
+   "start": 19.644,
+   "end": 19.713
+  },
+  {
+   "w": "la",
+   "start": 19.76,
+   "end": 19.841
+  },
+  {
+   "w": "gente",
+   "start": 19.888,
+   "end": 20.201
+  },
+  {
+   "w": "llama",
+   "start": 20.224,
+   "end": 20.607
+  },
+  {
+   "w": "'la",
+   "start": 20.886,
+   "end": 21.118
+  },
+  {
+   "w": "muerte",
+   "start": 21.176,
+   "end": 21.548
+  },
+  {
+   "w": "del",
+   "start": 21.594,
+   "end": 21.71
+  },
+  {
+   "w": "RAG'.",
+   "start": 21.78,
+   "end": 22.326
+  },
+  {
+   "w": "Pero",
+   "start": 22.767,
+   "end": 22.988
+  },
+  {
+   "w": "fíjate:",
+   "start": 23.034,
+   "end": 23.707
+  },
+  {
+   "w": "siguen",
+   "start": 24.149,
+   "end": 24.474
+  },
+  {
+   "w": "recuperando",
+   "start": 24.543,
+   "end": 25.077
+  },
+  {
+   "w": "información",
+   "start": 25.124,
+   "end": 25.936
+  },
+  {
+   "w": "antes",
+   "start": 26.633,
+   "end": 27.039
+  },
+  {
+   "w": "de",
+   "start": 27.063,
+   "end": 27.121
+  },
+  {
+   "w": "responder.",
+   "start": 27.19,
+   "end": 27.968
+  },
+  {
+   "w": "Lo",
+   "start": 28.409,
+   "end": 28.537
+  },
+  {
+   "w": "que",
+   "start": 28.584,
+   "end": 28.676
+  },
+  {
+   "w": "ha",
+   "start": 28.711,
+   "end": 28.758
+  },
+  {
+   "w": "muerto",
+   "start": 28.792,
+   "end": 29.28
+  },
+  {
+   "w": "es",
+   "start": 29.605,
+   "end": 29.756
+  },
+  {
+   "w": "la",
+   "start": 29.849,
+   "end": 29.919
+  },
+  {
+   "w": "base",
+   "start": 29.965,
+   "end": 30.209
+  },
+  {
+   "w": "de",
+   "start": 30.255,
+   "end": 30.325
+  },
+  {
+   "w": "datos",
+   "start": 30.371,
+   "end": 30.673
+  },
+  {
+   "w": "vectorial",
+   "start": 30.731,
+   "end": 31.335
+  },
+  {
+   "w": "como",
+   "start": 31.66,
+   "end": 31.939
+  },
+  {
+   "w": "paso",
+   "start": 31.997,
+   "end": 32.345
+  },
+  {
+   "w": "obligatorio.",
+   "start": 32.38,
+   "end": 33.332
+  },
+  {
+   "w": "Y",
+   "start": 33.657,
+   "end": 33.727
+  },
+  {
+   "w": "meter",
+   "start": 33.808,
+   "end": 34.098
+  },
+  {
+   "w": "un",
+   "start": 34.18,
+   "end": 34.226
+  },
+  {
+   "w": "millón",
+   "start": 34.272,
+   "end": 34.574
+  },
+  {
+   "w": "de",
+   "start": 34.621,
+   "end": 34.679
+  },
+  {
+   "w": "tokens",
+   "start": 34.737,
+   "end": 35.201
+  },
+  {
+   "w": "en",
+   "start": 35.283,
+   "end": 35.433
+  },
+  {
+   "w": "cada",
+   "start": 35.503,
+   "end": 35.724
+  },
+  {
+   "w": "pregunta",
+   "start": 35.77,
+   "end": 36.351
+  },
+  {
+   "w": "sigue",
+   "start": 36.862,
+   "end": 37.187
+  },
+  {
+   "w": "costando",
+   "start": 37.245,
+   "end": 37.732
+  },
+  {
+   "w": "muchísimo",
+   "start": 37.79,
+   "end": 38.324
+  },
+  {
+   "w": "más",
+   "start": 38.371,
+   "end": 38.684
+  },
+  {
+   "w": "que",
+   "start": 39.009,
+   "end": 39.137
+  },
+  {
+   "w": "recuperar",
+   "start": 39.207,
+   "end": 39.81
+  },
+  {
+   "w": "cinco",
+   "start": 40.194,
+   "end": 40.612
+  },
+  {
+   "w": "trozos",
+   "start": 40.658,
+   "end": 41.029
+  },
+  {
+   "w": "buenos.",
+   "start": 41.088,
+   "end": 41.889
+  }
+ ]
+}

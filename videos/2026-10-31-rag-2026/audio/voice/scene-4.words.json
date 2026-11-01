@@ -1,363 +1,363 @@
 {
  "scene": "4",
- "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "voice_id": "JnBnSljehAqxkcZsA6n0",
  "text": "Y en la práctica, falla. Un trozo suelto pierde su contexto: 'los ingresos crecieron un 3 %'… ¿de qué empresa? ¿De qué trimestre? La búsqueda por significado se equivoca con nombres exactos, códigos de producto o identificadores. Y hay preguntas que ningún trozo responde solo: '¿cuáles son los temas principales de estos mil informes?' o preguntas que necesitan encadenar varios pasos. Para cada uno de estos fallos ha aparecido una solución.",
- "duration": 34.969,
+ "duration": 26.889,
  "words": [
   {
    "w": "Y",
    "start": 0.0,
-   "end": 0.093
+   "end": 0.058
   },
   {
    "w": "en",
-   "start": 0.163,
-   "end": 0.209
+   "start": 0.128,
+   "end": 0.174
   },
   {
    "w": "la",
-   "start": 0.255,
-   "end": 0.325
+   "start": 0.209,
+   "end": 0.255
   },
   {
    "w": "práctica,",
-   "start": 0.372,
-   "end": 1.091
+   "start": 0.302,
+   "end": 0.917
   },
   {
    "w": "falla.",
-   "start": 1.335,
-   "end": 1.95
+   "start": 1.033,
+   "end": 1.567
   },
   {
    "w": "Un",
-   "start": 2.554,
-   "end": 2.717
+   "start": 1.683,
+   "end": 1.834
   },
   {
    "w": "trozo",
-   "start": 2.763,
-   "end": 3.019
+   "start": 1.881,
+   "end": 2.136
   },
   {
    "w": "suelto",
-   "start": 3.065,
-   "end": 3.506
+   "start": 2.183,
+   "end": 2.647
   },
   {
    "w": "pierde",
-   "start": 3.831,
-   "end": 4.191
+   "start": 2.798,
+   "end": 3.17
   },
   {
    "w": "su",
-   "start": 4.238,
-   "end": 4.331
+   "start": 3.216,
+   "end": 3.297
   },
   {
    "w": "contexto:",
-   "start": 4.377,
-   "end": 5.213
+   "start": 3.355,
+   "end": 4.052
   },
   {
    "w": "'los",
-   "start": 5.457,
-   "end": 5.724
+   "start": 4.122,
+   "end": 4.331
   },
   {
    "w": "ingresos",
-   "start": 5.805,
-   "end": 6.211
+   "start": 4.412,
+   "end": 5.05
   },
   {
    "w": "crecieron",
-   "start": 6.269,
-   "end": 6.792
+   "start": 5.166,
+   "end": 5.7
   },
   {
    "w": "un",
-   "start": 6.92,
-   "end": 7.059
+   "start": 5.817,
+   "end": 5.921
   },
   {
    "w": "3",
-   "start": 7.152,
-   "end": 7.303
+   "start": 6.014,
+   "end": 6.13
   },
   {
    "w": "%'…",
-   "start": 7.477,
-   "end": 8.324
+   "start": 6.304,
+   "end": 6.931
   },
   {
    "w": "¿de",
-   "start": 8.603,
-   "end": 8.835
+   "start": 7.082,
+   "end": 7.233
   },
   {
    "w": "qué",
-   "start": 8.893,
-   "end": 8.986
+   "start": 7.291,
+   "end": 7.361
   },
   {
    "w": "empresa?",
-   "start": 9.033,
-   "end": 9.752
+   "start": 7.384,
+   "end": 7.93
   },
   {
    "w": "¿De",
-   "start": 10.031,
-   "end": 10.31
+   "start": 8.046,
+   "end": 8.197
   },
   {
    "w": "qué",
-   "start": 10.368,
-   "end": 10.472
+   "start": 8.243,
+   "end": 8.313
   },
   {
    "w": "trimestre?",
-   "start": 10.519,
-   "end": 11.215
+   "start": 8.348,
+   "end": 8.998
   },
   {
    "w": "La",
-   "start": 11.819,
-   "end": 11.935
+   "start": 9.207,
+   "end": 9.334
   },
   {
    "w": "búsqueda",
-   "start": 11.97,
-   "end": 12.33
+   "start": 9.381,
+   "end": 9.787
   },
   {
    "w": "por",
-   "start": 12.376,
-   "end": 12.492
+   "start": 9.834,
+   "end": 9.95
   },
   {
    "w": "significado",
-   "start": 12.539,
-   "end": 13.247
+   "start": 9.996,
+   "end": 10.623
   },
   {
    "w": "se",
-   "start": 13.572,
-   "end": 13.804
+   "start": 10.681,
+   "end": 10.751
   },
   {
    "w": "equivoca",
-   "start": 13.839,
-   "end": 14.396
+   "start": 10.774,
+   "end": 11.227
   },
   {
    "w": "con",
-   "start": 14.605,
-   "end": 14.803
+   "start": 11.285,
+   "end": 11.413
   },
   {
    "w": "nombres",
-   "start": 14.884,
-   "end": 15.221
+   "start": 11.459,
+   "end": 11.784
   },
   {
    "w": "exactos,",
-   "start": 15.29,
-   "end": 16.115
+   "start": 11.865,
+   "end": 12.597
   },
   {
    "w": "códigos",
-   "start": 16.358,
-   "end": 16.788
+   "start": 12.725,
+   "end": 13.119
   },
   {
    "w": "de",
-   "start": 16.834,
-   "end": 16.893
+   "start": 13.166,
+   "end": 13.224
   },
   {
    "w": "producto",
-   "start": 16.927,
-   "end": 17.45
+   "start": 13.27,
+   "end": 13.816
   },
   {
    "w": "o",
-   "start": 17.728,
-   "end": 17.844
+   "start": 13.932,
+   "end": 14.013
   },
   {
    "w": "identificadores.",
-   "start": 17.891,
-   "end": 19.052
+   "start": 14.06,
+   "end": 15.116
   },
   {
    "w": "Y",
-   "start": 19.295,
-   "end": 19.377
+   "start": 15.197,
+   "end": 15.29
   },
   {
    "w": "hay",
-   "start": 19.423,
-   "end": 19.504
+   "start": 15.36,
+   "end": 15.488
   },
   {
    "w": "preguntas",
-   "start": 19.551,
-   "end": 20.108
+   "start": 15.546,
+   "end": 16.103
   },
   {
    "w": "que",
-   "start": 20.178,
-   "end": 20.271
+   "start": 16.196,
+   "end": 16.289
   },
   {
    "w": "ningún",
-   "start": 20.317,
-   "end": 20.654
+   "start": 16.347,
+   "end": 16.637
   },
   {
    "w": "trozo",
-   "start": 20.712,
-   "end": 21.037
+   "start": 16.684,
+   "end": 17.032
   },
   {
    "w": "responde",
-   "start": 21.118,
-   "end": 21.583
+   "start": 17.102,
+   "end": 17.543
   },
   {
    "w": "solo:",
-   "start": 21.629,
-   "end": 22.175
+   "start": 17.601,
+   "end": 17.972
   },
   {
    "w": "'¿cuáles",
-   "start": 22.558,
-   "end": 22.999
+   "start": 17.995,
+   "end": 18.355
   },
   {
    "w": "son",
-   "start": 23.022,
-   "end": 23.161
+   "start": 18.379,
+   "end": 18.506
   },
   {
    "w": "los",
-   "start": 23.196,
-   "end": 23.312
+   "start": 18.564,
+   "end": 18.68
   },
   {
    "w": "temas",
-   "start": 23.37,
-   "end": 23.603
+   "start": 18.739,
+   "end": 18.982
   },
   {
    "w": "principales",
-   "start": 23.649,
-   "end": 24.334
+   "start": 19.04,
+   "end": 19.679
   },
   {
    "w": "de",
-   "start": 24.578,
-   "end": 24.706
+   "start": 19.737,
+   "end": 19.807
   },
   {
    "w": "estos",
-   "start": 24.775,
-   "end": 25.054
+   "start": 19.83,
+   "end": 20.062
   },
   {
    "w": "mil",
-   "start": 25.135,
-   "end": 25.274
+   "start": 20.132,
+   "end": 20.283
   },
   {
    "w": "informes?'",
-   "start": 25.344,
-   "end": 26.192
+   "start": 20.341,
+   "end": 21.002
   },
   {
    "w": "o",
-   "start": 26.517,
-   "end": 26.575
+   "start": 21.095,
+   "end": 21.165
   },
   {
    "w": "preguntas",
-   "start": 26.621,
-   "end": 27.248
+   "start": 21.211,
+   "end": 21.676
   },
   {
    "w": "que",
-   "start": 27.492,
-   "end": 27.596
+   "start": 21.722,
+   "end": 21.792
   },
   {
    "w": "necesitan",
-   "start": 27.643,
-   "end": 28.235
+   "start": 21.838,
+   "end": 22.396
   },
   {
    "w": "encadenar",
-   "start": 28.328,
-   "end": 29.048
+   "start": 22.442,
+   "end": 22.941
   },
   {
    "w": "varios",
-   "start": 29.373,
-   "end": 29.744
+   "start": 22.999,
+   "end": 23.255
   },
   {
    "w": "pasos.",
-   "start": 29.802,
-   "end": 30.429
+   "start": 23.324,
+   "end": 23.847
   },
   {
    "w": "Para",
-   "start": 30.812,
-   "end": 31.01
+   "start": 23.87,
+   "end": 24.056
   },
   {
    "w": "cada",
-   "start": 31.056,
-   "end": 31.254
+   "start": 24.102,
+   "end": 24.3
   },
   {
    "w": "uno",
-   "start": 31.323,
-   "end": 31.474
+   "start": 24.346,
+   "end": 24.497
   },
   {
    "w": "de",
-   "start": 31.521,
-   "end": 31.59
+   "start": 24.544,
+   "end": 24.602
   },
   {
    "w": "estos",
-   "start": 31.637,
-   "end": 31.892
+   "start": 24.625,
+   "end": 24.869
   },
   {
    "w": "fallos",
-   "start": 31.95,
-   "end": 32.357
+   "start": 24.927,
+   "end": 25.31
   },
   {
    "w": "ha",
-   "start": 32.682,
-   "end": 32.833
+   "start": 25.379,
+   "end": 25.437
   },
   {
    "w": "aparecido",
-   "start": 32.879,
-   "end": 33.552
+   "start": 25.496,
+   "end": 25.983
   },
   {
    "w": "una",
-   "start": 33.703,
-   "end": 33.936
+   "start": 26.006,
+   "end": 26.146
   },
   {
    "w": "solución.",
-   "start": 33.994,
-   "end": 34.969
+   "start": 26.181,
+   "end": 26.889
   }
  ]
 }

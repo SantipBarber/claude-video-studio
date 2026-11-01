@@ -10,7 +10,7 @@
 ---
 
 ### Escena 1 — Gancho (0:00–0:20)
-**Voz:** "El equipo de Claude Code, una de las herramientas de IA más usadas para programar, probó la receta estándar para que un modelo encuentre información. Y la tiró. Desde entonces medio internet dice que esa receta, el RAG, ha muerto. Spoiler: no ha muerto. Ha cambiado de forma. Y en diez minutos vas a entender qué es y en qué se ha convertido."
+**Voz:** "El equipo de Claude Code, una de las herramientas de IA más usadas para programar, probó la receta estándar para que un modelo encuentre información. Y la tiró. Desde entonces medio internet dice que esa receta, el RAG, ha muerto. Spoiler: no ha muerto. Ha cambiado de forma. Y en seis minutos vas a entender qué es y en qué se ha convertido."
 **Visual:** una caja «receta estándar: base de datos vectorial» se tacha; aparece «¿RAG ha muerto?»; el signo de interrogación se convierte en una flecha que gira hacia «ha cambiado».
 **Fuente:** ⚠️ pendiente de fuente primaria (post de Boris Cherny en X / entrevista de mayo de 2025). Secundarias: https://www.tabnews.com.br/kenimo49/construi-o-rag-que-mandaram-fazer-voyage-vector-db-busca-semantica-depois-deletei-tudo-o-grep-venceu · https://www.besthub.dev/articles/why-claude-code-and-cursor-abandoned-vector-databases-for-agentic-retrieval-9dad68e8f191
 **Contexto (para la escena 9):** lo quitaron porque la búsqueda agéntica (grep, abrir ficheros) daba mejores resultados, no se desactualiza, no obliga a guardar una copia del código en un índice y tiene menos piezas.

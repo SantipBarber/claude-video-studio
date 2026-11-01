@@ -1,0 +1,383 @@
+{
+ "scene": "3c",
+ "voice_id": "onwK4e9ZLuTAKqWW03F9",
+ "text": "Tres: llega una pregunta. También la conviertes en vector y buscas los trozos que quedan más cerca. ¿Cuántos? Depende: en el ejemplo de Hugging Face, cinco; Anthropic recomienda veinte. No hay número mágico, se mide. Cuatro: le das esos trozos al modelo con la pregunta y le pides que responda solo con eso y que diga de dónde lo saca. Si mañana cambia un documento, lo actualizas en la biblioteca y listo. Sin reentrenar nada.",
+ "duration": 35.201,
+ "words": [
+  {
+   "w": "Tres:",
+   "start": 0.0,
+   "end": 0.65
+  },
+  {
+   "w": "llega",
+   "start": 1.126,
+   "end": 1.405
+  },
+  {
+   "w": "una",
+   "start": 1.451,
+   "end": 1.567
+  },
+  {
+   "w": "pregunta.",
+   "start": 1.602,
+   "end": 2.287
+  },
+  {
+   "w": "También",
+   "start": 2.647,
+   "end": 3.019
+  },
+  {
+   "w": "la",
+   "start": 3.053,
+   "end": 3.123
+  },
+  {
+   "w": "conviertes",
+   "start": 3.17,
+   "end": 3.611
+  },
+  {
+   "w": "en",
+   "start": 3.669,
+   "end": 3.727
+  },
+  {
+   "w": "vector",
+   "start": 3.785,
+   "end": 4.191
+  },
+  {
+   "w": "y",
+   "start": 4.551,
+   "end": 4.656
+  },
+  {
+   "w": "buscas",
+   "start": 4.725,
+   "end": 5.074
+  },
+  {
+   "w": "los",
+   "start": 5.143,
+   "end": 5.259
+  },
+  {
+   "w": "trozos",
+   "start": 5.317,
+   "end": 5.654
+  },
+  {
+   "w": "que",
+   "start": 5.7,
+   "end": 5.782
+  },
+  {
+   "w": "quedan",
+   "start": 5.84,
+   "end": 6.13
+  },
+  {
+   "w": "más",
+   "start": 6.177,
+   "end": 6.362
+  },
+  {
+   "w": "cerca.",
+   "start": 6.397,
+   "end": 7.012
+  },
+  {
+   "w": "¿Cuántos?",
+   "start": 7.372,
+   "end": 8.208
+  },
+  {
+   "w": "Depende:",
+   "start": 8.568,
+   "end": 9.253
+  },
+  {
+   "w": "en",
+   "start": 9.509,
+   "end": 9.625
+  },
+  {
+   "w": "el",
+   "start": 9.683,
+   "end": 9.741
+  },
+  {
+   "w": "ejemplo",
+   "start": 9.776,
+   "end": 10.124
+  },
+  {
+   "w": "de",
+   "start": 10.17,
+   "end": 10.228
+  },
+  {
+   "w": "Hugging",
+   "start": 10.298,
+   "end": 10.553
+  },
+  {
+   "w": "Face,",
+   "start": 10.612,
+   "end": 11.064
+  },
+  {
+   "w": "cinco;",
+   "start": 11.204,
+   "end": 11.889
+  },
+  {
+   "w": "Anthropic",
+   "start": 12.19,
+   "end": 12.806
+  },
+  {
+   "w": "recomienda",
+   "start": 13.166,
+   "end": 13.793
+  },
+  {
+   "w": "veinte.",
+   "start": 14.106,
+   "end": 14.814
+  },
+  {
+   "w": "No",
+   "start": 15.372,
+   "end": 15.569
+  },
+  {
+   "w": "hay",
+   "start": 15.627,
+   "end": 15.743
+  },
+  {
+   "w": "número",
+   "start": 15.801,
+   "end": 16.068
+  },
+  {
+   "w": "mágico,",
+   "start": 16.115,
+   "end": 16.753
+  },
+  {
+   "w": "se",
+   "start": 16.939,
+   "end": 17.078
+  },
+  {
+   "w": "mide.",
+   "start": 17.148,
+   "end": 17.647
+  },
+  {
+   "w": "Cuatro:",
+   "start": 18.204,
+   "end": 18.82
+  },
+  {
+   "w": "le",
+   "start": 19.389,
+   "end": 19.481
+  },
+  {
+   "w": "das",
+   "start": 19.528,
+   "end": 19.714
+  },
+  {
+   "w": "esos",
+   "start": 19.772,
+   "end": 19.992
+  },
+  {
+   "w": "trozos",
+   "start": 20.039,
+   "end": 20.41
+  },
+  {
+   "w": "al",
+   "start": 20.492,
+   "end": 20.608
+  },
+  {
+   "w": "modelo",
+   "start": 20.666,
+   "end": 20.979
+  },
+  {
+   "w": "con",
+   "start": 21.037,
+   "end": 21.13
+  },
+  {
+   "w": "la",
+   "start": 21.176,
+   "end": 21.246
+  },
+  {
+   "w": "pregunta",
+   "start": 21.293,
+   "end": 21.815
+  },
+  {
+   "w": "y",
+   "start": 22.198,
+   "end": 22.279
+  },
+  {
+   "w": "le",
+   "start": 22.361,
+   "end": 22.43
+  },
+  {
+   "w": "pides",
+   "start": 22.477,
+   "end": 22.779
+  },
+  {
+   "w": "que",
+   "start": 22.837,
+   "end": 22.918
+  },
+  {
+   "w": "responda",
+   "start": 22.999,
+   "end": 23.522
+  },
+  {
+   "w": "solo",
+   "start": 23.638,
+   "end": 23.986
+  },
+  {
+   "w": "con",
+   "start": 24.033,
+   "end": 24.16
+  },
+  {
+   "w": "eso",
+   "start": 24.23,
+   "end": 24.543
+  },
+  {
+   "w": "y",
+   "start": 24.868,
+   "end": 24.961
+  },
+  {
+   "w": "que",
+   "start": 25.043,
+   "end": 25.124
+  },
+  {
+   "w": "diga",
+   "start": 25.17,
+   "end": 25.495
+  },
+  {
+   "w": "de",
+   "start": 25.646,
+   "end": 25.762
+  },
+  {
+   "w": "dónde",
+   "start": 25.809,
+   "end": 26.111
+  },
+  {
+   "w": "lo",
+   "start": 26.157,
+   "end": 26.238
+  },
+  {
+   "w": "saca.",
+   "start": 26.296,
+   "end": 26.877
+  },
+  {
+   "w": "Si",
+   "start": 27.388,
+   "end": 27.539
+  },
+  {
+   "w": "mañana",
+   "start": 27.585,
+   "end": 27.934
+  },
+  {
+   "w": "cambia",
+   "start": 27.98,
+   "end": 28.293
+  },
+  {
+   "w": "un",
+   "start": 28.34,
+   "end": 28.386
+  },
+  {
+   "w": "documento,",
+   "start": 28.433,
+   "end": 29.245
+  },
+  {
+   "w": "lo",
+   "start": 29.687,
+   "end": 29.779
+  },
+  {
+   "w": "actualizas",
+   "start": 29.826,
+   "end": 30.488
+  },
+  {
+   "w": "en",
+   "start": 30.557,
+   "end": 30.673
+  },
+  {
+   "w": "la",
+   "start": 30.732,
+   "end": 30.79
+  },
+  {
+   "w": "biblioteca",
+   "start": 30.836,
+   "end": 31.486
+  },
+  {
+   "w": "y",
+   "start": 31.869,
+   "end": 31.962
+  },
+  {
+   "w": "listo.",
+   "start": 32.043,
+   "end": 32.624
+  },
+  {
+   "w": "Sin",
+   "start": 33.007,
+   "end": 33.239
+  },
+  {
+   "w": "reentrenar",
+   "start": 33.309,
+   "end": 33.959
+  },
+  {
+   "w": "nada.",
+   "start": 34.47,
+   "end": 35.201
+  }
+ ]
+}
