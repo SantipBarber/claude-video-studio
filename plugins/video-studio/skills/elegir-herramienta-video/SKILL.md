@@ -50,6 +50,7 @@ Siempre que haya animaciones → skill identidad-visual
 ```bash
 # Edición de tomas
 brew install ffmpeg
+# Windows: winget install Gyan.FFmpeg  (ver docs/windows.md)
 git clone https://github.com/browser-use/video-use ~/tools/video-use
 ln -s ~/tools/video-use ~/.claude/skills/video-use   # + ELEVENLABS_API_KEY en .env
 
@@ -58,7 +59,7 @@ claude plugin marketplace add heygen-com/hyperframes   # Node 22+ y FFmpeg
 npx skills add remotion-dev/skills
 
 # Editor con MCP (con la app abierta)
-claude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp
+claude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp   # solo macOS
 ```
 
 ## Reglas

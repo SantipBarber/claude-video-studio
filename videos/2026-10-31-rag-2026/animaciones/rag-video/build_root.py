@@ -50,7 +50,7 @@ HOLD = {
 }
 
 def words_of(folder, scene):
-    return json.loads((folder / f"scene-{scene}.words.json").read_text())
+    return json.loads((folder / f"scene-{scene}.words.json").read_text(encoding="utf-8"))
 
 
 def interp(x, xs, ys):
@@ -141,7 +141,7 @@ for ref, cur in zip(ref_scenes, scenes):
         clean.append((ref["duration"], cur["duration"]))  # pausa: el último estado se mantiene
     WARPS[cur["id"]] = ([p[0] for p in clean], [p[1] for p in clean])
     f = HERE / "compositions" / f"{cur['id']}.html"
-    html = f.read_text()
+    html = f.read_text(encoding="utf-8")
     block = WARP_JS.format(anchors=json.dumps([list(p) for p in clean], separators=(",", ":")), cid=cur["id"])
     if "/* warp:start" in html:
         html = re.sub(r"/\* warp:start.*?/\* warp:end \*/", lambda m: block, html, flags=re.S)
@@ -149,7 +149,7 @@ for ref, cur in zip(ref_scenes, scenes):
         old = re.search(r'window\.__timelines = window\.__timelines \|\| \{\};\s*window\.__timelines\["' + cur["id"] + r'"\] = tl;', html)
         assert old, f"{f.name}: no encuentro el registro de la línea de tiempo"
         html = html[:old.start()] + block + html[old.end():]
-    f.write_text(html)
+    f.write_text(html, encoding="utf-8")
 
 # ── Efectos de sonido ────────────────────────────────────────────────────────
 # Instante de referencia (segundo local de la composición, como en su código) -> segundo global actual.
@@ -296,6 +296,6 @@ html = f"""<!doctype html>
   </body>
 </html>
 """
-(HERE / "index.html").write_text(html)
-(HERE / "timeline.json").write_text(json.dumps({"total": TOTAL, "scenes": scenes}, ensure_ascii=False, indent=1))
+(HERE / "index.html").write_text(html, encoding="utf-8")
+(HERE / "timeline.json").write_text(json.dumps({"total": TOTAL, "scenes": scenes}, ensure_ascii=False, indent=1), encoding="utf-8")
 print(f"index.html: {len(scenes)} escenas, {TOTAL} s")

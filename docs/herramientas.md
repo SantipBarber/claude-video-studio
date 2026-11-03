@@ -41,3 +41,5 @@ Herramientas para editar y producir vídeo con Claude Code mediante MCP, skills 
 
 - **Vídeo hablado (talking-head):** video-use → (opcional) retoque en Palmier Pro / Velorn → youtube-mcp. Alternativa coste cero: auto-editor/videocut-skills + Whisper local.
 - **Motion graphics, shorts y vídeos sin cara:** HyperFrames (o Remotion) + ElevenLabs TTS → youtube-mcp.
+
+Windows: ver [docs/windows.md](windows.md).

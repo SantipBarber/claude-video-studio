@@ -16,6 +16,18 @@ cd ~/tools/video-use && uv sync        # o: pip install -e .
 cp .env.example .env                   # poner ELEVENLABS_API_KEY
 ```
 
+Opción manual (Windows, PowerShell):
+
+```powershell
+winget install Gyan.FFmpeg
+winget install yt-dlp.yt-dlp
+winget install astral-sh.uv
+git clone https://github.com/browser-use/video-use $HOME\tools\video-use
+New-Item -ItemType Junction -Path "$HOME\.claude\skills\video-use" -Target "$HOME\tools\video-use"
+cd $HOME\tools\video-use; uv sync
+copy .env.example .env                 # poner ELEVENLABS_API_KEY
+```
+
 ## Cómo funciona
 
 Pipeline: **Transcribir → Empaquetar → Razonar → EDL → Render → Autoevaluación**.
@@ -42,7 +54,7 @@ claude
 ## Limitaciones
 
 - Muy bueno para contenido hablado; menos fino en montajes puramente visuales.
-- No hay timeline para ajustar a mano → si hace falta, retocar en Palmier Pro o Velorn.
+- No hay timeline para ajustar a mano → si hace falta, retocar en Palmier Pro (solo macOS) o Velorn.
 - Depende de ElevenLabs para transcribir (coste por uso).
 
 ## Al terminar

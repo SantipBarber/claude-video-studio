@@ -35,6 +35,9 @@ Lo más reciente arriba. Formato: `- AAAA-MM-DD · [tema] lo aprendido. Cómo ap
 
 ## Claude Code / plugin
 
+- 2026-11-03 · [windows] IDs de winget verificados en microsoft/winget-pkgs: `Git.Git`, `GitHub.GitLFS`, `OpenJS.NodeJS.LTS`, `Gyan.FFmpeg`, `Python.Python.3.12`, `astral-sh.uv`, `yt-dlp.yt-dlp`, `Rclone.Rclone`, `Audacity.Audacity`. En Python, `read_text`/`write_text` siempre con `encoding="utf-8"`: en Windows el valor por defecto es cp1252.
+- 2026-11-03 · [pi] `pi-task -v` solo funciona dentro de herdr. Desde una sesión de Claude Code fuera de herdr, lanzarlo con `-s <id>` para que quede la sesión y se pueda registrar el coste con `pi-usage`.
+
 - 2026-10-31 · [plugin] `claude plugin marketplace add heygen-com/hyperframes` falla sin **git-lfs** (`brew install git-lfs && git lfs install`). Después queda un aviso de punteros LFS sin bajar: son vídeos de test del repo, no hace falta `lfs pull`. Plugin: `hyperframes@hyperframes`.
 - 2026-10-31 · [pencil] El MCP de Pencil no crea ni abre ficheros: si `filePath` no existe, actúa sobre el `.pen` activo (¡riesgo de tocar otro proyecto!). Crear el fichero en la app (⌘N + guardar) y pasar siempre la ruta explícita. No abrir una segunda instancia de Pen: competirían por el MCP.
 - 2026-10-31 · [plugin] Validar el marketplace con `claude plugin validate .` desde la raíz del repo antes de subir.

@@ -15,7 +15,7 @@ La idea: abrir Claude Code (o un proyecto de Claude) sobre este repositorio y us
 
 Todo funciona con la suscripción de Claude; lo único que se paga aparte es ElevenLabs.
 
-## Empezar en tu Mac
+## Empezar en Mac
 
 ```bash
 # 1. Herramientas base
@@ -38,6 +38,33 @@ cd ../../../.. && claude
 ```
 
 Claves (ElevenLabs, Google) en un `.env` en la raíz; está en `.gitignore`.
+
+## Empezar en Windows
+
+```powershell
+# 1. Herramientas base (PowerShell)
+winget install Git.Git
+winget install GitHub.GitLFS
+winget install OpenJS.NodeJS.LTS   # Node 22 o superior
+winget install Gyan.FFmpeg
+winget install Python.Python.3.12
+# cerrar y abrir PowerShell para que se actualice el PATH
+git lfs install
+git clone https://github.com/SantipBarber/claude-video-studio.git
+cd claude-video-studio
+
+# 2. Plugin con las skills
+claude plugin marketplace add SantipBarber/claude-video-studio
+claude plugin install video-studio@claude-video-studio
+
+# 3. Probar que la escena de ejemplo renderiza
+cd videos/2026-10-31-rag-2026/animaciones/escena-03
+npx hyperframes check
+npx hyperframes preview          # vista previa en Chrome o Edge
+npx hyperframes render -o $HOME\Desktop\escena-03.mp4
+```
+
+El núcleo (HyperFrames, ffmpeg, Python, ElevenLabs, rclone) es multiplataforma, pero HyperFrames en Windows aún está por probar y hay herramientas solo de macOS: el resto en [docs/windows.md](docs/windows.md).
 
 ## Memoria
 

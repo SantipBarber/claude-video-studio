@@ -28,7 +28,7 @@
 - [x] Tramo de prueba 3b + 3c animado con voz en `animaciones/rag-steps/` (74 s, 5 escenas como subcomposiciones, voz de serie «Daniel» de ElevenLabs sincronizada por palabra). Pendiente: que Santi lo vea en la vista previa y apruebe antes de renderizar.
 - [x] **Vídeo completo montado** en `animaciones/rag-video/` (18 composiciones, 7:58, voz de prueba «Daniel»). `build_root.py` regenera `index.html` y `timeline.json` desde las duraciones reales de la voz. Borrador renderizado en `out/rag-video-draft-v1.mp4` (fuera de git). Santi: «como POC está guay», mejorable en el ajuste final.
 - [x] Música (estilo A «pulso tech», ElevenLabs Music, encadenada a 6:13) y 30 efectos (whoosh, pop, tic, golpe final), colocados desde `build_root.py`. Render v2 normalizado a −14 LUFS: `out/rag-video-v2.mp4`. Santi (01-11): «está perfecto para ser el primero»; la voz suena algo artificial.
-- [ ] Enviar la v2 para recoger opiniones. Subida a Google Drive (`Vídeos IA/RAG en 2026 - v2 (borrador para opiniones).mp4`) el 01-11; falta compartir el enlace y recoger respuestas.
+- [x] Enviar la v2 para recoger opiniones (Google Drive, `Vídeos IA/RAG en 2026 - v2 (borrador para opiniones).mp4`). 03-11: **ha gustado bastante**. Siguiente paso: ajuste final (voz más natural, transiciones, ritmo de agentic y longcontext, `first_frame_empty`) y miniatura.
 - [ ] Crear un client_id propio de Google Cloud para rclone (el compartido se retira en 2026) y aprovechar el proyecto para la API de YouTube.
 - [ ] Ajustes conocidos: con la voz de Santi, 5 textos (ya resueltos con pausas de 1,2 s en search y topk) se ven poco tiempo (`line_unread` en search, topk y failures) porque las escenas «Buscar» (5,4 s) y «¿Cuántos?» (6,9 s) se han quedado cortas; «6 o más llamadas» (8b) no tiene fuente; música y efectos (sin créditos de ElevenLabs este mes); transiciones entre escenas (ahora cortes secos).
 - [x] **Voz de Santi** (01-11): prueba A/B de la escena 1 entre ElevenLabs IVC (Starter), Qwen3-TTS 0.6B y Qwen3-TTS 1.7B, todas a la misma velocidad. Santi y Nerea eligieron **ElevenLabs**: entonación más natural y mejor manejo de pausas y silencios. Las 14 escenas ya están generadas con su voz (`ELEVENLABS_VOICE_ID_SANTI` en `.env`). El vídeo pasa de 7:58 a **6:11** y el gancho dice ahora «en seis minutos».
@@ -39,6 +39,11 @@
 - [ ] Generar la voz por escenas con la voz clonada.
 - [ ] Animar el resto de escenas (1–2 y 4–11).
 - [ ] Miniatura y publicación como privado.
+
+## Windows (03-11)
+
+- [x] Adaptar el repo: `docs/windows.md` (winget, diferencias de comandos, herramientas solo de macOS), sección «Empezar en Windows» en el README, `encoding="utf-8"` en `build_root.py` (en el Mac genera el mismo `index.html`) y `.gitattributes` con `eol=lf`.
+- [ ] **Probarlo en un Windows real** (Santi o alguien de su empresa): la lista de comprobación está en `docs/windows.md`. HyperFrames dice soportar Windows desde la v0.8.219, pero no lo hemos probado. Si falla el render nativo, usar WSL2. Para `rag-video` hay que pasar aparte los mp3 de `assets/`, que no están en git.
 
 ## Ideas
 
