@@ -11,6 +11,7 @@ La idea: abrir Claude Code (o un proyecto de Claude) sobre este repositorio y us
 | Vídeo hablado: quitar silencios, errores y muletillas | [video-use](https://github.com/browser-use/video-use) | Palmier Pro / Velorn para retoque visual | ElevenLabs (transcripción) |
 | Animaciones y efectos mientras explicas | video-use + HyperFrames o Remotion | — | ElevenLabs |
 | Vídeo sin cara (explicativo animado + voz en off) | [HyperFrames](https://github.com/heygen-com/hyperframes) o [Remotion](https://www.remotion.dev/docs/ai/skills) | ElevenLabs TTS para la voz | ElevenLabs |
+| Demo de producto: grabación de pantalla con voz clonada | Playwright + ffmpeg + HyperFrames | ElevenLabs para la voz ([workflow 5](docs/workflows/05-demo-de-producto.md)) | ElevenLabs |
 | Publicar en YouTube | MCP de YouTube (Data API v3) | — | Gratis (cuota de API de Google) |
 
 Todo funciona con la suscripción de Claude; lo único que se paga aparte es ElevenLabs.
@@ -99,11 +100,17 @@ docs/
   herramientas.md            Catálogo de herramientas investigadas (oct 2026)
   clonify.md                 Por qué Clonify no sirve para esto
   recursos-abiertos.md       Hugging Face, documentación, iconos, fuentes, audio (con licencias)
+  voz-clonada.md             Modelos, pronunciación, tomas y empalmes con ElevenLabs
+  montaje-y-verificacion.md  Sincronía con la voz, cortes limpios, mezcla y qué prueba cada comprobación
   workflows/
     01-video-hablado.md      Cortar tomas con video-use
     02-animaciones.md        Añadir animaciones sobre tu explicación
     03-video-sin-cara.md     Vídeo explicativo animado con voz en off
     04-publicar-youtube.md   Subida, título, descripción, miniatura
+    05-demo-de-producto.md   Grabación de pantalla con voz clonada
+scripts/
+  splice_voice.py            Sustituye frases o palabras de una locución sin regenerarla
+  detect_glitches.py         Busca clics, huecos y congelaciones en un vídeo
 videos/
   README.md                  Índice de vídeos
   _plantilla/                Copiar para cada vídeo nuevo

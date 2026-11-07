@@ -3,8 +3,8 @@
 ## Ahora (en el Mac)
 
 - [x] Clonar el repo e instalar el plugin `video-studio` (+ hyperframes, Chrome Headless Shell, whisper-cpp, Parakeet) (ver "Empezar en tu Mac" en el README).
-- [ ] Probar el flujo **pencil.dev → HyperFrames**: diseñar 1–2 fotogramas clave de una escena en Pencil, que Claude Code los lea por MCP y los anime. Comprobar qué exporta Pencil (HTML/CSS, imágenes, tokens) y documentarlo en `docs/workflows/05-pencil-a-hyperframes.md`.
-- [ ] **Clonar la voz** en ElevenLabs: grabar audio limpio, crear la voz, comprobar requisitos actuales (clonación rápida vs profesional, plan necesario). Guardar el ID de la voz en `.env`, nunca en git.
+- [ ] Probar el flujo **pencil.dev → HyperFrames**: diseñar 1–2 fotogramas clave de una escena en Pencil, que Claude Code los lea por MCP y los anime. Comprobar qué exporta Pencil (HTML/CSS, imágenes, tokens) y documentarlo en `docs/workflows/06-pencil-a-hyperframes.md`.
+- [x] (01-11, clonación instantánea; ver `docs/voz-clonada.md`.) **Clonar la voz** en ElevenLabs: grabar audio limpio, crear la voz, comprobar requisitos actuales (clonación rápida vs profesional, plan necesario). Guardar el ID de la voz en `.env`, nunca en git.
 - [ ] Elegir entre whisper-cpp y Parakeet para transcribir y **desinstalar el que no se use** (Santi, 31-10: el espacio en disco está creciendo mucho; npm y Playwright ya se limpiaron).
 - [ ] Vídeo de RAG: **más pantallas** en el pen, con el conocimiento de `fuentes.md` (Hugging Face, LangChain Deep Agents…) explicado para usuarios no tan avanzados (petición de Santi, 31-10).
 
@@ -36,8 +36,8 @@
 - [ ] **Ritmo para que no canse** (Santi, 01-11: prioridad justo después de la voz): revisar escenas largas (8 agentic 52 s, 9 longcontext 42 s), meter cambios de plano y alguna pausa o pregunta al espectador.
 - [ ] Afinar la escena 3: ritmo ajustado a la voz real, sonido (música de fondo + efecto en cada paso).
 - [ ] Sustituir los puntos inventados por **embeddings reales** (sentence-transformers + dataset de Hugging Face, proyección UMAP/PCA).
-- [ ] Generar la voz por escenas con la voz clonada.
-- [ ] Animar el resto de escenas (1–2 y 4–11).
+- [x] Generar la voz por escenas con la voz clonada (01-11).
+- [x] Animar el resto de escenas (`animaciones/rag-video/`, 18 composiciones).
 - [ ] Miniatura y publicación como privado.
 
 ## Windows (03-11)

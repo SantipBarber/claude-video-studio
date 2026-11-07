@@ -20,6 +20,9 @@ Antes de recomendar, haz como mucho dos preguntas si no está claro:
 │       ¿Quiere retocar a mano en un timeline?
 │              → añadir Palmier Pro (macOS 26 + Apple Silicon) o Velorn
 │
+├─ ¿Demo de una aplicación con grabación de pantalla y voz clonada?
+│      → Playwright + ffmpeg + HyperFrames → docs/workflows/05-demo-de-producto.md
+│
 └─ No → ¿Explicativo/diagramas/motion graphics/short?
         → HyperFrames (por defecto) o Remotion + voz ElevenLabs → skill video-sin-cara
         ¿La voz la graba el usuario? → limpiarla antes con video-use
