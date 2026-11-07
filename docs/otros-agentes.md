@@ -44,6 +44,6 @@ Lo probado es que el agente encuentra las skills. Producir un vídeo entero solo
 
 ## Diferencias con Claude Code
 
-- **Herramientas y MCP.** Las skills piden herramientas por su nombre (ffmpeg, HyperFrames, ElevenLabs, el MCP de YouTube). Cada agente configura los MCP a su manera; consulta su documentación.
+- **Herramientas y MCP.** Las skills piden herramientas por su nombre (ffmpeg, HyperFrames, ElevenLabs, youtubeuploader). Las que son CLI funcionan igual en todos; los MCP, cada agente los configura a su manera.
 - **Plugins de terceros.** Los workflows usan skills de otros proyectos, como HyperFrames o video-use. Cada uno explica cómo instalarlas fuera de Claude Code.
 - **Windows.** Git en Windows puede clonar `.agents/skills` y `.claude/skills` como ficheros de texto en vez de como enlace. Mira [windows.md](windows.md).

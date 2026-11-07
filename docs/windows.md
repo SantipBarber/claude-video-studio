@@ -26,6 +26,7 @@ winget install Python.Python.3.12
 winget install astral-sh.uv           # para video-use (uv sync)
 winget install yt-dlp.yt-dlp          # solo para el workflow de vídeo hablado
 winget install Rclone.Rclone          # subir a Google Drive
+# youtubeuploader no está en winget: zip de https://github.com/porjo/youtubeuploader/releases
 git lfs install
 ```
 

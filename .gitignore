@@ -16,6 +16,7 @@ node_modules/
 *.env
 client_secret*.json
 token*.json
+request.token
 
 .DS_Store
 
