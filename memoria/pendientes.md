@@ -4,6 +4,7 @@
 
 - [x] Documentar cómo instalarlo en Codex, OpenCode, pi y Cursor (07-11, `docs/otros-agentes.md`). pi y OpenCode encuentran las skills; Codex y Cursor sin probar.
 - [ ] Producir un vídeo entero con un agente que no sea Claude Code y anotar qué falla.
+- [ ] Publicar con youtubeuploader (07-11, workflow 4): crear el proyecto de Google Cloud y subir un vídeo corto de prueba como **oculto** para ver si un proyecto sin auditar lo deja privado y bloqueado.
 - [x] Subir la imagen como vista previa social en los ajustes de GitHub (07-11).
 
 ## Verificación automática (investigación del 07-11)

@@ -33,14 +33,15 @@ Herramientas para editar y producir vídeo con Claude Code mediante MCP, skills 
 
 | Herramienta | Qué hace | Notas |
 |---|---|---|
-| [mrchevyceleb/youtube-mcp](https://github.com/mrchevyceleb/youtube-mcp) | `upload_video` (reanudable), `update_video`, `set_thumbnail` | MIT, OAuth Google Cloud + YouTube Data API v3. Pocas estrellas: **revisar el código antes de dar acceso al canal** |
-| Composio YouTube toolkit | MCP gestionado (OAuth resuelto) | Requiere API key de Composio |
-| Otros ⚠️ | [anwerj/youtube-uploader-mcp](https://pkg.go.dev/github.com/anwerj/youtube-uploader-mcp), [miller-joe/youtube-mcp](https://glama.ai/mcp/servers/miller-joe/youtube-mcp) | Sin revisar |
+| **[youtubeuploader](https://github.com/porjo/youtubeuploader)** (recomendada) | CLI: sube como privado u oculto, con miniatura, subtítulos SRT, lista de reproducción y metadatos en JSON | Apache-2.0, gratis. Mac (`brew`), Windows (zip) y Linux. OAuth de Google Cloud + YouTube Data API v3. v1.25.5, actividad en agosto de 2026 |
+| [youtube-uploader-mcp](https://github.com/anwerj/youtube-uploader-mcp) | MCP: lo mismo, más cambiar la visibilidad después y marcar contenido sintético | MIT, gratis. Mac, Windows y Linux. v0.3.1 (31-10-2026), pocos usuarios: **revisar el código antes de dar acceso al canal** |
+
+Un proyecto de Google Cloud sin auditar puede dejar privados y bloqueados los vídeos subidos por la API: prueba antes con un vídeo corto (ver [workflow 4](workflows/04-publicar-youtube.md)).
 
 ## Recomendación de stacks
 
-- **Vídeo hablado (talking-head):** video-use → (opcional) retoque en Palmier Pro / Velorn → youtube-mcp. Alternativa coste cero: auto-editor/videocut-skills + Whisper local.
-- **Motion graphics, shorts y vídeos sin cara:** HyperFrames (o Remotion) + ElevenLabs TTS → youtube-mcp.
+- **Vídeo hablado (talking-head):** video-use → (opcional) retoque en Palmier Pro / Velorn → youtubeuploader. Alternativa coste cero: auto-editor/videocut-skills + Whisper local.
+- **Motion graphics, shorts y vídeos sin cara:** HyperFrames (o Remotion) + ElevenLabs TTS → youtubeuploader.
 
 Demo de producto con grabación de pantalla: Playwright + ffmpeg + HyperFrames + ElevenLabs ([workflow 5](workflows/05-demo-de-producto.md)). Voz: [voz-clonada.md](voz-clonada.md).
 

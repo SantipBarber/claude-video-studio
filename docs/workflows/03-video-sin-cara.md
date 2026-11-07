@@ -2,7 +2,7 @@
 
 Ejemplo: "Cómo funciona RAG y qué tecnologías RAG son las más punteras ahora".
 
-Herramientas: [HyperFrames](https://github.com/heygen-com/hyperframes) (o [Remotion](https://www.remotion.dev/docs/ai/skills)) + ElevenLabs TTS + MCP de YouTube. video-use solo entra si la voz la grabas tú (para limpiarla y cortarla).
+Herramientas: [HyperFrames](https://github.com/heygen-com/hyperframes) (o [Remotion](https://www.remotion.dev/docs/ai/skills)) + ElevenLabs TTS + youtubeuploader. video-use solo entra si la voz la grabas tú (para limpiarla y cortarla).
 
 ## Instalación (una vez)
 

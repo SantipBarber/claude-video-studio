@@ -18,7 +18,7 @@ Un manual y un espacio de trabajo para producir vídeos con agentes de IA. Abres
 | Animaciones sobre tu explicación | video-use + HyperFrames o Remotion | [Workflow 2](docs/workflows/02-animaciones.md) |
 | Explicativo sin cara, con voz en off | [HyperFrames](https://github.com/heygen-com/hyperframes) o [Remotion](https://www.remotion.dev/docs/ai/skills) + ElevenLabs | [Workflow 3](docs/workflows/03-video-sin-cara.md) |
 | Demo de producto: pantalla y voz clonada | Playwright + ffmpeg + HyperFrames | [Workflow 5](docs/workflows/05-demo-de-producto.md) |
-| Publicar en YouTube | MCP de YouTube (Data API v3) | [Workflow 4](docs/workflows/04-publicar-youtube.md) |
+| Publicar en YouTube | [youtubeuploader](https://github.com/porjo/youtubeuploader) (YouTube Data API v3) | [Workflow 4](docs/workflows/04-publicar-youtube.md) |
 
 Funciona con Claude Code, Codex, OpenCode, pi y Cursor. Lo único que se paga aparte es ElevenLabs.
 
