@@ -29,3 +29,7 @@ videos/*/audio/ab-test/
 
 # Cloudflare
 .wrangler/
+
+# Informes de check_voice.py (llevan la transcripción)
+*.check.json
+__pycache__/

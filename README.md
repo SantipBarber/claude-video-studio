@@ -130,6 +130,7 @@ site/                        Página de haividio.dev
 scripts/
   splice_voice.py            Sustituye frases o palabras de una locución sin regenerarla
   detect_glitches.py         Busca clics, huecos y congelaciones en un vídeo
+  check_voice.py             Compara la voz con el guion (WhisperX, local)
 videos/
   README.md                  Índice de vídeos
   _plantilla/                Copiar para cada vídeo nuevo

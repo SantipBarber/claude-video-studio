@@ -6,6 +6,33 @@
 - [ ] Producir un vídeo entero con un agente que no sea Claude Code y anotar qué falla.
 - [x] Subir la imagen como vista previa social en los ajustes de GitHub (07-11).
 
+## Verificación automática (investigación del 07-11)
+
+Dos investigaciones independientes (un subagente de Claude y pi con gpt-6-luna) con el criterio de Santi: libre y gratis primero; ElevenLabs sigue siendo la voz principal. Ninguna medida decide si algo suena bien: sirven para saber qué escuchar primero.
+
+Ya:
+- [x] **WhisperX** ([repo](https://github.com/m-bain/whisperX), BSD-2, v3.8.6): `scripts/check_voice.py` compara la voz con el guion y guarda el instante real de cada palabra (07-11). Detectar cortes por duración de palabras no funcionó (ver aprendizajes).
+- [ ] **Cortes limpios dentro de una palabra**: ni `check_voice.py` ni `detect_glitches.py` los ven. Probar a alinear el audio final con la toma original por MFCC y DTW: un corte debería verse como un salto en el camino. Caso de prueba: quitar 150 ms en mitad de una palabra de una toma aprobada.
+- [ ] **Pronunciación escrita en `eleven_v4`**: IPA entre barras (`/ˈapi/`) y alias en el diccionario ([guía](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/best-practices)). Probar con «API». La documentación se contradice sobre qué modelos admiten etiquetas phoneme: hay que oírlo.
+
+Después:
+- [ ] Revisión visual: un fotograma por plano con [PySceneDetect](https://www.scenedetect.com) (BSD-3) y OCR ([PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR), Apache-2.0, o `ocrmac` en Mac) para comparar rótulos esperados, texto cortado, legibilidad a 360 px de ancho y desfase rótulo-voz (OCR a 10 fps contra los tiempos de WhisperX).
+- [ ] Si el OCR se queda corto: [Qwen3-VL-4B](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct) (Apache-2.0, local) como revisor de clips en movimiento. Ya está en caché la versión MLX de 4 bits.
+- [ ] Mezcla con *ducking* (`sidechaincompress`) en vez de volumen fijo para la música; medir voz y música por separado para marcar tramos donde la música tapa la voz (umbral a calibrar con oído).
+
+Más adelante:
+- [ ] Detector de pronunciación por fonemas: `wav2vec2-xlsr-53-espeak-cv-ft` (lo que suena) contra espeak-ng (lo esperado). Solo para la lista de términos difíciles; calibrar con tomas aprobadas y rechazadas. Licencia del modelo sin verificar.
+- [ ] Similitud de timbre por frase contra la toma aprobada (WeSpeaker) y calidad con DNSMOS, para ordenar qué escuchar.
+- [ ] Pedir 2 o 3 variantes solo de la frase difícil, ordenarlas con lo anterior y empalmar la buena con `splice_voice.py`.
+- [ ] Limpiar la muestra de clonación con Resemble Enhance (MIT) o DeepFilterNet. No aplicarlo a lo que genera ElevenLabs.
+- [ ] Borradores con voz local (VoxCPM2, Apache-2.0, o Qwen3-TTS) para cuadrar tiempos antes de gastar créditos.
+- [ ] Shorts verticales: composición vertical en HyperFrames; para vídeo hablado, recorte con MediaPipe.
+- [ ] Miniaturas desde código con Pillow; subtítulos SRT y capítulos desde los `.words.json`; probar títulos y miniaturas con «Test & Compare» de YouTube Studio.
+- [ ] Documentar en `docs/otros-agentes.md` el MCP alojado de ElevenLabs (`https://api.elevenlabs.io/v1/mcp`, OAuth); el `elevenlabs-mcp` local está archivado desde el 20-08-2026.
+- [ ] Validar las skills con `skills-ref` (Agent Skills).
+
+Descartados: Chatterbox (retirado y con marca de agua), Fish Audio S2 (licencia de investigación), F5-TTS y XTTS v2 (pesos no comerciales), Gemini (de pago; como mucho segunda opinión), UTMOSv2 como único medidor (inestable).
+
 ## Ahora (en el Mac)
 
 - [x] Clonar el repo e instalar el plugin `video-studio` (+ hyperframes, Chrome Headless Shell, whisper-cpp, Parakeet) (ver "Empezar en tu Mac" en el README).
