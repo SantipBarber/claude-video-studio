@@ -1,14 +1,14 @@
 ![Haividio: guion, voz, animación y publicación, dirigidos por tu agente de IA](docs/estilo/haividio-banner.png)
 
 ![Licencia MIT](https://img.shields.io/badge/licencia-MIT-D4FF3A?style=flat-square&labelColor=0F1116)
-![Probado con Claude Code](https://img.shields.io/badge/probado_con-Claude_Code-D4FF3A?style=flat-square&labelColor=0F1116)
+![Agentes: Claude Code, Codex, OpenCode, pi, Cursor](https://img.shields.io/badge/agentes-Claude_Code_%C2%B7_Codex_%C2%B7_OpenCode_%C2%B7_pi_%C2%B7_Cursor-D4FF3A?style=flat-square&labelColor=0F1116)
 ![Idioma: español](https://img.shields.io/badge/idioma-espa%C3%B1ol-D4FF3A?style=flat-square&labelColor=0F1116)
 
 Un manual y un espacio de trabajo para producir vídeos con agentes de IA. Abres la terminal aquí y el agente ya sabe qué herramienta usar, cómo se trabaja y qué falló la última vez.
 
 *Haividio* suena a «hay vídeo» en español y a «hi, video» en inglés.
 
-**[haividio.dev](https://haividio.dev)** · [Elige tu vídeo](#elige-tu-vídeo) · [Empezar](#empezar) · [Skills](#skills-del-plugin) · [Guías](#guías) · [Estructura](#estructura)
+**[haividio.dev](https://haividio.dev)** · [Elige tu vídeo](#elige-tu-vídeo) · [Empezar](#empezar) · [Skills](#skills) · [Guías](#guías) · [Estructura](#estructura)
 
 ## Elige tu vídeo
 
@@ -20,9 +20,11 @@ Un manual y un espacio de trabajo para producir vídeos con agentes de IA. Abres
 | Demo de producto: pantalla y voz clonada | Playwright + ffmpeg + HyperFrames | [Workflow 5](docs/workflows/05-demo-de-producto.md) |
 | Publicar en YouTube | MCP de YouTube (Data API v3) | [Workflow 4](docs/workflows/04-publicar-youtube.md) |
 
-Probado con Claude Code; las guías y los scripts sirven con cualquier agente. Lo único que se paga aparte es ElevenLabs.
+Funciona con Claude Code, Codex, OpenCode, pi y Cursor. Lo único que se paga aparte es ElevenLabs.
 
 ## Empezar
+
+Con Claude Code:
 
 ```bash
 claude plugin marketplace add SantipBarber/haividio
@@ -30,6 +32,15 @@ claude plugin install video-studio@haividio
 git clone https://github.com/SantipBarber/haividio.git
 cd haividio && claude
 ```
+
+Con Codex, OpenCode, pi o Cursor no hay que instalar nada: clona el repositorio y abre el agente en su raíz. Leen `AGENTS.md` y encuentran las skills en `.agents/skills`.
+
+```bash
+git clone https://github.com/SantipBarber/haividio.git
+cd haividio && codex             # o opencode, o pi
+```
+
+Para usar las skills en otros proyectos, o ver qué se ha probado con cada agente: [docs/otros-agentes.md](docs/otros-agentes.md).
 
 Dile qué vídeo quieres. El agente lee sus instrucciones, elige el workflow y propone el plan antes de renderizar nada.
 
@@ -90,7 +101,7 @@ El núcleo es multiplataforma, pero HyperFrames en Windows aún está por probar
 
 </details>
 
-## Skills del plugin
+## Skills
 
 | Skill | Para qué |
 |---|---|
@@ -104,6 +115,7 @@ El núcleo es multiplataforma, pero HyperFrames en Windows aún está por probar
 
 - [Voz clonada](docs/voz-clonada.md): modelos, pronunciación, tomas y empalmes.
 - [Montaje y verificación](docs/montaje-y-verificacion.md): sincronía, cortes limpios, mezcla y qué prueba cada comprobación.
+- [Otros agentes](docs/otros-agentes.md): Codex, OpenCode, pi y Cursor, dentro y fuera del repositorio.
 - [Catálogo de herramientas](docs/herramientas.md): editores, MCP y skills, con su coste.
 - [Identidad visual](docs/estilo/identidad.md): paleta, tipografía y movimiento.
 - [Recursos abiertos](docs/recursos-abiertos.md): documentación, iconos, fuentes y audio, con sus licencias.
@@ -117,15 +129,18 @@ El núcleo es multiplataforma, pero HyperFrames en Windows aún está por probar
 ```text
 AGENTS.md                    Instrucciones para cualquier agente
 CLAUDE.md                    Punto de entrada para Claude Code
+.agents/skills               Enlace a las skills para Codex, OpenCode, pi y Cursor
+package.json                 Paquete de pi (pi install)
 memoria/                     Aprendizajes, preferencias y pendientes
 .claude-plugin/              Marketplace de plugins
-plugins/video-studio/        Plugin con las skills
+plugins/video-studio/        Plugin de Claude Code con las skills
 docs/
   estilo/identidad.md        Identidad visual (paleta, tipografía, movimiento)
   herramientas.md            Catálogo de herramientas
   voz-clonada.md             Modelos, pronunciación, tomas y empalmes
   montaje-y-verificacion.md  Sincronía, cortes, mezcla y comprobaciones
   recursos-abiertos.md       Recursos con sus licencias
+  otros-agentes.md           Codex, OpenCode, pi y Cursor
   windows.md                 Instalación y límites en Windows
   workflows/                 Un flujo por tipo de vídeo
 site/                        Página de haividio.dev

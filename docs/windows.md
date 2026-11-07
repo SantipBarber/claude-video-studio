@@ -37,6 +37,7 @@ Tras instalar, cierra y abre la terminal para que el PATH se actualice; comprueb
 - Rutas en PowerShell: `$HOME\Desktop\escena-03.mp4` en lugar de `~/Desktop/...`.
 - Enlace simbólico de la skill video-use: en vez de `ln -s`, usa una unión de directorios (no requiere administrador):
   `New-Item -ItemType Junction -Path "$HOME\.claude\skills\video-use" -Target "$HOME\tools\video-use"`
+- Skills para otros agentes: `.agents/skills` es un enlace simbólico. Sin el Modo desarrollador, Git lo clona como un fichero de texto. Actívalo y clona con `git clone -c core.symlinks=true ...`, o crea una unión: `New-Item -ItemType Junction -Path .agents\skills -Target plugins\video-studio\skills` (borra antes el fichero). Detalles en [otros-agentes.md](otros-agentes.md).
 - La vista previa de HyperFrames se abre en Chrome o Edge, que reproducen el audio.
 - Finales de línea: el repo trae `.gitattributes` con `eol=lf`, no hace falta tocar `core.autocrlf`.
 

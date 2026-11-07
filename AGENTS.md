@@ -1,6 +1,6 @@
 # Instrucciones para agentes de IA
 
-Este repositorio, Haividio, es la base de conocimiento y el espacio de trabajo de Santi para producir vídeos con agentes de IA. Se ha probado con Claude Code. Idioma de trabajo: español.
+Este repositorio, Haividio, es la base de conocimiento y el espacio de trabajo de Santi para producir vídeos con agentes de IA. Se ha usado de principio a fin con Claude Code; Codex, OpenCode, pi y Cursor encuentran las mismas skills en `.agents/skills` (ver `docs/otros-agentes.md`). Idioma de trabajo: español.
 
 ## Memoria (siempre)
 
@@ -11,7 +11,7 @@ Al empezar cualquier sesión, lee `memoria/aprendizajes.md`, `memoria/preferenci
 1. Lee `README.md` (tabla de herramientas) y `docs/herramientas.md`.
 2. Identifica el caso de uso y lee el workflow correspondiente en `docs/workflows/`.
 3. Revisa `videos/README.md` por si hay vídeos anteriores relacionados (reutiliza estilo, escenas, guiones).
-4. Si hay animaciones o miniatura, aplica `docs/estilo/identidad.md` (skill `identidad-visual` del plugin `plugins/video-studio`).
+4. Si hay animaciones o miniatura, aplica `docs/estilo/identidad.md` (skill `identidad-visual`, en `plugins/video-studio/skills/`).
 5. Crea la carpeta del vídeo copiando `videos/_plantilla/` → `videos/AAAA-MM-DD-slug/`.
 
 ## Reglas

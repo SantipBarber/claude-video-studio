@@ -1,0 +1,10 @@
+{
+  "name": "haividio",
+  "private": true,
+  "description": "Paquete de pi con las skills de Haividio.",
+  "license": "MIT",
+  "keywords": ["pi-package"],
+  "pi": {
+    "skills": ["./plugins/video-studio/skills"]
+  }
+}
