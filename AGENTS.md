@@ -1,6 +1,6 @@
 # Instrucciones para agentes de IA
 
-Este repositorio, Haividio, es la base de conocimiento y el espacio de trabajo de Santi para producir vídeos con agentes de IA. Se ha usado de principio a fin con Claude Code; Codex, OpenCode, pi y Cursor encuentran las mismas skills en `.agents/skills` (ver `docs/otros-agentes.md`). Idioma de trabajo: español.
+Este repositorio, Haividio, es la base de conocimiento y el espacio de trabajo de Santi para producir vídeos con agentes de IA. Se ha usado de principio a fin con Claude Code; Codex, OpenCode, pi y Cursor encuentran las mismas skills en `.agents/skills`, y Claude Code en `.claude/skills` (ver `docs/otros-agentes.md`). Idioma de trabajo: español.
 
 ## Memoria (siempre)
 
