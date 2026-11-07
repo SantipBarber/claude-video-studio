@@ -3,7 +3,7 @@
 ## Haividio
 
 - [ ] Documentar cómo instalarlo y usarlo en Codex, pi y Cursor, y probarlo: hoy solo se ha probado con Claude Code.
-- [ ] Enlazar `haividio.dev` cuando esté activo y subir la imagen como vista previa social en los ajustes de GitHub.
+- [ ] Subir la imagen como vista previa social en los ajustes de GitHub.
 
 ## Ahora (en el Mac)
 

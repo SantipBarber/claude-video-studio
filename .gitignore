@@ -26,3 +26,6 @@ token*.json
 
 # Pruebas A/B de voz (audios, logs y ficheros temporales)
 videos/*/audio/ab-test/
+
+# Cloudflare
+.wrangler/
