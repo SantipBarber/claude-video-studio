@@ -2,8 +2,9 @@
 
 ## Haividio
 
-- [ ] Documentar cómo instalarlo y usarlo en Codex, pi y Cursor, y probarlo: hoy solo se ha probado con Claude Code.
-- [ ] Subir la imagen como vista previa social en los ajustes de GitHub.
+- [x] Documentar cómo instalarlo en Codex, OpenCode, pi y Cursor (07-11, `docs/otros-agentes.md`). pi y OpenCode encuentran las skills; Codex y Cursor sin probar.
+- [ ] Producir un vídeo entero con un agente que no sea Claude Code y anotar qué falla.
+- [x] Subir la imagen como vista previa social en los ajustes de GitHub (07-11).
 
 ## Ahora (en el Mac)
 

@@ -71,6 +71,7 @@ section{padding-block:clamp(72px,13vh,140px) 0}
 pre{margin:0;overflow-x:auto;font:400 clamp(13.5px,1.2vw,16px)/1.75 "Geist Mono",monospace;scrollbar-color:var(--bar) transparent}
 .install .btn{position:absolute;right:clamp(16px,2.4vw,28px);bottom:14px}
 .after{margin:18px 0 0;color:var(--muted);max-width:44em}
+.after code{font-family:"Geist Mono",monospace;font-size:.88em;color:var(--text)}
 footer.wrap{margin-top:clamp(72px,13vh,140px);border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:15px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px}
 footer p{margin:0}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -159,7 +160,8 @@ cd haividio &amp;&amp; claude</code></pre>
       <button class="btn" id="copy" type="button">Copiar</button>
       <span class="vh" role="status" id="copied"></span>
     </div>
-    <p class="after">Dile qué vídeo quieres. Probado con Claude Code; las guías y los scripts sirven con cualquier agente. Lo único que se paga aparte es ElevenLabs.</p>
+    <p class="after">Dile qué vídeo quieres. Lo único que se paga aparte es ElevenLabs.</p>
+    <p class="after">¿Codex, OpenCode, pi o Cursor? Clona el repositorio y abre el agente en su raíz: lee <code>AGENTS.md</code> y encuentra las skills solo. <a href="https://github.com/SantipBarber/haividio/blob/main/docs/otros-agentes.md">Cómo instalarlas en otros proyectos</a>.</p>
   </section>
 </main>
 
