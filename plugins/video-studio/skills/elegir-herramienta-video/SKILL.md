@@ -69,4 +69,4 @@ claude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp   # solo 
 
 - Comprueba en la web precios y requisitos si la información tiene más de unos meses: este ecosistema cambia cada mes.
 - Recomienda una sola opción principal y como mucho una alternativa; no listes todo el catálogo.
-- Si el trabajo está en el repo `claude-video-studio`, el detalle de cada herramienta está en `docs/herramientas.md` y los flujos en `docs/workflows/`.
+- Si el trabajo está en el repo `haividio`, el detalle de cada herramienta está en `docs/herramientas.md` y los flujos en `docs/workflows/`.

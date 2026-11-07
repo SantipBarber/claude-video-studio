@@ -14,3 +14,4 @@
 - 2026-11-06 · [pronunciación] «Odoo» se dice «Odú», «API» como palabra, «OCR» «oce erre», «CIF» «zif». Tabla en `docs/voz-clonada.md`.
 - 2026-11-06 · [demo] Lo que se explica tiene que verse, y el recorrido parte siempre del mismo sitio. Sirve de referencia: unos 7-8 min sin huecos de voz.
 - 2026-11-06 · [contenido] En un vídeo de formación aportan los entresijos: cómo se hizo y qué se planea mejorar. Descartar lo evidente y profundizar en lo técnico propio.
+- 2026-11-07 · [nombre] El proyecto se llama **Haividio**: «hay vídeo» en español y «hi, video» en inglés. Dominio elegido: `haividio.dev`. Debe servir con otros agentes, no solo con Claude.

@@ -1,5 +1,10 @@
 # Pendientes
 
+## Haividio
+
+- [ ] Documentar cómo instalarlo y usarlo en Codex, pi y Cursor, y probarlo: hoy solo se ha probado con Claude Code.
+- [ ] Enlazar `haividio.dev` cuando esté activo y subir la imagen como vista previa social en los ajustes de GitHub.
+
 ## Ahora (en el Mac)
 
 - [x] Clonar el repo e instalar el plugin `video-studio` (+ hyperframes, Chrome Headless Shell, whisper-cpp, Parakeet) (ver "Empezar en tu Mac" en el README).
