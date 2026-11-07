@@ -68,9 +68,6 @@ section{padding-block:clamp(72px,13vh,140px) 0}
 .scars h3{font-size:clamp(21px,2.2vw,27px);line-height:1.2;letter-spacing:-.012em;font-weight:700;margin:0 0 8px}
 .scars p{margin:0;color:var(--muted)}
 .scars a{color:var(--text)}
-.install{margin-top:32px;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px clamp(16px,2.4vw,28px) 58px}
-pre{margin:0;overflow-x:auto;font:400 clamp(13.5px,1.2vw,16px)/1.75 "Geist Mono",monospace;scrollbar-color:var(--bar) transparent}
-.install .btn{position:absolute;right:clamp(16px,2.4vw,28px);bottom:14px}
 .after{margin:18px 0 0;color:var(--muted);max-width:44em}
 .after code{font-family:"Geist Mono",monospace;font-size:.88em;color:var(--text)}
 footer.wrap{margin-top:clamp(72px,13vh,140px);border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:15px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px}
@@ -114,7 +111,7 @@ footer p{margin:0}
     <p>Un manual abierto y un espacio de trabajo. Abres la terminal en el repositorio y el agente ya sabe qué herramienta usar, cómo se trabaja y qué falló la última vez.</p>
     <div class="cta">
       <a class="primary" href="https://github.com/SantipBarber/haividio">Ver en GitHub</a>
-      <a class="secondary" href="#empezar">Instalarlo</a>
+      <a class="secondary" href="#empezar">Cómo empezar</a>
     </div>
   </div>
 
@@ -153,17 +150,9 @@ footer p{margin:0}
 
   <section id="empezar">
     <h2>Empezar</h2>
-    <div class="install">
-<pre id="cmds"><code>git clone https://github.com/SantipBarber/haividio.git
-cd haividio
-claude    # o codex, opencode, pi, Cursor…</code></pre>
-      <button class="btn" id="copy" type="button">Copiar</button>
-      <span class="vh" role="status" id="copied"></span>
-    </div>
-    <p class="after">Tu agente lee <code>AGENTS.md</code> y encuentra las skills: no hay que instalar nada más. Dile qué vídeo quieres. Lo único que se paga aparte es ElevenLabs.</p>
+    <p class="after">Clona el repositorio y abre tu agente en la carpeta: Claude Code, Codex, OpenCode, pi o Cursor. Lee <code>AGENTS.md</code> y encuentra las skills, sin instalar nada más. Lo único que se paga aparte es ElevenLabs.</p>
     <div class="cta">
-      <a class="primary" href="https://github.com/SantipBarber/haividio">Dale una estrella en GitHub</a>
-      <a class="secondary" href="https://github.com/SantipBarber/haividio/blob/main/docs/otros-agentes.md">Usar las skills en otros proyectos</a>
+      <a class="primary" href="https://github.com/SantipBarber/haividio#empezar">Dale una estrella y empieza</a>
     </div>
   </section>
 </main>
@@ -189,8 +178,6 @@ const set=p=>{playing=p;btn.textContent=p?"Pausar":"Reproducir";if(p){start=null
 btn.addEventListener("click",()=>set(!playing));
 document.addEventListener("visibilitychange",()=>{if(document.hidden)cancelAnimationFrame(raf);else if(playing){start=null;raf=requestAnimationFrame(tick)}});
 set(playing);
-const copy=document.getElementById("copy"),st=document.getElementById("copied");
-copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(document.getElementById("cmds").innerText);copy.textContent="Copiado";st.textContent="Comandos copiados"}catch{copy.textContent="Selecciónalo a mano";st.textContent="No se pudo copiar"}setTimeout(()=>{copy.textContent="Copiar";st.textContent=""},2200)});
 </script>
 </body>
 </html>
