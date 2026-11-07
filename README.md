@@ -8,7 +8,7 @@ Un manual y un espacio de trabajo para producir vídeos con agentes de IA. Abres
 
 *Haividio* suena a «hay vídeo» en español y a «hi, video» en inglés.
 
-[Elige tu vídeo](#elige-tu-vídeo) · [Empezar](#empezar) · [Skills](#skills-del-plugin) · [Guías](#guías) · [Estructura](#estructura)
+**[haividio.dev](https://haividio.dev)** · [Elige tu vídeo](#elige-tu-vídeo) · [Empezar](#empezar) · [Skills](#skills-del-plugin) · [Guías](#guías) · [Estructura](#estructura)
 
 ## Elige tu vídeo
 
@@ -128,6 +128,7 @@ docs/
   recursos-abiertos.md       Recursos con sus licencias
   windows.md                 Instalación y límites en Windows
   workflows/                 Un flujo por tipo de vídeo
+site/                        Página de haividio.dev
 scripts/
   splice_voice.py            Sustituye frases o palabras de una locución sin regenerarla
   detect_glitches.py         Busca clics, huecos y congelaciones en un vídeo
@@ -142,4 +143,4 @@ Para empezar un vídeo nuevo, copia `videos/_plantilla/` a `videos/AAAA-MM-DD-sl
 
 ## Licencia
 
-[MIT](LICENSE). Las herramientas y servicios citados tienen sus propias licencias.
+[MIT](LICENSE). La web usa la tipografía Geist, con licencia SIL OFL. Las herramientas y servicios citados tienen sus propias licencias.

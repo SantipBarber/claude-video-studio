@@ -2,6 +2,8 @@
 
 Lo más reciente arriba. Formato: `- AAAA-MM-DD · [tema] lo aprendido. Cómo aplicarlo.`
 
+- 2026-11-07 · [web] `haividio.dev` es una página estática en `site/`, servida por un Worker de Cloudflare. Se publica desde la raíz con `npx wrangler deploy --name haividio --assets site --compatibility-date 2026-11-01 --domain haividio.dev --domain www.haividio.dev`. Publicar no ocurre al fusionar en `main`.
+
 - 2026-11-07 · [demo] Lo aprendido al hacer una demo de producto con voz clonada está en `docs/workflows/05-demo-de-producto.md`, `docs/voz-clonada.md` y `docs/montaje-y-verificacion.md`. Lo más caro: buscar palabras sueltas al sincronizar y regenerar voz ya aprobada en vez de empalmarla.
 
 ## HyperFrames
