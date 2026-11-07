@@ -2,6 +2,8 @@
 
 Lo más reciente arriba. Formato: `- AAAA-MM-DD · [tema] lo aprendido. Cómo aplicarlo.`
 
+- 2026-11-07 · [demo] Lo aprendido al hacer una demo de producto con voz clonada está en `docs/workflows/05-demo-de-producto.md`, `docs/voz-clonada.md` y `docs/montaje-y-verificacion.md`. Lo más caro: buscar palabras sueltas al sincronizar y regenerar voz ya aprobada en vez de empalmarla.
+
 ## HyperFrames
 
 - 2026-10-31 · [render] HyperFrames renderiza con **Chrome Headless Shell** (familia Chrome for Testing), no con Chrome normal ni Brave. `npx hyperframes browser ensure` lo descarga en `~/.cache/hyperframes/chrome/`. `npx hyperframes doctor` revisa todas las dependencias. Sustituye el truco del Chromium de Playwright.
