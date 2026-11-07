@@ -24,25 +24,15 @@ Funciona con Claude Code, Codex, OpenCode, pi y Cursor. Lo único que se paga ap
 
 ## Empezar
 
-Con Claude Code:
-
-```bash
-claude plugin marketplace add SantipBarber/haividio
-claude plugin install video-studio@haividio
-git clone https://github.com/SantipBarber/haividio.git
-cd haividio && claude
-```
-
-Con Codex, OpenCode, pi o Cursor no hay que instalar nada: clona el repositorio y abre el agente en su raíz. Leen `AGENTS.md` y encuentran las skills en `.agents/skills`.
-
 ```bash
 git clone https://github.com/SantipBarber/haividio.git
-cd haividio && codex             # o opencode, o pi
+cd haividio
+claude    # o codex, opencode, pi, Cursor…
 ```
 
-Para usar las skills en otros proyectos, o ver qué se ha probado con cada agente: [docs/otros-agentes.md](docs/otros-agentes.md).
+Tu agente lee `AGENTS.md` y encuentra las skills (en `.agents/skills`, o `.claude/skills` en Claude Code): no hay que instalar nada más. Dile qué vídeo quieres; elige el workflow y propone el plan antes de renderizar nada.
 
-Dile qué vídeo quieres. El agente lee sus instrucciones, elige el workflow y propone el plan antes de renderizar nada.
+Para usar las skills en otros proyectos (plugin de Claude Code, `pi install` o `~/.agents/skills`) y ver qué se ha probado con cada agente: [docs/otros-agentes.md](docs/otros-agentes.md).
 
 Claves (ElevenLabs, Google) en un `.env` en la raíz; está en `.gitignore`. Los vídeos y audios pesados no se suben al repositorio.
 
@@ -55,18 +45,14 @@ brew install ffmpeg node        # Node 22 o superior
 git clone https://github.com/SantipBarber/haividio.git
 cd haividio
 
-# 2. Plugin con las skills
-claude plugin marketplace add SantipBarber/haividio
-claude plugin install video-studio@haividio
-
-# 3. Probar que la escena de ejemplo renderiza
+# 2. Probar que la escena de ejemplo renderiza
 cd videos/2026-10-31-rag-2026/animaciones/escena-03
 npx hyperframes check
 npx hyperframes preview          # vista previa en el navegador
 npx hyperframes render -o ~/Desktop/escena-03.mp4
 
-# 4. Abrir Claude Code en la raíz del repositorio
-cd ../../../.. && claude
+# 3. Abrir tu agente en la raíz del repositorio
+cd ../../../.. && claude          # o codex, opencode, pi
 ```
 
 </details>
@@ -86,11 +72,7 @@ git lfs install
 git clone https://github.com/SantipBarber/haividio.git
 cd haividio
 
-# 2. Plugin con las skills
-claude plugin marketplace add SantipBarber/haividio
-claude plugin install video-studio@haividio
-
-# 3. Probar que la escena de ejemplo renderiza
+# 2. Probar que la escena de ejemplo renderiza
 cd videos/2026-10-31-rag-2026/animaciones/escena-03
 npx hyperframes check
 npx hyperframes preview          # vista previa en Chrome o Edge
@@ -130,6 +112,7 @@ El núcleo es multiplataforma, pero HyperFrames en Windows aún está por probar
 AGENTS.md                    Instrucciones para cualquier agente
 CLAUDE.md                    Punto de entrada para Claude Code
 .agents/skills               Enlace a las skills para Codex, OpenCode, pi y Cursor
+.claude/skills               Enlace a las skills para Claude Code
 package.json                 Paquete de pi (pi install)
 memoria/                     Aprendizajes, preferencias y pendientes
 .claude-plugin/              Marketplace de plugins
