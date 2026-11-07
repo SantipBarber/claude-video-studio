@@ -7,7 +7,7 @@ description: Aplica la identidad visual del canal (paleta, tipografías, movimie
 
 ## Fuente de verdad
 
-Lee `docs/estilo/identidad.md` del repo `claude-video-studio`. Si existe `docs/estilo/tokens.css`, impórtalo en las composiciones de HyperFrames, o tradúcelo a constantes en Remotion. Si la identidad todavía está "pendiente de elegir dirección", pregunta al usuario cuál usar antes de animar.
+Lee `docs/estilo/identidad.md` del repo `haividio`. Si existe `docs/estilo/tokens.css`, impórtalo en las composiciones de HyperFrames, o tradúcelo a constantes en Remotion. Si la identidad todavía está "pendiente de elegir dirección", pregunta al usuario cuál usar antes de animar.
 
 ## Antes de entregar cualquier escena, revisa
 

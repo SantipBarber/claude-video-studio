@@ -1,32 +1,52 @@
-# Claude Video Studio
+![Haividio: guion, voz, animación y publicación, dirigidos por tu agente de IA](docs/estilo/haividio-banner.png)
 
-Base de conocimiento y espacio de trabajo para crear vídeos de YouTube con Claude Code: edición, animaciones, vídeos sin cara y publicación.
+![Licencia MIT](https://img.shields.io/badge/licencia-MIT-D4FF3A?style=flat-square&labelColor=0F1116)
+![Probado con Claude Code](https://img.shields.io/badge/probado_con-Claude_Code-D4FF3A?style=flat-square&labelColor=0F1116)
+![Idioma: español](https://img.shields.io/badge/idioma-espa%C3%B1ol-D4FF3A?style=flat-square&labelColor=0F1116)
 
-La idea: abrir Claude Code (o un proyecto de Claude) sobre este repositorio y usarlo como fuente de verdad. Aquí vive la investigación sobre herramientas, los flujos de trabajo de cada caso de uso y el histórico de cada vídeo que hagamos (guion, resumen, decisiones, enlace publicado).
+Un manual y un espacio de trabajo para producir vídeos con agentes de IA. Abres la terminal aquí y el agente ya sabe qué herramienta usar, cómo se trabaja y qué falló la última vez.
 
-## Qué herramienta para cada caso
+*Haividio* suena a «hay vídeo» en español y a «hi, video» en inglés.
 
-| Caso de uso | Herramienta principal | Complementos | Coste extra |
-|---|---|---|---|
-| Vídeo hablado: quitar silencios, errores y muletillas | [video-use](https://github.com/browser-use/video-use) | Palmier Pro / Velorn para retoque visual | ElevenLabs (transcripción) |
-| Animaciones y efectos mientras explicas | video-use + HyperFrames o Remotion | — | ElevenLabs |
-| Vídeo sin cara (explicativo animado + voz en off) | [HyperFrames](https://github.com/heygen-com/hyperframes) o [Remotion](https://www.remotion.dev/docs/ai/skills) | ElevenLabs TTS para la voz | ElevenLabs |
-| Demo de producto: grabación de pantalla con voz clonada | Playwright + ffmpeg + HyperFrames | ElevenLabs para la voz ([workflow 5](docs/workflows/05-demo-de-producto.md)) | ElevenLabs |
-| Publicar en YouTube | MCP de YouTube (Data API v3) | — | Gratis (cuota de API de Google) |
+[Elige tu vídeo](#elige-tu-vídeo) · [Empezar](#empezar) · [Skills](#skills-del-plugin) · [Guías](#guías) · [Estructura](#estructura)
 
-Todo funciona con la suscripción de Claude; lo único que se paga aparte es ElevenLabs.
+## Elige tu vídeo
 
-## Empezar en Mac
+| Quieres hacer | Con | Guía |
+|---|---|---|
+| Vídeo hablado: quitar silencios, errores y muletillas | [video-use](https://github.com/browser-use/video-use) | [Workflow 1](docs/workflows/01-video-hablado.md) |
+| Animaciones sobre tu explicación | video-use + HyperFrames o Remotion | [Workflow 2](docs/workflows/02-animaciones.md) |
+| Explicativo sin cara, con voz en off | [HyperFrames](https://github.com/heygen-com/hyperframes) o [Remotion](https://www.remotion.dev/docs/ai/skills) + ElevenLabs | [Workflow 3](docs/workflows/03-video-sin-cara.md) |
+| Demo de producto: pantalla y voz clonada | Playwright + ffmpeg + HyperFrames | [Workflow 5](docs/workflows/05-demo-de-producto.md) |
+| Publicar en YouTube | MCP de YouTube (Data API v3) | [Workflow 4](docs/workflows/04-publicar-youtube.md) |
+
+Probado con Claude Code; las guías y los scripts sirven con cualquier agente. Lo único que se paga aparte es ElevenLabs.
+
+## Empezar
+
+```bash
+claude plugin marketplace add SantipBarber/haividio
+claude plugin install video-studio@haividio
+git clone https://github.com/SantipBarber/haividio.git
+cd haividio && claude
+```
+
+Dile qué vídeo quieres. El agente lee sus instrucciones, elige el workflow y propone el plan antes de renderizar nada.
+
+Claves (ElevenLabs, Google) en un `.env` en la raíz; está en `.gitignore`. Los vídeos y audios pesados no se suben al repositorio.
+
+<details>
+<summary>Instalación completa en Mac</summary>
 
 ```bash
 # 1. Herramientas base
 brew install ffmpeg node        # Node 22 o superior
-git clone https://github.com/SantipBarber/claude-video-studio.git
-cd claude-video-studio
+git clone https://github.com/SantipBarber/haividio.git
+cd haividio
 
 # 2. Plugin con las skills
-claude plugin marketplace add SantipBarber/claude-video-studio
-claude plugin install video-studio@claude-video-studio
+claude plugin marketplace add SantipBarber/haividio
+claude plugin install video-studio@haividio
 
 # 3. Probar que la escena de ejemplo renderiza
 cd videos/2026-10-31-rag-2026/animaciones/escena-03
@@ -34,13 +54,14 @@ npx hyperframes check
 npx hyperframes preview          # vista previa en el navegador
 npx hyperframes render -o ~/Desktop/escena-03.mp4
 
-# 4. Abrir Claude Code en la raíz del repo
+# 4. Abrir Claude Code en la raíz del repositorio
 cd ../../../.. && claude
 ```
 
-Claves (ElevenLabs, Google) en un `.env` en la raíz; está en `.gitignore`.
+</details>
 
-## Empezar en Windows
+<details>
+<summary>Instalación completa en Windows</summary>
 
 ```powershell
 # 1. Herramientas base (PowerShell)
@@ -51,12 +72,12 @@ winget install Gyan.FFmpeg
 winget install Python.Python.3.12
 # cerrar y abrir PowerShell para que se actualice el PATH
 git lfs install
-git clone https://github.com/SantipBarber/claude-video-studio.git
-cd claude-video-studio
+git clone https://github.com/SantipBarber/haividio.git
+cd haividio
 
 # 2. Plugin con las skills
-claude plugin marketplace add SantipBarber/claude-video-studio
-claude plugin install video-studio@claude-video-studio
+claude plugin marketplace add SantipBarber/haividio
+claude plugin install video-studio@haividio
 
 # 3. Probar que la escena de ejemplo renderiza
 cd videos/2026-10-31-rag-2026/animaciones/escena-03
@@ -65,49 +86,48 @@ npx hyperframes preview          # vista previa en Chrome o Edge
 npx hyperframes render -o $HOME\Desktop\escena-03.mp4
 ```
 
-El núcleo (HyperFrames, ffmpeg, Python, ElevenLabs, rclone) es multiplataforma, pero HyperFrames en Windows aún está por probar y hay herramientas solo de macOS: el resto en [docs/windows.md](docs/windows.md).
+El núcleo es multiplataforma, pero HyperFrames en Windows aún está por probar y hay herramientas solo de macOS. El resto, en [docs/windows.md](docs/windows.md).
 
-## Memoria
+</details>
 
-`memoria/` guarda aprendizajes técnicos, preferencias y pendientes. Claude la lee al empezar y la actualiza mientras trabaja, así cada sesión (en la nube o en el Mac) continúa donde lo dejó la anterior.
-
-## Plugin `video-studio` para Claude Code
-
-El repo es también un marketplace de plugins. Instálalo una vez y las skills estarán disponibles en cualquier proyecto:
-
-```bash
-claude plugin marketplace add SantipBarber/claude-video-studio
-claude plugin install video-studio@claude-video-studio
-```
+## Skills del plugin
 
 | Skill | Para qué |
 |---|---|
-| `elegir-herramienta-video` | Decide qué herramienta usar según el tipo de vídeo y cómo instalarla |
-| `video-hablado` | Edita tomas con video-use: cortes, subtítulos, animaciones sincronizadas |
-| `video-sin-cara` | Investigación → guion por escenas → voz → animación → render |
-| `identidad-visual` | Aplica la identidad del canal y evita la estética típica de vídeo hecho con IA |
-| `publicar-youtube` | Título, descripción, capítulos, miniatura y subida como privado |
+| `elegir-herramienta-video` | Decide qué herramienta usar según el tipo de vídeo |
+| `video-hablado` | Edita tomas: cortes, subtítulos y animaciones sincronizadas |
+| `video-sin-cara` | Investigación, guion, voz, animación y render |
+| `identidad-visual` | Aplica la identidad del canal y evita lo genérico |
+| `publicar-youtube` | Título, capítulos, miniatura y subida como privado |
+
+## Guías
+
+- [Voz clonada](docs/voz-clonada.md): modelos, pronunciación, tomas y empalmes.
+- [Montaje y verificación](docs/montaje-y-verificacion.md): sincronía, cortes limpios, mezcla y qué prueba cada comprobación.
+- [Catálogo de herramientas](docs/herramientas.md): editores, MCP y skills, con su coste.
+- [Identidad visual](docs/estilo/identidad.md): paleta, tipografía y movimiento.
+- [Recursos abiertos](docs/recursos-abiertos.md): documentación, iconos, fuentes y audio, con sus licencias.
+- [Memoria](memoria/): aprendizajes y fallos, con fecha.
 
 ## Estructura
 
-```
-CLAUDE.md                    Instrucciones para Claude al trabajar en este repo
+<details>
+<summary>Ver carpetas</summary>
+
+```text
+AGENTS.md                    Instrucciones para cualquier agente
+CLAUDE.md                    Punto de entrada para Claude Code
 memoria/                     Aprendizajes, preferencias y pendientes
 .claude-plugin/              Marketplace de plugins
 plugins/video-studio/        Plugin con las skills
 docs/
-  estilo/identidad.md        Identidad visual del canal (paleta, tipografía, movimiento)
-  herramientas.md            Catálogo de herramientas investigadas (oct 2026)
-  clonify.md                 Por qué Clonify no sirve para esto
-  recursos-abiertos.md       Hugging Face, documentación, iconos, fuentes, audio (con licencias)
-  voz-clonada.md             Modelos, pronunciación, tomas y empalmes con ElevenLabs
-  montaje-y-verificacion.md  Sincronía con la voz, cortes limpios, mezcla y qué prueba cada comprobación
-  workflows/
-    01-video-hablado.md      Cortar tomas con video-use
-    02-animaciones.md        Añadir animaciones sobre tu explicación
-    03-video-sin-cara.md     Vídeo explicativo animado con voz en off
-    04-publicar-youtube.md   Subida, título, descripción, miniatura
-    05-demo-de-producto.md   Grabación de pantalla con voz clonada
+  estilo/identidad.md        Identidad visual (paleta, tipografía, movimiento)
+  herramientas.md            Catálogo de herramientas
+  voz-clonada.md             Modelos, pronunciación, tomas y empalmes
+  montaje-y-verificacion.md  Sincronía, cortes, mezcla y comprobaciones
+  recursos-abiertos.md       Recursos con sus licencias
+  windows.md                 Instalación y límites en Windows
+  workflows/                 Un flujo por tipo de vídeo
 scripts/
   splice_voice.py            Sustituye frases o palabras de una locución sin regenerarla
   detect_glitches.py         Busca clics, huecos y congelaciones en un vídeo
@@ -116,10 +136,10 @@ videos/
   _plantilla/                Copiar para cada vídeo nuevo
 ```
 
-## Cómo empezar un vídeo nuevo
+Para empezar un vídeo nuevo, copia `videos/_plantilla/` a `videos/AAAA-MM-DD-slug/` y dile al agente qué quieres hacer.
 
-1. Copia `videos/_plantilla/` a `videos/AAAA-MM-DD-slug/`.
-2. Abre Claude Code en la raíz del repo y dile qué vídeo quieres. Claude leerá `CLAUDE.md` y el workflow correspondiente.
-3. Al terminar, Claude actualiza el `README.md` del vídeo y el índice `videos/README.md`.
+</details>
 
-> Los archivos de vídeo pesados (raw, renders) **no se suben** al repo; ver `.gitignore`.
+## Licencia
+
+[MIT](LICENSE). Las herramientas y servicios citados tienen sus propias licencias.
